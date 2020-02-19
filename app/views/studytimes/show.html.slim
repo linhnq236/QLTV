@@ -1,0 +1,9 @@
+p#notice = notice
+
+p
+  strong Studytime:
+  = @studytime.studytime
+
+=> link_to 'Edit', edit_studytime_path(@studytime)
+'|
+=< link_to 'Back', studytimes_path

@@ -1,0 +1,84 @@
+{
+  "application.js": "/packs/js/application-cda7228aa81dd4002786.js",
+  "application.js.map": "/packs/js/application-cda7228aa81dd4002786.js.map",
+  "cascade.js": "/packs/js/cascade-a5f6b1b07fb1317d7375.js",
+  "cascade.js.map": "/packs/js/cascade-a5f6b1b07fb1317d7375.js.map",
+  "ccv.js": "/packs/js/ccv-281470b3aa551c35b7d3.js",
+  "ccv.js.map": "/packs/js/ccv-281470b3aa551c35b7d3.js.map",
+  "course.js": "/packs/js/course-9f97a04f89dd5a7e8d01.js",
+  "course.js.map": "/packs/js/course-9f97a04f89dd5a7e8d01.js.map",
+  "entrypoints": {
+    "application": {
+      "js": [
+        "/packs/js/application-cda7228aa81dd4002786.js"
+      ],
+      "js.map": [
+        "/packs/js/application-cda7228aa81dd4002786.js.map"
+      ]
+    },
+    "cascade": {
+      "js": [
+        "/packs/js/cascade-a5f6b1b07fb1317d7375.js"
+      ],
+      "js.map": [
+        "/packs/js/cascade-a5f6b1b07fb1317d7375.js.map"
+      ]
+    },
+    "ccv": {
+      "js": [
+        "/packs/js/ccv-281470b3aa551c35b7d3.js"
+      ],
+      "js.map": [
+        "/packs/js/ccv-281470b3aa551c35b7d3.js.map"
+      ]
+    },
+    "course": {
+      "js": [
+        "/packs/js/course-9f97a04f89dd5a7e8d01.js"
+      ],
+      "js.map": [
+        "/packs/js/course-9f97a04f89dd5a7e8d01.js.map"
+      ]
+    },
+    "equipment": {
+      "js": [
+        "/packs/js/equipment-04e62ce354bffbc4be13.js"
+      ],
+      "js.map": [
+        "/packs/js/equipment-04e62ce354bffbc4be13.js.map"
+      ]
+    },
+    "jquery": {
+      "js": [
+        "/packs/js/jquery-89d111d86665a29477aa.js"
+      ],
+      "js.map": [
+        "/packs/js/jquery-89d111d86665a29477aa.js.map"
+      ]
+    },
+    "places": {
+      "js": [
+        "/packs/js/places-fae173473dbc13f3514b.js"
+      ],
+      "js.map": [
+        "/packs/js/places-fae173473dbc13f3514b.js.map"
+      ]
+    },
+    "webcam": {
+      "js": [
+        "/packs/js/webcam-20dea366b3d8591c076c.js"
+      ],
+      "js.map": [
+        "/packs/js/webcam-20dea366b3d8591c076c.js.map"
+      ]
+    }
+  },
+  "equipment.js": "/packs/js/equipment-04e62ce354bffbc4be13.js",
+  "equipment.js.map": "/packs/js/equipment-04e62ce354bffbc4be13.js.map",
+  "jquery.js": "/packs/js/jquery-89d111d86665a29477aa.js",
+  "jquery.js.map": "/packs/js/jquery-89d111d86665a29477aa.js.map",
+  "places.js": "/packs/js/places-fae173473dbc13f3514b.js",
+  "places.js.map": "/packs/js/places-fae173473dbc13f3514b.js.map",
+  "webcam.js": "/packs/js/webcam-20dea366b3d8591c076c.js",
+  "webcam.js.map": "/packs/js/webcam-20dea366b3d8591c076c.js.map"
+}

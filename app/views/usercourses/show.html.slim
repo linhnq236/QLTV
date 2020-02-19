@@ -1,0 +1,12 @@
+p#notice = notice
+
+p
+  strong Course:
+  = @usercourse.course_id
+p
+  strong User:
+  = @usercourse.user_id
+
+=> link_to 'Edit', edit_usercourse_path(@usercourse)
+'|
+=< link_to 'Back', usercourses_path

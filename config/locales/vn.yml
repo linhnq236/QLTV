@@ -1,0 +1,90 @@
+vn:
+  rollcall: "Điểm danh"
+  take: "Chụp ảnh"
+  department:
+    it: "Công nghệ thông tin"
+    ec: "Kinh tế vận tải"
+  message:
+    content: "Hãy cho phép định vị GPS !"
+  layout:
+    student: "Sinh viên"
+    admin: "Quản trị viên"
+    teacher: "Giảng viên"
+    setting: "CÀI ĐẶT"
+    changepassword: "THAY ĐỔI PASSWORD"
+    logout: "ĐĂNG XUÂT"
+    previous: " Trước "
+    next: " Sau "
+    login_title: "ĐĂNG NHẬP"
+    signup: "Đăng ký"
+    email: "Email"
+    password: "Mật khẩu"
+    remember: "Nhớ mật khẩu"
+    forgot: "Quên mật khẩu ? "
+    home: "TRANG CHỦ"
+    notice_common: "THÔNG BÁO CHUNG "
+    show: "Chi tiết"
+    created_at: "Ngày đăng "
+
+  button:
+    login: "Đăng nhập"
+  menu:
+    student:
+      course: "KHÓA HỌC"
+      mycourse: "KHÓA HỌC CỦA TÔI"
+      weekcalendar: "LỊCH HỌC THEO TUẦN"
+      timetable:
+        title: "LỊCH HỌC THEO TUẦN"
+      courses:
+        title: "TẤT CẢ KHÓA HỌC"
+        name: "Tên khóa học"
+        content: "Nội dung"
+        start: "Bắt đầu"
+        end: "Kết thúc"
+        show: "Chi tiết"
+        register: "Đăng ký"
+        studytime: "Thời gian "
+      notice:
+        title: " Thông báo "
+        notice_name: " Tiêu đề "
+        content: " Nội dung "
+        start: " Áp dụng "
+        end: " Kết thúc "
+    teacher:
+      myclass: "LỚP HỌC"
+      calendar: "LỊCH THEO TUẦN"
+      detail: "Detail"
+      equipment: "THIẾT BỊ"
+      timetable:
+        title: "LỊCH DẠY THEO TUẦN"
+      listequipment:
+        title: "THIẾT BỊ ĐIỀU KHIỂN"
+        equipmentname: "Tên thiết bị"
+        status: "Trạng thái"
+        timer: "Hẹn giờ bật"
+        timeout: "Hẹn giờ tắt"
+    admin:
+      add:
+        add: "THÊM"
+        course: "KHÓA HỌC"
+        room: "PHÒNG HỌC"
+        timetable: "THỜI KHÓA BIỂU"
+        account: "TÀI KHOẢN"
+        equipment: "THIẾT BỊ"
+        notice: "THÔNG BÁO"
+        department: "BAN NGÀNH"
+  date:
+    abbr_day_names: [CN, T2 ,T3,T4 ,T5 ,T6 ,T7]
+    order: [ !ruby/symbol day, !ruby/symbol month, !ruby/symbol year ]
+    formats:
+      Octorber: "Tháng 10"
+      default: "%Y-%m-%d"
+      short: "%b %d"
+      long: "%B %d, %Y"
+  time:
+    formats:
+      default: "%a, %d %b %Y %H:%M:%S %z"
+      short: "%d %b %H:%M"
+      long: "%B %d, %Y %H:%M"
+    am: "am"
+    pm: "pm"

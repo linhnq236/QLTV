@@ -1,0 +1,21 @@
+h1 Listing apikeys
+
+table
+  thead
+    tr
+      th Name
+      th
+      th
+      th
+
+  tbody
+    - @apikeys.each do |apikey|
+      tr
+        td = apikey.name
+        td = link_to 'Show', apikey
+        td = link_to 'Edit', edit_apikey_path(apikey)
+        td = link_to 'Destroy', apikey, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New Apikey', new_apikey_path

@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  notice_name: MyString
+  content: MyString
+  start: 2019-09-30
+  end: 2019-09-30
+
+two:
+  notice_name: MyString
+  content: MyString
+  start: 2019-09-30
+  end: 2019-09-30

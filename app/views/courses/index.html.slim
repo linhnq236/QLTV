@@ -1,0 +1,28 @@
+h1 = I18n.t('menu.student.courses.title')
+
+table
+  thead
+    tr
+      th = I18n.t('menu.student.courses.name')
+      th = I18n.t('menu.student.courses.content')
+      th = I18n.t('menu.student.courses.start')
+      th = I18n.t('menu.student.courses.end')
+      th = I18n.t('menu.student.courses.studytime')
+      th
+      th
+      th
+
+  tbody
+    - @courses.each do |course|
+      tr
+        td = course.course_name
+        td = convert_ckeditor(course.content)
+        td = course.start
+        td = course.end
+        td = course.time
+        td = link_to "#{I18n.t('menu.student.courses.show')}", course
+        td
+         button class = "reg" data-id = course.id = "#{I18n.t('menu.student.courses.register')}"
+
+br
+= javascript_pack_tag 'course', 'data-turbolinks-track': 'reload'

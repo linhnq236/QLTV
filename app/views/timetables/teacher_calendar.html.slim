@@ -1,0 +1,11 @@
+h1 = I18n.t('menu.teacher.timetable.title')
+= month_calendar events: @timetables, attribute: :start_time  do |date, timetables|
+    = format_day(date)
+    - timetables.each do |timetable|
+      - if take_datetime(date.inspect) == take_datetime(timetable.start_time.inspect)
+        div
+          = link_to "/classTeacher/"+timetable.course_id.to_s
+            = timetable.course_name + ' - '
+          = link_to "/controller_equipment"
+            = timetable.room_name
+        div#studytime = timetable.course.studytime.time

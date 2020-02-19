@@ -1,0 +1,42 @@
+
+<nav class="navbar navbar-expand-md bg-dark navbar-dark menu container">
+  <a class="navbar-brand" href="#"><%= current_user.admin%></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <%= link_to("#{I18n.t 'layout.home'}", root_path,  class: "nav-link", id: "course") %>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+        <%= I18n.t('menu.admin.add.add')%>
+        </a>
+        <div class="dropdown-menu">
+          <%= link_to("#{I18n.t('menu.admin.add.equipment')}", new_equipment_path,  class: "dropdown-item") %>
+        </div>
+    </li>
+      <li class="nav-item">
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+          <%= I18n.t('layout.setting')%>
+        </a>
+        <div class="dropdown-menu">
+          <%= link_to("#{I18n.t('layout.changepassword')}", edit_user_registration_path,  class: "dropdown-item") %>
+          <%= link_to("#{I18n.t('layout.logout')}", destroy_user_session_path, method: :delete, class: "dropdown-item") %>
+        </div>
+    </li>
+    <li id='search'>
+      <div class="search-container">
+        <form action="">
+          <input type="text" placeholder="Search.." name="search" class="search">
+          <button type="submit"><i class="fa fa-search"></i></button>
+        </form>
+      </div>
+    </li>
+    </ul>
+  </div>
+</nav>
+<br>

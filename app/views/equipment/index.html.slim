@@ -1,0 +1,22 @@
+h1 = I18n.t('menu.teacher.listequipment.title')
+
+table.table
+  thead
+    tr
+      th scope="col" = I18n.t('menu.teacher.listequipment.equipmentname')
+      th scope="col" = I18n.t('menu.teacher.listequipment.status')
+      th scope="col" = I18n.t('menu.teacher.listequipment.timer')
+      th scope="col" = I18n.t('menu.teacher.listequipment.timeout')
+  tbody
+    - @equipment.each do |equipment|
+      tr
+        td = equipment.equiqment_name
+        td.turn data-id = equipment.id = equipment.active == true ? "On" : "OFF"
+        td.timer data-id = equipment.id  = equipment.timer.nil? ? "Timer" : format_datetime(equipment.timer)
+        td.timeout data-id = equipment.id  = equipment.timer.nil? ? "Timeout" : format_datetime(equipment.timeout)
+br
+
+div#settime
+div#settimeout
+= link_to 'New Equipment', new_equipment_path
+= javascript_pack_tag 'equipment', 'data-turbolinks-track': 'reload'

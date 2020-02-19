@@ -1,0 +1,12 @@
+p#notice = notice
+
+p
+  strong Equiqment name:
+  = @equipment.equiqment_name
+p
+  strong Active:
+  = @equipment.active
+
+=> link_to 'Edit', edit_equipment_path(@equipment)
+'|
+=< link_to 'Back', equipment_index_path

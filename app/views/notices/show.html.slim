@@ -1,0 +1,21 @@
+p#notice = notice
+
+p
+  strong = I18n.t('menu.student.notice.notice_name')
+  = @notice.notice_name
+p
+  strong = I18n.t('menu.student.notice.content')
+  = convert_ckeditor(@notice.content)
+p
+  strong = I18n.t('menu.student.notice.start')
+  = @notice.start
+p
+  strong = I18n.t('menu.student.notice.end')
+  = @notice.end
+p
+  strong = I18n.t('layout.created_at')
+  = format(@notice.created_at)
+
+=> link_to 'Edit', edit_notice_path(@notice)
+'|
+=< link_to 'Back', notices_path

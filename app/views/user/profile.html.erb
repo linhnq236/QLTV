@@ -1,0 +1,30 @@
+<% @profile.each do |p|%>
+<%= form_with(local: true) do |form| %>
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email, value:"#{p.email}", :readonly => true %>
+  </div>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name,  value:"#{p.name}" %>
+  </div>
+  <div class="field">
+    <%= form.label :department_id %>
+    <%= form.text_field :department_id, value:"#{p.department_name}", :readonly => true %>
+  </div>
+  <div class="field">
+    <%= form.label :password %><br>
+    <%= form.password_field :password %>
+  </div>
+  <div class="field">
+    <%= form.label :password_confirmation %>
+    <%= form.password_field :password_confirmation %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+<% end %>

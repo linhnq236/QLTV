@@ -1,0 +1,12 @@
+<%= form_tag('/agency_admin/tenants', method: :get, id: "changePage") do %>
+    <%= select_tag 'per_page',
+      options_for_select([["Level 1","1"], ["Level 2","25"], ["Level 4","50"]], selected: params[:per_page]),
+      {onchange: "$('#changePage').submit();" }
+    %>
+  <% end %>
+  td
+     = form_tag "/equipment/#{equipment.id}", method: :PUT, id:'change' do
+      = select_tag "equipment[warn_led]",
+        options_for_select([["Off","0"], ["Level 1","1"], ["Level 2","25"], ["Level 3","50"]], selected: equipment.warn_led),
+        {onchange: "$('#change').submit();" }
+     end
