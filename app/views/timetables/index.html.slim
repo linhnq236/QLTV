@@ -1,9 +1,0 @@
-h1 Time Table
-
-= month_calendar events: @timetables, attribute: :start_time  do |date, timetables|
-    = date.to_formatted_s(:short)
-    - timetables.each do |timetable|
-      - if take_datetime(date.inspect) == take_datetime(timetable.start_time.inspect)
-       div = link_to root_path, class: 'event_link'
-             = timetable.course_name + ' - '
-             = timetable.room_name
