@@ -51,6 +51,7 @@ en:
     am: "am"
     pm: "pm"
   layout:
+    title: "LIBRARY MANAGEMENT SOFTWARE"
     student: "STUDENT"
     admin: "ADMIN"
     teacher: "TEACHER"
@@ -70,36 +71,12 @@ en:
     show: "Detail"
     created_at: "Post"
 
+
   button:
     login: "Log in"
   menu:
-    student:
-      course: "COURSE"
-      mycourse: "MY COURSE"
-      weekcalendar: "WEEK CALENDAR"
-      timetable:
-        title: "WEEK CALENDAR"
-      courses:
-        title: "LISTING COURSES"
-        name: "Name"
-        content: "Content"
-        start: "Start"
-        end: "End"
-        show: "Detail"
-        register: "Register"
-        studytime: "Study time"
-      notice:
-        title: "Listing notices"
-        notice_name: "Title"
-        content: "Content"
-        start: "Start"
-        end: "End"
-        notice_all: "all"
-        notice_teacher: "Teacher"
     teacher:
-      myclass: "MY CLASS"
       calendar: "WEEK CALENDAR"
-      detail: "Detail"
       equipment: "EQUIPMENT"
       timetable:
         title: "WEEK CALENDAR"
@@ -110,12 +87,3 @@ en:
         timer: "Timer"
         timeout: "TimeOut"
     admin:
-      add:
-        add: "ADD"
-        course: "COURSE"
-        room: "ROOM"
-        timetable: "TIMETABLE"
-        account: "ACCOUNT"
-        equipment: "EQUIPMENT"
-        notice: "NOTICE"
-        department: "DEPARTMENT"

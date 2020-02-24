@@ -1,0 +1,21 @@
+= form_for @historyall do |f|
+  - if @historyall.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@historyall.errors.count, "error")} prohibited this historyall from being saved:"
+      ul
+        - @historyall.errors.full_messages.each do |message|
+          li = message
+
+  .field
+    = f.label :active
+    = f.text_field :active
+  .field
+    = f.label :value_old
+    = f.text_field :value_old
+  .field
+    = f.label :value_new
+    = f.text_field :value_new
+  .field
+    = f.label :staff_id
+    = f.number_field :staff_id
+  .actions = f.submit

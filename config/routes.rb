@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :departments
+  resources :historyalls
+  resources :histories
+  resources :borrows
   resources :books
   resources :publishers
   resources :types
@@ -7,11 +11,13 @@ Rails.application.routes.draw do
   resources :studytimes
   scope "(:locale)", locale: /en|vn/ do
     resources :equipment
-    get "/controller_equipment" => "equipment#index"
-    get "/new_equipment" => "equipment#new"
+    get "controller_equipment" => "equipment#index"
+    get "new_equipment" => "equipment#new"
+    root to: 'home#index'
     devise_for :users
-    root to: "equipment#index"
+    get "/logout", to: "devise/registrations#destroy "
     namespace "api" do
+      root to: "equipment#index"
       resources :equipment
     end
   end

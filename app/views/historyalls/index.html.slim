@@ -1,0 +1,27 @@
+h1 Listing historyalls
+
+table
+  thead
+    tr
+      th Active
+      th Value old
+      th Value new
+      th Staff
+      th
+      th
+      th
+
+  tbody
+    - @historyalls.each do |historyall|
+      tr
+        td = historyall.active
+        td = historyall.value_old
+        td = historyall.value_new
+        td = historyall.staff_id
+        td = link_to 'Show', historyall
+        td = link_to 'Edit', edit_historyall_path(historyall)
+        td = link_to 'Destroy', historyall, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New Historyall', new_historyall_path

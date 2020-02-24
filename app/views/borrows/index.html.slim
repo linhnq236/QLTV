@@ -1,0 +1,21 @@
+h1 Listing borrows
+
+table
+  thead
+    tr
+      th Note
+      th
+      th
+      th
+
+  tbody
+    - @borrows.each do |borrow|
+      tr
+        td = borrow.note
+        td = link_to 'Show', borrow
+        td = link_to 'Edit', edit_borrow_path(borrow)
+        td = link_to 'Destroy', borrow, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New Borrow', new_borrow_path

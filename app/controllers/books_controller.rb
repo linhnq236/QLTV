@@ -1,10 +1,13 @@
 class BooksController < ApplicationController
   before_action :set_book, only: [:show, :edit, :update, :destroy]
-
+  before_action :check_student , only: [:index]
   # GET /books
   # GET /books.json
   def index
     @books = Book.all
+    @types = Type.all
+    @authors = Author.all
+    @publishers = Publisher.all
   end
 
   # GET /books/1
@@ -15,10 +18,16 @@ class BooksController < ApplicationController
   # GET /books/new
   def new
     @book = Book.new
+    @types = Type.all
+    @authors = Author.all
+    @publishers = Publisher.all
   end
 
   # GET /books/1/edit
   def edit
+    @types = Type.all
+    @authors = Author.all
+    @publishers = Publisher.all
   end
 
   # POST /books
@@ -69,6 +78,6 @@ class BooksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def book_params
-      params.require(:book).permit(:name, :publishyear)
+      params.require(:book).permit(:name, :publishyear, :author_id, :type_id, :publisher_id, :image,)
     end
 end

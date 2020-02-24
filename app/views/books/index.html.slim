@@ -1,23 +1,25 @@
 h1 Listing books
 
-table
-  thead
-    tr
-      th Name
-      th Publishyear
-      th
-      th
-      th
+</div>
+div.row
+  div.col-sm-3
 
-  tbody
-    - @books.each do |book|
-      tr
-        td = book.name
-        td = book.publishyear
-        td = link_to 'Show', book
-        td = link_to 'Edit', edit_book_path(book)
-        td = link_to 'Destroy', book, data: { confirm: 'Are you sure?' }, method: :delete
+      == render partial: 'books/share/type', locals: {types: @types}
+  div.col-sm-7
+    table
+      thead
+        tr
+          th Name
+          th Publishyear
+          th
+          th
+          th
 
-br
-
-= link_to 'New Book', new_book_path
+      tbody
+        - @books.each do |book|
+          tr
+            td = book.name
+            td = book.publishyear
+            td = link_to 'Show', book
+            td = link_to 'Edit', edit_book_path(book)
+            td = link_to 'Destroy', book, data: { confirm: 'Are you sure?' }, method: :delete
