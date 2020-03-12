@@ -1,11 +1,8 @@
 p#notice = notice
 
 p
-  strong Department code:
-  = @department.department_code
-p
-  strong Department name:
-  = @department.department_name
+  strong Name:
+  = @department.name
 
 => link_to 'Edit', edit_department_path(@department)
 '|

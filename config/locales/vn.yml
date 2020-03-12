@@ -7,6 +7,7 @@ vn:
   message:
     content: "Hãy cho phép định vị GPS !"
   layout:
+    title: "PHẦN MỀM QUẢN LÝ THƯ VIỆN"
     student: "Sinh viên"
     admin: "Quản trị viên"
     teacher: "Giảng viên"
@@ -25,35 +26,22 @@ vn:
     notice_common: "THÔNG BÁO CHUNG "
     show: "Chi tiết"
     created_at: "Ngày đăng "
-
+  borrow:
+    success: "Mượn sách %{name} thành công !"
+    fail: "Mượn sách %{name}  thất bại !"
+    exists: "Sách %{name} đã được mượn !"
+    over: "Bạn đã mượn đủ số lượng cho phép."
+  book:
+    profileuser: "Cập nhật thông tin cá nhân."
+    link: "Link"
+    new_author: "Tác giả mới"
+    new_type: "Thể loại mới"
+    new_publisher: "Nhà xuất bản mới"
   button:
     login: "Đăng nhập"
   menu:
-    student:
-      course: "KHÓA HỌC"
-      mycourse: "KHÓA HỌC CỦA TÔI"
-      weekcalendar: "LỊCH HỌC THEO TUẦN"
-      timetable:
-        title: "LỊCH HỌC THEO TUẦN"
-      courses:
-        title: "TẤT CẢ KHÓA HỌC"
-        name: "Tên khóa học"
-        content: "Nội dung"
-        start: "Bắt đầu"
-        end: "Kết thúc"
-        show: "Chi tiết"
-        register: "Đăng ký"
-        studytime: "Thời gian "
-      notice:
-        title: " Thông báo "
-        notice_name: " Tiêu đề "
-        content: " Nội dung "
-        start: " Áp dụng "
-        end: " Kết thúc "
     teacher:
-      myclass: "LỚP HỌC"
       calendar: "LỊCH THEO TUẦN"
-      detail: "Detail"
       equipment: "THIẾT BỊ"
       timetable:
         title: "LỊCH DẠY THEO TUẦN"
@@ -64,15 +52,8 @@ vn:
         timer: "Hẹn giờ bật"
         timeout: "Hẹn giờ tắt"
     admin:
-      add:
-        add: "THÊM"
-        course: "KHÓA HỌC"
-        room: "PHÒNG HỌC"
-        timetable: "THỜI KHÓA BIỂU"
-        account: "TÀI KHOẢN"
-        equipment: "THIẾT BỊ"
-        notice: "THÔNG BÁO"
-        department: "BAN NGÀNH"
+
+
   date:
     abbr_day_names: [CN, T2 ,T3,T4 ,T5 ,T6 ,T7]
     order: [ !ruby/symbol day, !ruby/symbol month, !ruby/symbol year ]

@@ -1,0 +1,50 @@
+<table id="dataTableHistory" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th class="th-sm">student_code
+      </th>
+      <th class="th-sm">student_name
+      </th>
+      <th class="th-sm">code_book
+      </th>
+      <th class="th-sm">book_name
+      </th>
+      <th class="th-sm">borrow_time
+      </th>
+      <th class="th-sm">pay_time
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    - @histories.each do |history|
+      tr
+        td
+          = history.user.code
+        td
+          = history.user.name
+        td
+          = history.amount.code
+        td
+          = history.book.name
+        td
+          = format_datetime(history.borrow_time)
+        td
+          = format_datetime(history.pay_time)
+  </tbody>
+  <tfoot>
+    <tr>
+      <th class="th-sm">student_code
+      </th>
+      <th class="th-sm">student_name
+      </th>
+      <th class="th-sm">code_book
+      </th>
+      <th class="th-sm">book_name
+      </th>
+      <th class="th-sm">borrow_time
+      </th>
+      <th class="th-sm">pay_time
+      </th>
+    </tr>
+  </tfoot>
+</table>

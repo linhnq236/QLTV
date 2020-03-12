@@ -1,0 +1,18 @@
+<div class="bg-light border-right" id="sidebar-wrapper">
+  <div class="list-group list-group-flush">
+    <div id="MainMenu">
+      <div class="list-group panel text-left">
+        - @departments.each do |department|
+          <div href="#add_#{department.id}" class="list-group-item list-group-item-success" data-toggle="collapse" data-parent="#MainMenu">
+            = department.name
+            <i class="fa fa-caret-down float-right "></i>
+          </div>
+          <div class="collapse text-left" id="add_#{department.id}">
+            - @types.each do |type|
+              - if type.id == department.id
+                = link_to type.name, "/books/#{type.id}", class:"list-group-item list-group-item-action bg-light"
+          </div>
+      </div>
+    </div>
+  </div>
+</div>

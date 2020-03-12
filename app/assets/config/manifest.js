@@ -6,3 +6,4 @@
 //= require i18n.js
 //= require i18n/translations
 //= require ckeditor/init
+//= link application.js

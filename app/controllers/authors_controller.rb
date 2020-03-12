@@ -1,5 +1,6 @@
 class AuthorsController < ApplicationController
   before_action :set_author, only: [:show, :edit, :update, :destroy]
+  skip_before_action :verify_authenticity_token
 
   # GET /authors
   # GET /authors.json
@@ -25,15 +26,8 @@ class AuthorsController < ApplicationController
   # POST /authors.json
   def create
     @author = Author.new(author_params)
-
-    respond_to do |format|
-      if @author.save
-        format.html { redirect_to @author, notice: 'Author was successfully created.' }
-        format.json { render :show, status: :created, location: @author }
-      else
-        format.html { render :new }
-        format.json { render json: @author.errors, status: :unprocessable_entity }
-      end
+    if @author.save
+      render json:{notice: "Them thanh cong"}
     end
   end
 

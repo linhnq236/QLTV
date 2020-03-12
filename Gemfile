@@ -21,17 +21,11 @@ gem 'jbuilder', '~> 2.7'
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-gem 'rosemary', '~> 0.4.3'
-gem 'open_street_map'
 gem 'jbuilder', '~> 2.7'
-gem 'pusher'
-gem 'figaro'
-gem 'geocoder'
 gem 'gmaps4rails'
 gem 'gon'
 gem 'slim-rails'
 gem 'carrierwave-base64'
-gem 'rmagick'
 gem 'devise'
 gem 'fullcalendar-rails'
 gem 'momentjs-rails'
@@ -42,12 +36,13 @@ gem 'bootstrap-datepicker-rails'
 gem 'paperclip'
 gem 'mini_magick'
 gem 'carrierwave'
-gem "ckeditor"
-gem "sidekiq"
+gem 'ckeditor', github: 'galetahub/ckeditor'
 gem 'rack'
-gem 'sinatra'
-gem 'whenever', require: false
+gem 'jquery-rails'
+gem 'sprockets-rails'
 gem 'rack-cors', :require => 'rack/cors'
+gem 'flex-slider-rails'
+gem 'will_paginate-bootstrap4'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
@@ -65,6 +60,7 @@ group :development do
   gem 'listen', '>= 3.0.5', '< 3.2'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+  gem 'rails_layout'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 

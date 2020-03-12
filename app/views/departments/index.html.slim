@@ -3,8 +3,7 @@ h1 Listing departments
 table
   thead
     tr
-      th Department code
-      th Department name
+      th Name
       th
       th
       th
@@ -12,8 +11,7 @@ table
   tbody
     - @departments.each do |department|
       tr
-        td = department.department_code
-        td = department.department_name
+        td = department.name
         td = link_to 'Show', department
         td = link_to 'Edit', edit_department_path(department)
         td = link_to 'Destroy', department, data: { confirm: 'Are you sure?' }, method: :delete

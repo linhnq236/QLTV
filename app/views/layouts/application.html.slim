@@ -1,0 +1,38 @@
+doctype html
+html
+  head
+    meta[name="viewport" content="width=device-width, initial-scale=1.0"]
+    title
+      = content_for?(:title) ? yield(:title) : t("layout.title")
+    meta name="description" content="#{content_for?(:description) ? yield(:description) : 'Rollcall'}"
+    == stylesheet_link_tag "application", :media => 'all', 'data-turbolinks-track' => 'reload'
+    == javascript_include_tag 'application', 'data-turbolinks-track' => 'reload'
+    == javascript_include_tag '/assets/datatable', 'data-turbolinks-track' => 'reload'
+    == javascript_include_tag '/assets/slideshow', 'data-turbolinks-track' => 'reload'
+    == csrf_meta_tags
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slidesjs/3.0/jquery.slides.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
+    <script src="https://cdn.ckeditor.com/4.13.1/standard/ckeditor.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.7.2/jquery.flexslider-min.js"></script>
+    <link href="//db.onlinewebfonts.com/c/2c6d794b5cfbe2958da38a4c6aeddde9?family=flexslider-icon" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css" />
+    <script src="//cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+  body.container-fluid.mt-5
+    header.navbar.fixed-top
+      == render 'layouts/navigation'
+      == render 'layouts/share/search' if user_signed_in? &&current_user.admin == 0
+    main[role="main"]
+      == render 'layouts/messages'
+      == yield
+      == include_gon
+    == render 'layouts/share/footer'
+    div.calendar
+      - month_calendar do |date|
+        = date

@@ -1,0 +1,18 @@
+p#notice = notice
+
+p
+  strong Active:
+  = @historyall.active
+p
+  strong Value old:
+  = @historyall.value_old
+p
+  strong Value new:
+  = @historyall.value_new
+p
+  strong Staff:
+  = @historyall.staff_id
+
+=> link_to 'Edit', edit_historyall_path(@historyall)
+'|
+=< link_to 'Back', historyalls_path

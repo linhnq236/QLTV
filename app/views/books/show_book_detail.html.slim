@@ -1,0 +1,13 @@
+div.row
+  div.col-sm-2
+    == render partial: 'books/share/type', locals: {types: @types, authors: @authors, department: @departments}
+  div.col-sm-9
+    div.row
+      div.title.col-sm-9
+        = @book.name
+      div.type.col-sm-9
+        = @book.type.name
+      div.author.col-sm-9
+        = @book.author.name
+      div.col-sm-9
+          = convert_ckeditor(@book.image)

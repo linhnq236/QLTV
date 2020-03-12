@@ -1,0 +1,12 @@
+p#notice = notice
+
+p
+  strong Staff:
+  = @history.staff_id
+p
+  strong Borrow:
+  = @history.borrow_id
+
+=> link_to 'Edit', edit_history_path(@history)
+'|
+=< link_to 'Back', histories_path

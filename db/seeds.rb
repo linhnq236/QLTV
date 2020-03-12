@@ -37,3 +37,64 @@ end
     end
   end
 end
+
+[
+  {id: 1,name: 'cntt'},
+  {id: 2,name: 'kt'},
+  {id: 3,name: 'ck'},
+].each do |attr|
+  department = Department.find_by(id: attr[:id])
+  Department.transaction do
+    unless department
+      department = Department.new(attr)
+      department.save
+    else
+      department.update_attributes attr
+    end
+  end
+end
+[
+  {id: 1,name: 'Quản trị web', department_id: Department.first.id},
+  {id: 2,name: 'Đầu tư chứng khoán', department_id: Department.second.id},
+  {id: 3,name: 'Động lực học', department_id: Department.third.id},
+].each do |attr|
+  type = Type.find_by(id: attr[:id])
+  Type.transaction do
+    unless type
+      type = Type.new(attr)
+      type.save
+    else
+      type.update_attributes attr
+    end
+  end
+end
+[
+  {id: 1,name: 'Nguyễn Văn Toàn'},
+  {id: 2,name: 'Nguyền Hoàng Tùng'},
+  {id: 3,name: 'Hoàng Thanh Sơn'},
+].each do |attr|
+  author = Author.find_by(id: attr[:id])
+  Author.transaction do
+    unless author
+      author = Author.new(attr)
+      author.save
+    else
+      author.update_attributes attr
+    end
+  end
+end
+[
+  {id: 1,name: 'NXB Nhi Đồng'},
+  {id: 2,name: 'NXB Tuổi Trẻ'},
+  {id: 3,name: 'NXB Thanh Niên'},
+].each do |attr|
+  publisher = Publisher.find_by(id: attr[:id])
+  Publisher.transaction do
+    unless publisher
+      publisher = Publisher.new(attr)
+      publisher.save
+    else
+      publisher.update_attributes attr
+    end
+  end
+end
