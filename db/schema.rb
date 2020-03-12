@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_23_162741) do
+ActiveRecord::Schema.define(version: 2020_03_12_004907) do
+
+  create_table "amounts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "code"
+    t.integer "book_id"
+    t.boolean "active"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id"
+  end
 
   create_table "authors", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -29,6 +38,8 @@ ActiveRecord::Schema.define(version: 2020_02_23_162741) do
     t.bigint "type_id", null: false
     t.bigint "publisher_id", null: false
     t.string "image"
+    t.string "code"
+    t.integer "amount"
     t.index ["author_id"], name: "index_books_on_author_id"
     t.index ["publisher_id"], name: "index_books_on_publisher_id"
     t.index ["type_id"], name: "index_books_on_type_id"
@@ -75,6 +86,11 @@ ActiveRecord::Schema.define(version: 2020_02_23_162741) do
     t.integer "borrow_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id"
+    t.datetime "borrow_time"
+    t.datetime "pay_time"
+    t.integer "book_id"
+    t.integer "amount_id"
   end
 
   create_table "historyalls", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -84,6 +100,7 @@ ActiveRecord::Schema.define(version: 2020_02_23_162741) do
     t.integer "staff_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "field_name"
   end
 
   create_table "publishers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -123,6 +140,9 @@ ActiveRecord::Schema.define(version: 2020_02_23_162741) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "admin", default: 0
     t.string "name"
+    t.string "code"
+    t.string "tel"
+    t.string "add"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

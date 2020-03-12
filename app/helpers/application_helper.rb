@@ -1,6 +1,6 @@
 module ApplicationHelper
   def convert_ckeditor string
-    return string.html_safe
+    return string.to_s.html_safe
   end
 
   def check_admin
@@ -10,7 +10,7 @@ module ApplicationHelper
   end
 
   def format created_at
-      return created_at.strftime("%d-%m-%y")
+      return created_at.strftime("%d-%m-%Y")
   end
   def format_day day
       return day.strftime("%d")
@@ -20,7 +20,7 @@ module ApplicationHelper
     if timer.nil?
       return "00:00:0000 0:0"
     else
-      return timer.strftime("%d-%m-%y %H:%M")
+      return timer.strftime("%d-%m-%Y %H:%M")
     end
   end
 end

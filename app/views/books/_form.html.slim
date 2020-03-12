@@ -19,6 +19,14 @@
     = f.label :publisher
     = f.select :publisher_id, options_for_select(@publishers.map{|k,v| [k.name, k.id]}, :prompt => 'Select'), {include_blank: true}, {class: 'form-control'}
   .field
-    = f.label :publishyear
-    = f.text_field :publishyear, class: "form-control"
-  .actions = f.submit class:"form-control btn btn-success"
+    = f.label :publisher_year
+    = f.date_field :publishyear, class: "form-control"
+  .field
+    = f.label :amount
+    = f.text_field :amount, class: "form-control"
+  .field
+    div.amount_code.code
+  .field
+    = f.label :conent
+    = f.cktext_area :image, class: "form-control"
+  .actions = f.submit class:"form-control btn btn-success create_book"

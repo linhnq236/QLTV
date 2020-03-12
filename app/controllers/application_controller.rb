@@ -1,6 +1,10 @@
 class ApplicationController < ActionController::Base
   before_action :authenticate_user!
   around_action :switch_locale
+  before_action :profile_user
+  before_action :set_current_user
+
+
   dino_blink = require "dino_blink"
 
   def check_staff
@@ -18,6 +22,20 @@ class ApplicationController < ActionController::Base
       redirect_to root_path
     end
   end
+
+  def profile_user
+    if user_signed_in?
+      # unless current_user.name.present? && current_user.admin == 0
+      unless current_user.name.present?
+        flash[:notice] = t("book.profileuser")
+      end
+    end
+  end
+
+   def set_current_user
+     User.current = current_user
+   end
+
   private
 
   def switch_locale(&action)

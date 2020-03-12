@@ -1,21 +1,87 @@
-h1 Listing borrows
-
-table
-  thead
-    tr
-      th Note
-      th
-      th
-      th
-
-  tbody
+<table id="dataTableBorrow" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th class="th-sm">code
+      </th>
+      <th class="th-sm">User
+      </th>
+      <th class="th-sm">Usdetailer
+      </th>
+    </tr>
+  </thead>
+  <tbody>
     - @borrows.each do |borrow|
       tr
-        td = borrow.note
-        td = link_to 'Show', borrow
-        td = link_to 'Edit', edit_borrow_path(borrow)
-        td = link_to 'Destroy', borrow, data: { confirm: 'Are you sure?' }, method: :delete
-
-br
-
-= link_to 'New Borrow', new_borrow_path
+        td
+          = borrow.user.code
+        td
+          = borrow.user.name
+        td
+          = link_to "chitiet", "/borrows_book/#{borrow.user_id}"
+  </tbody>
+  <tfoot>
+    <tr>
+      <th class="th-sm">code
+      </th>
+      <th class="th-sm">User
+      </th>
+      <th class="th-sm">Usdetailer
+      </th>
+    </tr>
+  </tfoot>
+</table>
+- if @books.present?
+  <table id="dataTableBook" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
+    <thead>
+      <tr>
+        <th class="th-sm">code
+        </th>
+        <th class="th-sm">Book
+        </th>
+        <th class="th-sm">Date
+        </th>
+        <th class="th-sm">allow
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      - @books.each do |b|
+        tr
+          td
+            - amountidtem = 0
+            - @amounts.each do |amount|
+              - if amount.book_id == b.book_id
+                - if amount.user_id == b.user_id && amount.active == true
+                  - amountidtem = amount.id
+                  span.code_check data-amountid ="#{amount.id}"
+                    = amount.code
+                  br
+                - elsif amount.active == false
+                  <input type="radio" name="code" class="code" value="#{amount.id}">
+                  = amount.code
+                  br
+          td
+            = b.book.name
+          td
+            = format(b.created_at)
+          td
+            - if b.allow == false
+              <button class="btn btn-primary dis yes" data-userid="#{b.user_id}" data-bookid="#{b.book_id}" disabled="disabled">có</button>
+              <button class="btn btn-danger">Không</button>
+            - else
+              <button class="btn btn-primary pay" data-userid="#{b.user_id}" data-bookid="#{b.book_id}" data-amountid="#{amountidtem}" data-borrowid="#{b.id}"">Tra</button>
+    </tbody>
+    <tfoot>
+      <tr>
+        <th class="th-sm">code
+        </th>
+        <th class="th-sm">Book
+        </th>
+        <th class="th-sm">Date
+        </th>
+        <th class="th-sm">allow
+        </th>
+      </tr>
+    </tfoot>
+  </table>
+/<input type="radio" name="code" class="code" value="#{amount.id}">

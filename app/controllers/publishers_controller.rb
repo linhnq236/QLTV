@@ -1,6 +1,6 @@
 class PublishersController < ApplicationController
   before_action :set_publisher, only: [:show, :edit, :update, :destroy]
-
+  skip_before_action :verify_authenticity_token
   # GET /publishers
   # GET /publishers.json
   def index
@@ -25,15 +25,8 @@ class PublishersController < ApplicationController
   # POST /publishers.json
   def create
     @publisher = Publisher.new(publisher_params)
-
-    respond_to do |format|
-      if @publisher.save
-        format.html { redirect_to @publisher, notice: 'Publisher was successfully created.' }
-        format.json { render :show, status: :created, location: @publisher }
-      else
-        format.html { render :new }
-        format.json { render json: @publisher.errors, status: :unprocessable_entity }
-      end
+    if @publisher.save
+      render json:{notice: "Them thanh cong"}
     end
   end
 

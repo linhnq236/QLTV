@@ -26,7 +26,17 @@ vn:
     notice_common: "THÔNG BÁO CHUNG "
     show: "Chi tiết"
     created_at: "Ngày đăng "
-
+  borrow:
+    success: "Mượn sách %{name} thành công !"
+    fail: "Mượn sách %{name}  thất bại !"
+    exists: "Sách %{name} đã được mượn !"
+    over: "Bạn đã mượn đủ số lượng cho phép."
+  book:
+    profileuser: "Cập nhật thông tin cá nhân."
+    link: "Link"
+    new_author: "Tác giả mới"
+    new_type: "Thể loại mới"
+    new_publisher: "Nhà xuất bản mới"
   button:
     login: "Đăng nhập"
   menu:
@@ -42,6 +52,7 @@ vn:
         timer: "Hẹn giờ bật"
         timeout: "Hẹn giờ tắt"
     admin:
+
 
   date:
     abbr_day_names: [CN, T2 ,T3,T4 ,T5 ,T6 ,T7]

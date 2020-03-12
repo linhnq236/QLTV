@@ -1,25 +1,20 @@
-h1 Listing books
-
-</div>
 div.row
-  div.col-sm-3
-
-      == render partial: 'books/share/type', locals: {types: @types}
-  div.col-sm-7
-    table
-      thead
-        tr
-          th Name
-          th Publishyear
-          th
-          th
-          th
-
-      tbody
-        - @books.each do |book|
-          tr
-            td = book.name
-            td = book.publishyear
-            td = link_to 'Show', book
-            td = link_to 'Edit', edit_book_path(book)
-            td = link_to 'Destroy', book, data: { confirm: 'Are you sure?' }, method: :delete
+  div.col-sm-2
+    == render partial: 'books/share/type', locals: {types: @types, authors: @authors, department: @departments}
+  div.col-sm-10
+    div.row
+      - @books.each do |book|
+        a.detail.text-decoration-none.text-dark href="/show_book_detail/#{book.id}"
+          div.col-sm-2.text-center.border.border-dark.hover.cursor.borrow
+            div.image
+              = convert_ckeditor(book.image)
+            div.title
+              = book.name
+            div.type
+              = book.type.name
+            div.author
+              = book.author.name
+            div.btn-borrow.text-center
+              button.btn.btn-danger.bor data-id="#{book.id}" Mượn
+              a.hidden
+    = will_paginate (@posts)

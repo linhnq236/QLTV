@@ -33,6 +33,11 @@ en:
   hello: "Hello word!"
   rollcall: "Roll call"
   take: "Take "
+  book:
+    new_author: "Tác giả mới"
+    new_type: "Thể loại mới"
+    new_publisher: "Nhà xuất bản mới"
+    notnull: "Không được để trống tên tác giả"
   department:
     it: "Informatin Technology"
     ec: "Economic"
@@ -70,8 +75,6 @@ en:
     notice_common: "NOTICE COMMON"
     show: "Detail"
     created_at: "Post"
-
-
   button:
     login: "Log in"
   menu:

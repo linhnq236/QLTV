@@ -1,5 +1,5 @@
 class EquipmentController < ApplicationController
-  before_action :check_admin, only: [:index, :show, :edit, :update, :destroy, :new]
+  before_action :check_admin, :check_staff, only: [:index, :show, :edit, :update, :destroy, :new]
   before_action :set_equipment, only: [:show, :edit, :update, :destroy]
   skip_before_action :verify_authenticity_token
 
