@@ -28,7 +28,7 @@ $( document ).on('turbolinks:load', function() {
     if (amount > 0){
       console.log(amount);
       for(i = 0; i < amount; i++){
-        $(".amount_code").append("<input name='amount_code[]' placeholder='Nhap ma sach' class='input_amount'>");
+        $(".amount_code").append(`<input name='amount_code[]' placeholder='Nhập mã sách ${i + 1}' class='input_amount form-control'>`);
       }
     }else{
         $(".input_amount").remove();

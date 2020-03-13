@@ -1,16 +1,18 @@
 vn:
-  rollcall: "Điểm danh"
-  take: "Chụp ảnh"
   department:
     it: "Công nghệ thông tin"
     ec: "Kinh tế vận tải"
-  message:
-    content: "Hãy cho phép định vị GPS !"
   layout:
     title: "PHẦN MỀM QUẢN LÝ THƯ VIỆN"
-    student: "Sinh viên"
-    admin: "Quản trị viên"
-    teacher: "Giảng viên"
+    home: "TRANG CHỦ"
+    equipment: "THIẾT BỊ"
+    history: "LỊCH SỬ"
+    add: "THÊM SÁCH MỚI"
+    book: "MƯỢN SÁCH"
+    login: "ĐĂNG NHẬP"
+    borrow: "PHÊ DUYỆT MƯỢN"
+    vietnamese: "TIẾNG VIỆT"
+    english: "TIẾNG ANH"
     setting: "CÀI ĐẶT"
     changepassword: "THAY ĐỔI PASSWORD"
     logout: "ĐĂNG XUÂT"
@@ -24,19 +26,41 @@ vn:
     forgot: "Quên mật khẩu ? "
     home: "TRANG CHỦ"
     notice_common: "THÔNG BÁO CHUNG "
-    show: "Chi tiết"
-    created_at: "Ngày đăng "
   borrow:
     success: "Mượn sách %{name} thành công !"
     fail: "Mượn sách %{name}  thất bại !"
     exists: "Sách %{name} đã được mượn !"
     over: "Bạn đã mượn đủ số lượng cho phép."
+    code: "Mssv"
+    user_name: "Họ và tên"
+    detail: "Chi tiết"
+    book_code: "Mã sách"
+    book_name: "Tên sách"
+    date_borrow: "Ngày mượn"
+    allow: "Tình trạng"
+    y: "Có"
+    n: "Không"
+    pa: "Trả sách"
   book:
     profileuser: "Cập nhật thông tin cá nhân."
     link: "Link"
     new_author: "Tác giả mới"
     new_type: "Thể loại mới"
     new_publisher: "Nhà xuất bản mới"
+    title: "THÊM SÁCH MỚI"
+    new_author: "TÁC GIẢ"
+    new_type: "THỂ LOẠI"
+    new_publisher: "NHÀ XUẤT BẢN"
+    name: "Tên sách"
+    author: "Tác giả"
+    type: "Loại"
+    publisher: "Nhà xuất bản"
+    publisheryear: "Năm xuất bản"
+    amount: "Số lượng"
+    conent: "Nội dung"
+    create: "THÊM MỚI"
+  history:
+    date_pay: "Ngày trả"
   button:
     login: "Đăng nhập"
   menu:
@@ -52,6 +76,7 @@ vn:
         timer: "Hẹn giờ bật"
         timeout: "Hẹn giờ tắt"
     admin:
+
 
 
   date:
