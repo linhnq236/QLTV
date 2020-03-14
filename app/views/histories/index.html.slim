@@ -1,21 +1,13 @@
-<table id="dataTableHistory" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
-  <thead>
-    <tr>
-      <th class="th-sm">student_code
-      </th>
-      <th class="th-sm">student_name
-      </th>
-      <th class="th-sm">code_book
-      </th>
-      <th class="th-sm">book_name
-      </th>
-      <th class="th-sm">borrow_time
-      </th>
-      <th class="th-sm">pay_time
-      </th>
-    </tr>
-  </thead>
-  <tbody>
+table#dataTableHistory.table.table-striped.table-bordered.table-sm cellspacing="0" width="100%"
+  thead
+     tr
+      th.th-sm #{I18n.t('borrow.code')}
+      th.th-sm #{I18n.t('borrow.user_name')}
+      th.th-sm #{I18n.t('borrow.book_code')}
+      th.th-sm #{I18n.t('borrow.book_name')}
+      th.th-sm #{I18n.t('borrow.date_borrow')}
+      th.th-sm #{I18n.t('history.date_pay')}
+  tbody
     - @histories.each do |history|
       tr
         td
@@ -30,21 +22,11 @@
           = format_datetime(history.borrow_time)
         td
           = format_datetime(history.pay_time)
-  </tbody>
-  <tfoot>
-    <tr>
-      <th class="th-sm">student_code
-      </th>
-      <th class="th-sm">student_name
-      </th>
-      <th class="th-sm">code_book
-      </th>
-      <th class="th-sm">book_name
-      </th>
-      <th class="th-sm">borrow_time
-      </th>
-      <th class="th-sm">pay_time
-      </th>
-    </tr>
-  </tfoot>
-</table>
+  tfoot
+    tr
+      th.th-sm #{I18n.t('borrow.code')}
+      th.th-sm #{I18n.t('borrow.user_name')}
+      th.th-sm #{I18n.t('borrow.book_code')}
+      th.th-sm #{I18n.t('borrow.book_name')}
+      th.th-sm #{I18n.t('borrow.date_borrow')}
+      th.th-sm #{I18n.t('history.date_pay')}
