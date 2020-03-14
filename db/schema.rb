@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_12_004907) do
+ActiveRecord::Schema.define(version: 2020_03_14_102026) do
 
   create_table "amounts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "code"
@@ -143,6 +143,7 @@ ActiveRecord::Schema.define(version: 2020_03_12_004907) do
     t.string "code"
     t.string "tel"
     t.string "add"
+    t.boolean "disable"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
