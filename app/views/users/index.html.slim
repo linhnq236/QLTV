@@ -1,0 +1,16 @@
+table#dataTableBorrow.table.table-striped.table-bordered.table-sm cellspacing="0" width="100%"
+  thead
+     tr
+      th.th-sm name
+      th.th-sm name
+      th.th-sm name
+  tbody
+    - @users.each do |user|
+      tr
+         td
+           = user.code
+  tfoot
+     tr
+      th.th-sm names
+      th.th-sm names
+      th.th-sm names

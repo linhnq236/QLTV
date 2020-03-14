@@ -1,5 +1,10 @@
 class UsersController < ApplicationController
+  def index
+    @users = User.order("code DESC")
+  end
+  def new
 
+  end
   def edit
     @user = User.where(:id=>current_user.id)
   end
