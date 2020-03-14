@@ -1,6 +1,7 @@
 class BooksController < ApplicationController
   before_action :set_book, only: [:show_book_detail, :edit, :update, :destroy]
   before_action :check_student , only: [:index]
+  before_action :check_active , only: [:index]
   before_action :check_staff , only: [:new, :create, :destroy, :update]
 
   PER_PAGE = 18

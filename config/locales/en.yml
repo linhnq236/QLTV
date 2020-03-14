@@ -57,8 +57,8 @@ en:
     pm: "pm"
   layout:
     title: "LIBRARY MANAGEMENT SOFTWARE"
-    student: "STUDENT"
-    admin: "ADMIN"
+    home: "HOME"
+    equipment: "EQUIPMENT"
     teacher: "TEACHER"
     setting: "SETTING"
     changepassword: "CHANGPASSWORD"

@@ -8,6 +8,7 @@ vn:
     equipment: "THIẾT BỊ"
     history: "LỊCH SỬ"
     add: "THÊM SÁCH MỚI"
+    user: "TÀI KHOẢN"
     book: "MƯỢN SÁCH"
     login: "ĐĂNG NHẬP"
     borrow: "PHÊ DUYỆT MƯỢN"
@@ -59,10 +60,24 @@ vn:
     amount: "Số lượng"
     conent: "Nội dung"
     create: "THÊM MỚI"
+    disable: "Bạn cần tới thư viện để mở lại tài khoản"
   history:
     date_pay: "Ngày trả"
   button:
     login: "Đăng nhập"
+  user:
+    code: "Mssv"
+    name: "Họ và tên"
+    tel: "Điện thoại"
+    email: "Email"
+    add: "Địa chỉ"
+    manage: "Quản lý"
+    created_at: "Ngày tạo"
+    updated_at: "Ngày chỉnh sửa"
+    active: "Mở"
+    block: "Khóa"
+    changepass: "Thay đổi mk"
+    acc_mess_succ: "Đã %{mes} tài khoản thành công."
   menu:
     teacher:
       calendar: "LỊCH THEO TUẦN"
