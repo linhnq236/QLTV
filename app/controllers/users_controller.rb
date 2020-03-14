@@ -1,5 +1,12 @@
 class UsersController < ApplicationController
 
+  def index
+
+  end
+
+  def new
+
+  end
   def edit
     @user = User.where(:id=>current_user.id)
   end

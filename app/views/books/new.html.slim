@@ -1,10 +1,10 @@
-h1 New book
+h1 #{I18n.t('book.title')}
 button.new_author.btn.btn-success.mr-1
-  i.fa.fa-plus &nbsp New author
+  i.fa.fa-plus &nbsp #{I18n.t('book.new_author')}
 button.new_type.btn.btn-success.mr-1
-  i.fa.fa-plus &nbsp New Type
+  i.fa.fa-plus &nbsp #{I18n.t('book.new_type')}
 button.new_publisher.btn.btn-success.mr-1
-  i.fa.fa-plus &nbsp New Publisher
+  i.fa.fa-plus &nbsp #{I18n.t('book.new_publisher')}
 == render 'form'
 
-= link_to 'Back', books_path
+/= link_to 'Back', books_path
