@@ -3,7 +3,11 @@ class Book < ApplicationRecord
   belongs_to :author
   has_many :borrows
   has_many :histories
+  belongs_to :publisher
+  belongs_to :type
 
+  validates :name, uniqueness: true
+  validates :name,:author_id,:type_id,:publisher_id, presence: true
   after_save :create_logs
 
   private

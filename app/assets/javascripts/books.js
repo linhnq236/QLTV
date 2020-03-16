@@ -207,4 +207,14 @@ $( document ).on('turbolinks:load', function() {
       },
     });
   })
+  $(".new_book_button_down").click(function(){
+    $(".new_book").removeClass("d-none");
+    $(".new_book_button_up").removeClass("d-none")
+    $(".new_book_button_down").addClass("d-none")
+  })
+  $(".new_book_button_up").click(function(){
+    $(".new_book").addClass("d-none");
+    $(".new_book_button_up").addClass("d-none")
+    $(".new_book_button_down").removeClass("d-none")
+  })
 })

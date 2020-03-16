@@ -2,12 +2,17 @@ vn:
   department:
     it: "Công nghệ thông tin"
     ec: "Kinh tế vận tải"
+  mes:
+    delete: "Bạn có muốn xóa ?"
+    exists: "Email đã tồn tại."
+    success: "Thêm thành công."
+    fail: "Thêm thất bại."
   layout:
     title: "PHẦN MỀM QUẢN LÝ THƯ VIỆN"
     home: "TRANG CHỦ"
     equipment: "THIẾT BỊ"
     history: "LỊCH SỬ"
-    add: "THÊM SÁCH MỚI"
+    add: "QUẢN LÝ SÁCH"
     user: "TÀI KHOẢN"
     book: "MƯỢN SÁCH"
     login: "ĐĂNG NHẬP"
@@ -48,7 +53,7 @@ vn:
     new_author: "Tác giả mới"
     new_type: "Thể loại mới"
     new_publisher: "Nhà xuất bản mới"
-    title: "THÊM SÁCH MỚI"
+    title: "QUẢN LÝ SÁCH"
     new_author: "TÁC GIẢ"
     new_type: "THỂ LOẠI"
     new_publisher: "NHÀ XUẤT BẢN"
@@ -61,6 +66,10 @@ vn:
     conent: "Nội dung"
     create: "THÊM MỚI"
     disable: "Bạn cần tới thư viện để mở lại tài khoản"
+    detail: "Chi tiết"
+    delete: "Xóa"
+    listall: "Tất cả sách"
+    new_book: "Thêm sách"
   history:
     date_pay: "Ngày trả"
   button:
@@ -78,6 +87,9 @@ vn:
     block: "Khóa"
     changepass: "Thay đổi mk"
     acc_mess_succ: "Đã %{mes} tài khoản thành công."
+    placeholder: "Nhập email mới"
+    submit: "Gửi"
+
   menu:
     teacher:
       calendar: "LỊCH THEO TUẦN"

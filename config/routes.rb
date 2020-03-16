@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   resources :books
   get "show_book/:id", to: "books#show_book"
   get "show_book_detail/:id", to: "books#show_book_detail"
+  get "book_detail/:id", to: "books#book_detail"
   resources :publishers
   resources :types
   resources :authors

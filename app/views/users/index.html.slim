@@ -1,3 +1,10 @@
+div.col
+  div.col-sm-3
+    = form_for "user" do |f|
+      .field
+        = f.label :email
+        = f.text_field :email, placeholder: "#{I18n.t('user.placeholder')}", class: "form-control"
+        = submit_tag "#{I18n.t('user.submit')}", class: "btn btn-success text-center"
 table#dataTableUser.table.table-striped.table-bordered.table-sm cellspacing="0" width="100%"
   thead
      tr

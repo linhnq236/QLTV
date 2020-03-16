@@ -38,6 +38,7 @@ en:
     new_type: "Thể loại mới"
     new_publisher: "Nhà xuất bản mới"
     notnull: "Không được để trống tên tác giả"
+  user:
   department:
     it: "Informatin Technology"
     ec: "Economic"
