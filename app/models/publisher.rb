@@ -1,6 +1,7 @@
 class Publisher < ApplicationRecord
+  has_many :books
   after_save :create_logs
-  
+  validates :name, presence: true
   private
   def create_logs
     col_logs = ["name","address","email"]

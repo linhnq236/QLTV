@@ -1,0 +1,52 @@
+div.col
+  div.col-sm-3
+    = form_for "user" do |f|
+      .field
+        = f.label :email
+        = f.text_field :email, placeholder: "#{I18n.t('user.placeholder')}", class: "form-control"
+        = submit_tag "#{I18n.t('user.submit')}", class: "btn btn-success text-center"
+table#dataTableUser.table.table-striped.table-bordered.table-sm cellspacing="0" width="100%"
+  thead
+     tr
+      th.th-sm #{I18n.t('user.code')}
+      th.th-sm #{I18n.t('user.name')}
+      th.th-sm #{I18n.t('user.tel')}
+      th.th-sm #{I18n.t('user.email')}
+      th.th-sm #{I18n.t('user.add')}
+      th.th-sm #{I18n.t('user.created_at')}
+      th.th-sm #{I18n.t('user.updated_at')}
+      th.th-sm #{I18n.t('user.manage')}
+  tbody
+    - @users.each do |user|
+      tr
+         td
+           = user.code
+         td
+           = user.name
+         td
+           = user.tel
+         td
+           = user.email
+         td
+           = user.add
+         td
+           = format_datetime(user.created_at)
+         td
+           = format_datetime(user.updated_at)
+         td
+           - if disable_account(user.disable).present?
+             button.btn.btn-primary.disable data-id = "#{user.id}" data-active="1" #{I18n.t('user.active')}
+           - else
+             button.btn.btn-danger.disable data-id = "#{user.id}"  data-active="0" #{I18n.t('user.block')}
+           button.btn.btn-info.changepassword data-id = "#{user.id}" #{I18n.t('user.changepass')}
+
+  tfoot
+     tr
+       th.th-sm #{I18n.t('user.code')}
+       th.th-sm #{I18n.t('user.name')}
+       th.th-sm #{I18n.t('user.tel')}
+       th.th-sm #{I18n.t('user.email')}
+       th.th-sm #{I18n.t('user.add')}
+       th.th-sm #{I18n.t('user.created_at')}
+       th.th-sm #{I18n.t('user.updated_at')}
+       th.th-sm #{I18n.t('user.manage')}

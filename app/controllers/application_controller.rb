@@ -7,6 +7,14 @@ class ApplicationController < ActionController::Base
 
   dino_blink = require "dino_blink"
 
+  def check_active
+    if user_signed_in?
+      unless current_user.disable.nil?
+        redirect_to root_path
+        flash[:notice] = I18n.t("book.disable")
+      end
+    end
+  end
   def check_staff
     unless current_user.admin == 1
       redirect_to root_path

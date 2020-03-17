@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :books
   has_many :histories
 
+  validates :email, uniqueness: true
   def self.current
     Thread.current[:user]
   end

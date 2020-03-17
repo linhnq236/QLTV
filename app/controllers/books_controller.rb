@@ -1,7 +1,8 @@
 class BooksController < ApplicationController
   before_action :set_book, only: [:show_book_detail, :edit, :update, :destroy]
   before_action :check_student , only: [:index]
-  before_action :check_staff , only: [:new, :create, :destroy, :update]
+  before_action :check_active , only: [:index]
+  before_action :check_staff , only: [:new, :create, :destroy, :update, :book_detail]
 
   PER_PAGE = 18
   # GET /books
@@ -40,9 +41,13 @@ class BooksController < ApplicationController
     @publishers = Publisher.all
     @departments = Department.all
   end
+  def book_detail
+    @book = Book.find(params[:id])
+  end
 
   # GET /books/new
   def new
+    @books = Book.all
     @book = Book.new
     @types = Type.all
     @authors = Author.all
@@ -97,7 +102,7 @@ class BooksController < ApplicationController
   def destroy
     @book.destroy
     respond_to do |format|
-      format.html { redirect_to books_url, notice: 'Book was successfully destroyed.' }
+      format.html { redirect_to new_book_path, notice: 'Book was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

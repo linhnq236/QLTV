@@ -28,7 +28,7 @@ $( document ).on('turbolinks:load', function() {
     if (amount > 0){
       console.log(amount);
       for(i = 0; i < amount; i++){
-        $(".amount_code").append("<input name='amount_code[]' placeholder='Nhap ma sach' class='input_amount'>");
+        $(".amount_code").append(`<input name='amount_code[]' placeholder='Nhập mã sách ${i + 1}' class='input_amount form-control'>`);
       }
     }else{
         $(".input_amount").remove();
@@ -206,5 +206,15 @@ $( document ).on('turbolinks:load', function() {
           },
       },
     });
+  })
+  $(".new_book_button_down").click(function(){
+    $(".new_book").removeClass("d-none");
+    $(".new_book_button_up").removeClass("d-none")
+    $(".new_book_button_down").addClass("d-none")
+  })
+  $(".new_book_button_up").click(function(){
+    $(".new_book").addClass("d-none");
+    $(".new_book_button_up").addClass("d-none")
+    $(".new_book_button_down").removeClass("d-none")
   })
 })
