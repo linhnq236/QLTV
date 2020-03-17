@@ -3,12 +3,12 @@
 en:
   devise:
     confirmations:
-      confirmed: "Địa chỉ email của bạn đã được xác nhận thành công."
+      confirmed: "Your email address has been successfully verified."
       send_instructions: "You will receive an email with instructions for how to confirm your email address in a few minutes."
-      send_paranoid_instructions: "Bạn sẽ nhận được email có hướng dẫn cách xác nhận địa chỉ email của bạn sau vài phút."
+      send_paranoid_instructions: "You will receive an email with instructions on how to confirm your email address after a few minutes."
     failure:
-      already_authenticated: "Bạn đã đăng nhập."
-      inactive: "Tài khoản của bạn chưa được kich hoạt."
+      already_authenticated: "You are already logged in."
+      inactive: "Your account has not been activated."
       invalid: "Invalid %{authentication_keys} or password."
       locked: "Your account is locked."
       last_attempt: "You have one more attempt before your account is locked."
