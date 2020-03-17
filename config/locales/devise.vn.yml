@@ -52,7 +52,7 @@ vn:
     unlocks:
       send_instructions: "Bạn sẽ nhận được email có hướng dẫn cách mở khóa tài khoản của bạn sau vài phút."
       send_paranoid_instructions: "Nếu tài khoản của bạn tồn tại, bạn sẽ nhận được email có hướng dẫn cách mở khóa trong vài phút."
-        unlocked: "Tài khoản của bạn đã được mở khóa thành công. Vui lòng đăng nhập để tiếp tục."
+      unlocked: "Tài khoản của bạn đã được mở khóa thành công. Vui lòng đăng nhập để tiếp tục."
   errors:
     messages:
       already_confirmed: "đã được xác nhận, vui lòng thử đăng nhập"

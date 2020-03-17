@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2020_03_14_102026) do
 
-  create_table "amounts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "amounts", force: :cascade do |t|
     t.string "code"
     t.integer "book_id"
     t.boolean "active"
@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 2020_03_14_102026) do
     t.integer "user_id"
   end
 
-  create_table "authors", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "authors", force: :cascade do |t|
     t.string "name"
     t.string "website"
     t.string "note"
@@ -29,14 +29,14 @@ ActiveRecord::Schema.define(version: 2020_03_14_102026) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "books", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "books", force: :cascade do |t|
     t.string "name"
     t.string "publishyear"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "author_id", null: false
-    t.bigint "type_id", null: false
-    t.bigint "publisher_id", null: false
+    t.integer "author_id"
+    t.integer "type_id"
+    t.integer "publisher_id"
     t.string "image"
     t.string "code"
     t.integer "amount"
@@ -45,18 +45,10 @@ ActiveRecord::Schema.define(version: 2020_03_14_102026) do
     t.index ["type_id"], name: "index_books_on_type_id"
   end
 
-  create_table "borrows", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "note"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.bigint "book_id", null: false
-    t.bigint "user_id", null: false
-    t.boolean "allow"
-    t.index ["book_id"], name: "index_borrows_on_book_id"
-    t.index ["user_id"], name: "index_borrows_on_user_id"
-  end
+# Could not dump table "borrows" because of following StandardError
+#   Unknown type 'bool' for column 'allow'
 
-  create_table "ckeditor_assets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "ckeditor_assets", force: :cascade do |t|
     t.string "data_file_name", null: false
     t.string "data_content_type"
     t.integer "data_file_size"
@@ -66,13 +58,13 @@ ActiveRecord::Schema.define(version: 2020_03_14_102026) do
     t.index ["type"], name: "index_ckeditor_assets_on_type"
   end
 
-  create_table "departments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "departments", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "equipment", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "equipment", force: :cascade do |t|
     t.string "equiqment_name"
     t.boolean "active"
     t.datetime "created_at", precision: 6, null: false
@@ -81,7 +73,7 @@ ActiveRecord::Schema.define(version: 2020_03_14_102026) do
     t.datetime "timeout"
   end
 
-  create_table "histories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "histories", force: :cascade do |t|
     t.integer "staff_id"
     t.integer "borrow_id"
     t.datetime "created_at", precision: 6, null: false
@@ -93,7 +85,7 @@ ActiveRecord::Schema.define(version: 2020_03_14_102026) do
     t.integer "amount_id"
   end
 
-  create_table "historyalls", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "historyalls", force: :cascade do |t|
     t.string "active"
     t.string "value_old"
     t.string "value_new"
@@ -103,7 +95,7 @@ ActiveRecord::Schema.define(version: 2020_03_14_102026) do
     t.string "field_name"
   end
 
-  create_table "publishers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "publishers", force: :cascade do |t|
     t.string "name"
     t.string "address"
     t.string "email"
@@ -112,15 +104,15 @@ ActiveRecord::Schema.define(version: 2020_03_14_102026) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "types", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "types", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "department_id", null: false
+    t.integer "department_id"
     t.index ["department_id"], name: "index_types_on_department_id"
   end
 
-  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
