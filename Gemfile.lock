@@ -93,6 +93,7 @@ GEM
       mime-types (~> 3.0)
       mimemagic (~> 0.3.2)
     childprocess (3.0.0)
+    chronic (0.10.2)
     climate_control (0.2.0)
     concurrent-ruby (1.1.6)
     crass (1.0.6)
@@ -284,6 +285,8 @@ GEM
     websocket-driver (0.7.1)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.4)
+    whenever (1.0.0)
+      chronic (>= 0.6.3)
     will_paginate (3.3.0)
     will_paginate-bootstrap4 (0.2.2)
       will_paginate (~> 3.0, >= 3.0.0)
@@ -334,6 +337,7 @@ DEPENDENCIES
   web-console (>= 3.3.0)
   webdrivers
   webpacker (~> 4.0)
+  whenever
   will_paginate-bootstrap4
 
 RUBY VERSION

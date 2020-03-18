@@ -49,6 +49,7 @@ gem 'sprockets-rails'
 gem 'rack-cors', :require => 'rack/cors'
 gem 'flex-slider-rails'
 gem 'will_paginate-bootstrap4'
+gem "whenever"
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
