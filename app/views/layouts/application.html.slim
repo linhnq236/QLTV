@@ -4,12 +4,13 @@ html
     meta[name="viewport" content="width=device-width, initial-scale=1.0"]
     title
       = content_for?(:title) ? yield(:title) : t("layout.title")
-    meta name="description" content="#{content_for?(:description) ? yield(:description) : 'Rollcall'}"
+    meta name="description" content="#{content_for?(:description) ? yield(:description) : 'QLTV'}"
     == stylesheet_link_tag "application", :media => 'all', 'data-turbolinks-track' => 'reload'
     == javascript_include_tag 'application', 'data-turbolinks-track' => 'reload'
     == javascript_include_tag '/assets/datatable', 'data-turbolinks-track' => 'reload'
     == javascript_include_tag '/assets/slideshow', 'data-turbolinks-track' => 'reload'
     == csrf_meta_tags
+    <link rel="shortcut icon" type="image/png" href="#{asset_path("logo_bds-2730-43760")}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -24,10 +25,10 @@ html
     <link href="//db.onlinewebfonts.com/c/2c6d794b5cfbe2958da38a4c6aeddde9?family=flexslider-icon" rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css" />
     <script src="//cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
-  body.container-fluid.mt-5
+  body.container-fluid.mtop
     header.navbar.fixed-top
       == render 'layouts/navigation'
-      == render 'layouts/share/search' if user_signed_in? &&current_user.admin == 0
+      /== render 'layouts/share/search' if user_signed_in? &&current_user.admin == 0
     main[role="main"]
       == render 'layouts/messages'
       == yield

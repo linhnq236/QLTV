@@ -1,0 +1,298 @@
+.baner_gioithieu{
+	background:url(asset_path('gioithiu.jpg')) no-repeat;
+	background-size: cover;
+  background-position: center center;
+  position: relative;
+  background-attachment: fixed;
+  height: 525px;
+}
+.main_conten{
+	max-width: 100%;
+    margin: 0 auto;
+}
+.baner_gioithieu h2{
+	 font-weight: 900;
+    font-size: 48px;
+    text-align: center;
+    color: #fff;
+    text-transform: uppercase;
+    padding-top: 250px;
+}
+.thongdiep_gioithieu{
+	background: url(asset_path('patter2.png'));
+	height: auto;
+    padding: 20px 0 80px;
+}
+.tieude_giua{
+	height: auto;
+    padding: 41px 9%;
+    text-align: center;
+    font-family: Montserrat,sans-serif;
+    position: relative;
+}
+.tieude_giua h2{
+	font-weight: 100;
+    font-size: 48px;
+    line-height: 1.2;
+    color: #004835;
+    text-transform: uppercase;
+    text-align: center;
+}
+.tieude_giua::before{
+    content: '';
+	top: 50%;
+    width: 15%;
+    height: 2px;
+    left: 0;
+    background-color: #004835;
+    position: absolute;
+}
+.tieude_giua::after{
+	content: '';
+	top: 50%;
+    width: 15%;
+    height: 2px;
+    right: 0;
+    background-color: #004835;
+    position: absolute;
+}
+.tieude_center{
+	font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+    line-height: 1.6;
+    margin: 0 0 15px;
+    font-family: Play,sans-serif;
+    color: #004835;
+}
+.chitiet_gioithieu{
+	height: auto;
+    width: 90%;
+    margin: auto;
+    max-width: 960px;
+    margin-top: 30px;
+}
+.messege-text p{
+	font-size: 15px;
+    font-weight: 400;
+    line-height: 1.6;
+    margin: 0 0 15px;
+    font-family: Play,sans-serif;
+    color: #004835;
+    text-align: justify;
+}
+.img img{
+	float: left;
+    margin-right: 16px;
+    margin-top: 5px;
+}
+.messege-bottom p {
+	font-size: 15px;
+    font-weight: 400;
+    line-height: 1.6;
+    margin: 0 0 15px;
+    font-family: Play,sans-serif;
+    color: #004835;
+    text-align: justify;
+}
+.line_bottom{
+	width: 220px;
+    height: 1px;
+    background-color: #004835;
+    margin: auto;
+    margin-top: 37px;
+}
+.coso_vatchat{
+	background: url(asset_path('coso.jpg'));
+	background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    padding: 50px 0 80px;
+}
+.tieude_coso_vatchat{
+    height: auto;
+    padding: 30px 5%;
+    position: relative;
+    font-family: Montserrat,sans-serif;
+}
+.tieude_coso_vatchat h2{
+	font-weight: 100;
+    font-size: 48px;
+    line-height: 1.2;
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+}
+.tieude_coso_vatchat::before{
+	content: '';
+	top: 50%;
+    width: 15%;
+    height: 2px;
+    left: 0;
+    background-color: #fff;
+    position: absolute;
+}
+.tieude_coso_vatchat::after{
+	content: '';
+	top: 50%;
+    width: 15%;
+    height: 2px;
+    right: 0;
+    background-color: #fff;
+    position: absolute;
+}
+.noidung_coso_vatchat{
+	width: 90%;
+    height: auto;
+    max-width: 1200px;
+    margin: auto;
+    box-shadow: 0 -1px 14px #bababa;
+}
+.noidung_header{
+    height: auto;
+    font-family: Play,sans-serif;
+    color: #004835;
+    font-weight: 400;
+    padding: 40px;
+    background-color: rgba(255,255,255,.8);
+    max-width: 600px;
+}
+.noidung_header_title h3{
+	font-weight: 700;
+    font-size: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0 0 8px;
+    font-family: Montserrat,sans-serif;
+}
+.noidung_header_noidung{
+	width: auto;
+    height: auto;
+    font-size: 15px;
+    text-align: left;
+    font-weight: 400;
+    line-height: 1.6;
+}
+.wap_lichsu{
+	background: url(asset_path('patter2.png'));
+	height: auto;
+    padding: 20px 0 50px;
+}
+.tieude_lichsu{
+	height: auto;
+    padding: 41px 9%;
+    text-align: center;
+    font-family: Montserrat,sans-serif;
+    position: relative;
+}
+.tieude_lichsu h2{
+	font-weight: 100;
+    font-size: 48px;
+    line-height: 1.2;
+    color: #004835;
+    text-transform: uppercase;
+    text-align: center;
+}
+.tieude_lichsu::before{
+	content: '';
+	top: 50%;
+    width: 15%;
+    height: 2px;
+    left: 0;
+    background-color: #004835;
+    position: absolute;
+}
+.tieude_lichsu::after{
+	content: '';
+	top: 50%;
+    width: 15%;
+    height: 2px;
+    right: 0;
+    background-color: #004835;
+    position: absolute;
+}
+.noidung_lichsu{
+	max-width: 960px;
+    margin: 20px auto 0;
+    padding: 15px 0;
+}
+.list1{
+	width: 100%;
+    height: auto;
+    color: #004835;
+    margin: 0 0 40px;
+}
+.list1 p{
+	line-height: 1.6;
+	font-size: larger;
+}
+.dichvu_thongtin{
+	background-image: url(asset_path('thu.png'));
+	padding: 12% 0 18%;
+    text-align: center;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+}
+.tieude_dichvu{
+	height: auto;
+    padding: 41px 9%;
+    text-align: center;
+    font-family: Montserrat,sans-serif;
+    position: relative;
+}
+.tieude_dichvu h2{
+	font-weight: 100;
+    font-size: 48px;
+    line-height: 1.2;
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+}
+.tieude_dichvu::before{
+	content: '';
+	top: 50%;
+    width: 15%;
+    height: 2px;
+    left: 0;
+    background-color: #fff;
+    position: absolute;
+}
+.tieude_dichvu::after{
+	content: '';
+	top: 50%;
+    width: 15%;
+    height: 2px;
+    right: 0;
+    background-color: #fff;
+    position: absolute;
+}
+.noidung_dichvu{
+	margin: auto;
+    width: auto;
+    height: auto;
+    max-width: 900px;
+    padding: 30px;
+    background-color: rgba(255,255,255,.8);
+    font-family: Montserrat,sans-serif;
+    width: 90%;
+}
+.boxtitle_noidung{
+	font-weight: 700;
+    font-size: 24px;
+    line-height: 1.4;
+    text-transform: uppercase;
+    color: #004835;
+    margin: 0 0 20px;
+}
+.boxlist_noidung p{
+	font-weight: 300;
+    font-size: 16px;
+    color: #004835;
+    text-align: left;
+    line-height: 1.6;
+    font-family: Montserrat,sans-serif;
+}
+.introduce_img{
+  width: 370px;
+}

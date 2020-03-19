@@ -116,6 +116,8 @@ en:
     forgot: "Forgot password ? "
     home: "HOME PAGE"
     notice_common: "GENERAL NOTIFICATION "
+    introduce: "INTROUDUCE"
+    library: "LIBRARY"
   button:
     login: "Log in"
   menu:

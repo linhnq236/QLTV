@@ -1,19 +1,90 @@
-<%# add navigation links to this file %>
-<% if user_signed_in? %>
-    <% if current_user.admin == 1%>
-      <%= link_to(I18n.t('layout.equipment'), controller_equipment_path) %>
-      <%= link_to(I18n.t('layout.borrow'),'/borrows') %>
-      <%= link_to(I18n.t('layout.history'),'/histories') %>
-      <%= link_to(I18n.t('layout.add'),'/books/new') %>
-      <%= link_to(I18n.t('layout.user'),'/users') %>
-    <% elsif  current_user.admin == 2%>
-      <%= link_to(I18n.t('layout.logout'), destroy_user_session_path, method: :delete) %>
-    <% else %>
-      <%= link_to(I18n.t('layout.book'), '/books') %>
-    <% end%>
-    <%= link_to(I18n.t('layout.logout'), destroy_user_session_path, method: :delete) %>
-<% else %>
-    <%= link_to(I18n.t('layout.login'), new_user_session_path) %>
-<% end %>
-<%= link_to(I18n.t('layout.vietnamese'), locale:"vn") %>
-<%= link_to(I18n.t('layout.english'), locale:"en") %>
+<div class="chitietmenu">
+		<div class="wap_1">
+			<nav id="menu">
+				<ul>
+					<div class="left-menu">
+						<% if user_signed_in? %>
+						    <% if current_user.admin == 1%>
+								<li>
+									<%= link_to(I18n.t('layout.equipment'), controller_equipment_path) %>
+								</li>
+								<li>
+									<%= link_to(I18n.t('layout.borrow'),'/borrows') %>
+								</li>
+								<li>
+									<%= link_to(I18n.t('layout.history'),'/histories') %>
+								</li>
+						    <% elsif  current_user.admin == 2%>
+								<li>
+									<%= link_to(I18n.t('layout.logout'), destroy_user_session_path, method: :delete) %>
+								</li>
+						    <% else %>
+								<li>
+									<%= link_to(I18n.t('layout.book'), '/books') %>
+								</li>
+						    <% end%>
+						<% end %>
+						<li>
+							<%= link_to(I18n.t('layout.introduce'), introduce_path) %>
+						</li>
+						<li class="icon">
+							<%= link_to(I18n.t('layout.home'), root_path) %>
+						</li>
+					</div>
+					<div class="center-logo">
+						<a href="">
+              <%= image_tag("logo_bds-2730-43760")%>
+						</a>
+						<p id="text"><%= t('layout.library') %></p>
+
+					</div>
+					<div class="right-menu">
+						<% if user_signed_in? %>
+						    <% if current_user.admin == 1%>
+								<li>
+									<%= link_to(I18n.t('layout.add'),'/books/new') %>
+								</li>
+								<li>
+									<%= link_to(I18n.t('layout.user'),'/users') %>
+								</li>
+						    <% elsif  current_user.admin == 2%>
+								<li>
+									<%= link_to(I18n.t('layout.logout'), destroy_user_session_path, method: :delete) %>
+								</li>
+						    <% else %>
+								<li>
+									<%= link_to(I18n.t('layout.book'), '/books') %>
+								</li>
+						    <% end%>
+								<li>
+									<%= link_to(I18n.t('layout.logout'), destroy_user_session_path, method: :delete) %>
+								</li>
+						<% else %>
+						<li>
+							<%= link_to(I18n.t('layout.login'), new_user_session_path) %>
+						</li>
+						<% end %>
+						<li>
+							<%= link_to(I18n.t('layout.vietnamese'), locale:"vn") %>
+						</li>
+						<li>
+							<%= link_to(I18n.t('layout.english'), locale:"en") %>
+						</li>
+
+						<li>
+						<form action="#" method="get" accept-charset="utf-8">
+							<div class="seach">
+								<input id="input" type="text" name="" placeholder="Seach">
+							</div>
+						</form>
+					</li>
+					<div class="clear"></div>
+
+					</div>
+					<div class="clear"></div>
+
+				</ul>
+				<div class="clear"></div>
+			</nav>
+		</div>
+	</div>

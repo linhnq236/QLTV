@@ -26,6 +26,7 @@ Rails.application.routes.draw do
     get "controller_equipment" => "equipment#index"
     get "new_equipment" => "equipment#new"
     root to: 'home#index'
+    get "introduce", to: "home#introduce"
     devise_for :users
     get "/logout", to: "devise/registrations#destroy "
     namespace "api" do
