@@ -1,27 +1,60 @@
-<h2 class="d-flex justify-content-center"><%= t('layout.login_title')%></h2>
+<div class="main-login">
+		<div class="tieude_giua">
+			<h2>Đăng nhập tài khoản</h2>
+		</div>
+		<div class="container-dangki">
+			<div class="rown">
+				<h1>Sinh viên đăng nhập tài khoản</h1>
+				<div class="login-container">
+					<div class="login-container-detail">
+						<div class="login-left">
+							<div class="iner">
+								<h2>Để mượn sách</h2>
+								<div class="content1">
+									<p>Bằng cách tạo tài khoảng bạn có thể mượn sách nhanh hơn, được cập nhập về tình trạng sách sau khi mượn, và theo dõi lịch sử mượn sách của bạn đã thực hiện trước đó.</p>
+									<a href="dangki.php">Đăng kí</a>
+								</div>
+							</div>
+						</div>
+						<div class="login-right">
+							<div class="iner1">
+								<h2><%= t('layout.login')%></h2>
+								<form action="#" method="POST" accept-charset="utf-8">
+									<ul class="form-dangki">
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label "#{I18n.t('layout.email')}" %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
-  </div>
-
-  <div class="field">
-    <%= f.label "#{I18n.t('layout.password')}" %><br />
-    <%= f.password_field :password, autocomplete: "current-password", class: "form-control" %>
-  </div>
-
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label "#{I18n.t('layout.remember')}" %>
-    </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit "#{I18n.t('button.login')}", class: "form-control btn btn-primary" %>
-  </div>
-<% end %>
-<!--
-<%= render "devise/shared/links" %>
---!>
+                    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+										<li>
+                        <div class="field">
+                          <%= f.label "#{I18n.t('layout.email')}" %><br />
+                          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="field">
+                          <%= f.label "#{I18n.t('layout.password')}" %><br />
+                          <%= f.password_field :password, autocomplete: "current-password", class: "form-control" %>
+                        </div>
+                      </li>
+                      <li>
+                        <% if devise_mapping.rememberable? %>
+                          <div class="field">
+                            <%= f.check_box :remember_me %>
+                            <%= f.label "#{I18n.t('layout.remember')}" %>
+                          </div>
+                        <% end %>
+                        </li>
+                        <li>
+                          <div class="actions">
+                            <%= f.submit "#{I18n.t('button.login')}", class: "form-control btn btn-primary" %>
+                          </div>
+                        </li>
+                    <% end %>
+									</ul>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>

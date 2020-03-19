@@ -32,6 +32,8 @@ vn:
     forgot: "Quên mật khẩu ? "
     home: "TRANG CHỦ"
     notice_common: "THÔNG BÁO CHUNG "
+    introduce: "GIỚI THIỆU"
+    library: "THƯ VIỆN"
   borrow:
     success: "Mượn sách %{name} thành công !"
     fail: "Mượn sách %{name}  thất bại !"

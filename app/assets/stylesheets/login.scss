@@ -1,0 +1,110 @@
+.main-login{
+	/*padding: 70px 0px 30px;*/
+    margin: 0 auto;
+    min-height: 550px;
+    text-align: left;
+    background: #ECECEC;
+}
+.container-dangki{
+	max-width: 1260px;
+    margin: auto;
+}
+.rown{
+	padding:0px 30px;
+}
+.rown h1{
+	font-size: 1.5em;
+    line-height: normal;
+    margin: 0;
+    padding-left: 15px;
+    font-weight: 300;
+    color: #004835;
+}
+.login-left{
+	width: 50%;
+    float: left;
+    /* padding: 0 15px; */
+    color: #004835;
+}
+.login-right{
+	    width: 50%;
+    float: left;
+    /* padding: 0 15px; */
+/*    background-color: #b8d4d4;
+*/    height: 300px;
+}
+.iner h2{
+	font-size: 1.33em;
+    line-height: normal;
+    margin-bottom: .57em;
+    padding-left: 15px;
+    font-weight: 300;
+}
+.content1{
+	width: 70%;
+    padding-left: 15px;
+}
+.form-dangki{
+	list-style: none;
+}
+.form-dangki li input{
+	width: 49%;
+    padding: 7px;
+    margin-bottom: 10px;
+    /*background: #fff;*/
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-left: 0;
+    margin-right: 0;
+    outline: none;
+}
+.iner1{
+	    padding-left: 30px;
+}
+.iner1 h2{
+	font-size: 1.33em;
+    line-height: normal;
+    margin-bottom: .57em;
+    color: #004835;
+}
+
+.btn-dangki{
+	background-color: #004835;
+    color: #fff;
+    cursor: pointer;
+}
+.btn-dangki:hover{
+	background-color: #00483596;
+	transition: 0.5s all;
+}
+/*đang nhập*/
+.content1 a{
+	border: none;
+    cursor: pointer;
+    background: #004835;
+    color: #fff;
+    text-align: center;
+    padding: 6px;
+    font-size: 14px;
+    border-radius: 4px;
+    text-decoration: none;
+}
+.content1 p{
+	margin: 0 0 20px;
+}
+.form-dangki p{
+	    margin: 0 0 20px;
+}
+.btn-dangnhap,.conten1 a{
+	background-color: #004835;
+    color: #fff;
+    cursor: pointer;
+}
+.btn-dangnhap:hover{
+	background-color: #00483596;
+	transition: 0.5s all;
+}
+.content1 a:hover{
+	background-color: #00483596;
+	transition: 0.5s all;
+}

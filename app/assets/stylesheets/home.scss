@@ -1,3 +1,427 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+*{
+	margin: 0;
+	padding: 0;
+}
+.wap_1{
+	// width: 89%;
+    margin: auto;
+    // max-width: 1200px;
+}
+#menu ul li a {
+	text-decoration: none;
+    text-transform: uppercase;
+    display: block;
+    font-size: 17px;
+    color: #004835;
+    transition: all .3s ease-in-out;
+    position: relative;
+    font-weight: 600;
+    position: relative;
+}
+#menu ul li a:before {
+    content: '';
+    width: 0px;
+    height: 3px;
+    background: #004835;
+    position: absolute;
+    top: 120%;
+    left: 0;
+    transition: .5s;
+    mix-blend-mode: multiply;
+}
+#menu ul li a:after {
+    content: '';
+    width: 0px;
+    height: 3px;
+    background: #541304;
+    position: absolute;
+    top: 120%;
+    right: 0;
+    transition: .5s;
+    mix-blend-mode: multiply;
+}
+#menu ul li:hover a:before {
+    width: 50%;
+    transform: translateX(100%);
+}
+#menu ul li:hover a:after {
+    width: 50%;
+    transform: translateX(-100%);
+}
+#menu a:hover{
+    color: #b05c1e;
+}
+
+.left-menu{
+    width: calc(50% - 83px);
+    float: left;
+    padding-top: 40px;
+}
+.left-menu li{
+	margin-left: 15px;
+	float: right!important;
+}
+.center-logo{
+    width: 126px;
+    float: left;
+    display: block;
+    margin-left: 20px;
+    height: 100px;
+}
+.center-logo a img{
+	display: block;
+    margin: auto;
+    margin-top: 10px;
+    width: 100%;
+    transition: .3s;
+}
+.right-menu{
+    width: calc(48% - 63px);
+    float: right;
+    padding-top: 40px;
+}
+.right-menu li{
+	margin-right: 15px;
+}
+#menu ul{
+	list-style: none;
+	width: 100%;
+}
+#menu ul li{
+	display: inline-block;
+}
+.chitietmenu{
+    margin: auto;
+    width: 100%;
+}
+.clear{
+	clear: both;
+}
+.seach input{
+		outline: none;
+    padding: 4px 8px;
+    // width: 91%;
+    color: #000;
+    border-radius: 4px;
+}
+#text{
+    text-transform: uppercase;
+    font-size: 17px;
+    color: #004835;
+    font-weight: 600;
+    text-align: center
+}
+/*slide*/
+.intro{
+    position: relative;
+    width: 100%;
+    height: 710px;
+}
+.intro-imge{
+    width: 100%;
+    height: 100%;
+}
+.slideshow-img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+/*gioithiu*/
+.gioithieu{
+   background:url(asset_path("pattern1.png")) left top;
+    /*background-color: red;*/
+    padding: 50px 0 80px;
+    position: relative;
+   }
+.gioithieu span{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(130deg,rgba(194,206,203,.3) 0,rgba(234,230,195,1) 100%)
+}
+.noidung-gioithieu{
+    z-index: 2;
+    position: relative;
+    text-align: center;
+}
+
+.tieude-gioithieu::before{
+    top: 28%;
+    width: 23%;
+    height: 4px;
+    left: 0;
+    background-color: #fff;
+    position: absolute;
+    content: '';
+
+}
+.tieude-gioithieu h3{
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 1.2;
+    color: #004835;
+    text-transform: uppercase;
+    text-align: center;
+    font-family: Montserrat,sans-serif;
+    padding: 30px;
+}
+.tieude-gioithieu::after{
+    top: 28%;
+    width: 23%;
+    height: 4px;
+    background-color: #fff;
+    position: absolute;
+    content: '';
+    right: 0;
+}
+.mota-gioithieu p {
+    font-family: Play,sans-serif;
+    color: #004835;
+    height: 175px;
+    font-weight: 400;
+    line-height: 1.6;
+    font-size: 100%;
+    margin-left: 21%;
+    margin-right: 21%;
+}
+.mota-gioithieu p strong{
+    font-weight: 700;
+}
+.noidung-gioithieu a{
+   display: inline-block;
+    margin: 44px 0 0;
+    padding: 10px 18px 11px;
+    font-weight: 400;
+    font-size: 17px;
+    background-color: #fff;
+    -webkit-border-radius: 30px;
+    text-decoration: none;
+    font-family: Play,sans-serif;
+    color: #004835;
+}
+.noidung-gioithieu a:hover{
+    background-color: #004835;
+    color: #fff;
+}
+/*danhngon*/
+.danhngon{
+    background-image: url(asset_path("background.jpg"));
+    background-position: center center;
+    position: relative;
+    background-attachment: fixed;
+    background-size: cover;
+    padding: 52% 0 0;
+}
+.slogan{
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 40%;
+}
+@media only screen and (min-width:630px) and (max-width: 930px){
+    .slogan h3{
+        font-size: 3em;
+
+    }
+    .slogan h4{
+        font-size: 3em;
+    }
+}
+@media screen and (max-width:629px){
+    .slogan h3{
+        font-size: 2em;
+    }
+    .slogan h4{
+        font-size: 2em;
+    }
+}
+.slogan-text{
+    font-size: 5em;
+    font-weight: 400;
+    color: #00c2d8;
+    background: linear-gradient(90deg,#00c2d8 40%,#6b9800 60%);
+    line-height: 1.2;
+    -webkit-text-fill-color: transparent;
+    font-family: Montserrat,sans-serif;
+    -webkit-background-clip: text;
+
+}
+.slogan-text1{
+    font-family: Montserrat,sans-serif;
+    font-weight: 700;
+    font-size: 5em;
+    color: #c18a4f;
+    background: linear-gradient(90deg,#66cc53 40%,#f10c17 60%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 3%;
+}
+
+/*sachnoibac*/
+.swiper-container {
+      width: 100%;
+      padding-top: 60px;
+      padding-bottom: 72px;
+
+    }
+    .swiper-slide {
+      background-position: center;
+      background-size: cover;
+      width: 300px;
+      height: 370px;
+      background-color: #fff;
+      border-radius: 1px;
+
+    }
+
+.sach-index{
+    background-image: url(asset_path("backr1.jpg"));
+    padding: 65px 0;
+    width: 100%;
+    padding-bottom: 50px;
+}
+.wap_89{
+    width: 89%;
+    margin: auto;
+    max-width: 1200px;
+
+  }
+.tieude-tintuc{
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 1.2;
+    text-transform: uppercase;
+    position: relative;
+    font-family: Montserrat,sans-serif;
+    text-align: center;
+    color: #004835;
+}
+.tieude-tintuc::after{
+    content: "";
+    left: 0;
+    right: 0;
+    margin: auto;
+    bottom: -20px;
+    width: 120px;
+    height: 1px;
+    background-color: #fff;
+}
+.imgbox{
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+}
+.imgbox img{
+    width: 100%;
+    height: 100%;
+}
+.detail{
+    font-size: 20px;
+    box-sizing: border-box;
+    padding: 14px;
+}
+.detail h3{
+    font-size: 20px;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    line-height: 20px;
+}
+.detail h3 span{
+    font-size: 15px;
+    color: red;
+}
+.wap_footer{
+    background: url(asset_path("pattern.png"));
+    width: 100%;
+    height: auto;
+}
+.footer_header{
+    max-width: 100%;
+    margin: auto;
+    padding: 60px 5%;
+}
+.footer_noidung{
+    text-align: center;
+    color: #fff;
+    font-weight: 400;
+}
+.footer_noidung h3{
+    margin: 0 0 15px;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.4;
+    font-family: sans-serif;
+}
+.footer_noidung p{
+    font-size: 16px;
+}
+.footer_thongtin{
+    text-align: center;
+    margin-top: 28px;
+}
+.diachi_footer,.sdt_footer,.email_footer{
+    font-size: 18px;
+    color: #fff;
+    margin-bottom: 10px;
+    font-family: Play,sans-serif;
+}
+.bottom_footer{
+    width: 100%;
+    height: auto;
+    padding: 40px 0;
+    background-color: #004835;
+    text-align: center;
+    border-top: 1px solid rgba(223,223,197,.5);
+    font-size: 14px;
+}
+.bottom_footer_text{
+    max-width: 100%;
+    margin: auto;
+}
+.bottom_footer_text h3{
+    font-family: Play,sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 15px;
+}
+.video_index{
+    width: 100%;
+    height: auto;
+}
+.video_index_noidung{
+    max-width: 100%;
+    margin: auto;
+    border-top: 4px solid #af8e8e;
+}
+.left_video{
+    width: 50%;
+    float: left;
+    height: auto;
+}
+.right_bangdo{
+    width: 50%;
+    float: left;
+    height: auto;
+}
+.tieude-tintuc::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    bottom: -20px;
+    width: 120px;
+    height: 2px;
+    background-color: #004835;
+}
