@@ -36,12 +36,9 @@
                         </div>
                       </li>
                         <% if devise_mapping.rememberable? %>
-												<li>
-                            <%= f.check_box :remember_me %>
-												</li>
-												<li>
-													<%= f.label "#{I18n.t('layout.remember')}" %> 
-												</li>
+												<div>
+                            <%= f.check_box :remember_me %> <%= f.label "#{I18n.t('layout.remember')}" %>
+												</div>
                         <% end %>
                         <li>
                           <div class="actions">

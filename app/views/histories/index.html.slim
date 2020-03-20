@@ -11,13 +11,13 @@ table#dataTableHistory.table.table-striped.table-bordered.table-sm cellspacing="
     - @histories.each do |history|
       tr
         td
-          = history.user.code
+          = history.user&.code
         td
-          = history.user.name
+          = history.user&.name
         td
-          = history.amount.code
+          = history.amount&.code
         td
-          = history.book.name
+          = history.book&.name
         td
           = format_datetime(history.borrow_time)
         td
