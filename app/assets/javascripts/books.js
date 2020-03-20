@@ -217,4 +217,15 @@ $( document ).on('turbolinks:load', function() {
     $(".new_book_button_up").addClass("d-none")
     $(".new_book_button_down").removeClass("d-none")
   })
+  $('.dropdown>li').click(function(){
+    if($(this).hasClass('active')){
+      $(this).children('.subiteam').slideUp();
+      $(this).removeClass('active');
+    }else{
+      $(this).children('.subiteam').slideDown();
+      //this laf ther dc chn menu>li
+      //chuwa active hien thi slide dow xuongs tuc con
+      $(this).addClass('active');//danh dau da active
+        }
+    });
 })

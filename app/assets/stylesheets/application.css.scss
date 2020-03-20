@@ -14,4 +14,7 @@
  *= require_self
  *= require simple_calendar
  *= require flexslider
+ *= require font-awesome
  */
+ @import "font-awesome-sprockets";
+ @import "font-awesome";

@@ -5,7 +5,7 @@
 //   });
 // });
 $(document).on("turbolinks:load", function() {
-  $('.flexslider').flexslider();
+  // $('.flexslider').flexslider();
   const slideshowImage = document.querySelectorAll(".intro .slideshow-img");
   const nextImageDelay = 3000;
   let currentImageCouter = 0;

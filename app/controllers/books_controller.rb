@@ -4,7 +4,7 @@ class BooksController < ApplicationController
   before_action :check_active , only: [:index]
   before_action :check_staff , only: [:new, :create, :destroy, :update, :book_detail]
 
-  PER_PAGE = 18
+  PER_PAGE = 12
   # GET /books
   # GET /books.json
   def index

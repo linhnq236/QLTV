@@ -50,6 +50,8 @@ gem 'rack-cors', :require => 'rack/cors'
 gem 'flex-slider-rails'
 gem 'will_paginate-bootstrap4'
 gem "whenever"
+gem "font-awesome-rails"
+gem 'font-awesome-sass', '~> 4.2.0'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 

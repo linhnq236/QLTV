@@ -1,16 +1,14 @@
 h1 #{I18n.t('book.title')}
 div
-  button.new_book_button_down.mr-1.mb-3.btn.btn-success
-    i.fa.fa-caret-down  &nbsp #{I18n.t('book.new_book')}
-  button.new_book_button_up.d-none.mr-1.mb-3.btn.btn-success
-    i.fa.fa-caret-up  &nbsp #{I18n.t('book.new_book')}
+  button.new_book_button_down.mr-1.mb-3.btn.btn-success <i class="fa fa-caret-down"></i> #{I18n.t('book.new_book')}
+  button.new_book_button_up.d-none.mr-1.mb-3.btn.btn-success <i class="fa fa-caret-up"></i> #{I18n.t('book.new_book')}
 div.new_book.d-none
   button.new_author.btn.btn-success.mr-1
-    i.fa.fa-plus &nbsp #{I18n.t('book.new_author')}
+    <i class="fa fa-plus"></i> &nbsp #{I18n.t('book.new_author')}
   button.new_type.btn.btn-success.mr-1
-    i.fa.fa-plus &nbsp #{I18n.t('book.new_type')}
+    <i class="fa fa-plus"></i> &nbsp #{I18n.t('book.new_type')}
   button.new_publisher.btn.btn-success.mr-1
-    i.fa.fa-plus &nbsp #{I18n.t('book.new_publisher')}
+    <i class="fa fa-plus"></i> &nbsp #{I18n.t('book.new_publisher')}
   == render 'form'
 table#dataTableBook.listall.table.table-striped.table-bordered.table-sm cellspacing="0" width="100%"
   thead

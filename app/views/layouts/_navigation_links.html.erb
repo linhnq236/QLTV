@@ -28,7 +28,10 @@
 							<%= link_to(I18n.t('layout.introduce'), introduce_path) %>
 						</li>
 						<li class="icon">
-							<%= link_to(I18n.t('layout.home'), root_path) %>
+							<a href="/">
+								<i class="fa fa-home"></i>
+								<%= I18n.t('layout.home')%>
+							</a>
 						</li>
 					</div>
 					<div class="center-logo">
@@ -53,7 +56,6 @@
 								</li>
 						    <% else %>
 								<li>
-									<%= link_to(I18n.t('layout.book'), '/books') %>
 								</li>
 						    <% end%>
 								<li>
@@ -70,14 +72,6 @@
 						<li>
 							<%= link_to(I18n.t('layout.english'), locale:"en") %>
 						</li>
-
-						<li>
-						<form action="#" method="get" accept-charset="utf-8">
-							<div class="seach">
-								<input id="input" type="text" name="" placeholder="Seach">
-							</div>
-						</form>
-					</li>
 					<div class="clear"></div>
 
 					</div>

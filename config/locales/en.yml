@@ -105,7 +105,7 @@ en:
     english: "ENGLISH"
     setting: "SETTING"
     changepassword: "CHANGE PASSWORD"
-    logout: "SIGN UP"
+    logout: "LOGOUT"
     previous: "Before"
     next: " After "
     login_title: "LOG IN"

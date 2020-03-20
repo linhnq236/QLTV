@@ -1,20 +1,7 @@
 div.row
-  div.col-sm-2
-    == render partial: 'books/share/type', locals: {types: @types, authors: @authors, department: @departments}
-  div.col-sm-10
+  div.col-sm-3
+    /= render partial: 'books/share/type', locals: {types: @types, authors: @authors, department: @departments}
+    == render partial: 'books/share/left_menu'
+  div.col-sm-9
     div.row
-      - @books.each do |book|
-        a.detail.text-decoration-none.text-dark href="/show_book_detail/#{book.id}"
-          div.col-sm-2.text-center.border.border-dark.hover.cursor.borrow
-            div.image
-              = convert_ckeditor(book.image)
-            div.title
-              = book.name
-            div.type
-              = book.type.name
-            div.author
-              = book.author.name
-            div.btn-borrow.text-center
-              button.btn.btn-danger.bor data-id="#{book.id}" Mượn
-              a.hidden
-    = will_paginate (@posts)
+      == render partial: 'books/share/content', locals: {books: @books }
