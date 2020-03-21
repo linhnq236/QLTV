@@ -12,7 +12,7 @@
         <div class="col-product">
 					<div class="col_product1">
 						<a href="/show_book_detail/<%= book.id%>"><%= convert_ckeditor(book.image) %></a>
-						<p><%= book.name%></p>
+						<p><%= book.name.truncate(27)%></p>
 						<h3><%= book.author.name%></h3>
 						<div class="col_bottom">
 							<button class="product1_bottom bor" data-id="<%= book.id%>" type="submit" name="muonsach">Mượn sách</button>
