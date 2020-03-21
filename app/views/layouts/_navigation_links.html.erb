@@ -20,6 +20,9 @@
 								</li>
 						    <% else %>
 								<li>
+									<%= link_to(I18n.t('layout.mybook'), mybook_path) %>
+								</li>
+								<li>
 									<%= link_to(I18n.t('layout.book'), '/books') %>
 								</li>
 						    <% end%>
@@ -56,6 +59,7 @@
 								</li>
 						    <% else %>
 								<li>
+									<%= link_to(I18n.t('layout.add'), destroy_user_session_path, method: :delete) %>
 								</li>
 						    <% end%>
 								<li>

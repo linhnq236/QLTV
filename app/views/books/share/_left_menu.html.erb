@@ -1,18 +1,23 @@
 <div class="container_left">
 			<div class="list_left">
 				<div class="title_list">
-					<h3>Category</h3>
+					<h3><%= t('department.docu')%></h3>
 				</div>
 				<ul class="dropdown">
-					<li>
-						<h3 class="text-light text-uppercase">Áo nam</h3 >
-						<ul class="subiteam">
-							<li><a href="">Áo thung nam</a></li>
-							<li><a href="">Áo sơ mi nam</a></li>
-							<li><a href="">Áo khoát nam</a></li>
-							<li><a href="">Áo len nam</a></li>
-						</ul>
-					</li>
+					<% @departments.each do |department| %>
+						<li>
+							<h5 class="text-light text-uppercase"><%= I18n.t("department.#{department.name}")%></h5 >
+							<ul class="subiteam">
+								<% @types.each do |type|%>
+								<li>
+									<% if type.id == department.id %>
+										<%= link_to type.name, "/books/#{type.id}" %>
+									<% end %>
+								</li>
+								<% end %>
+							</ul>
+						</li>
+					<% end %>
 			</div>
 			<div class="main-left">
 				<div class="of-left">

@@ -91,6 +91,9 @@ class BorrowsController < ApplicationController
     end
   end
 
+  def mybook
+    @borrowbooks = Borrow.where(user_id:current_user.id).order("created_at DESC")
+  end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_borrow

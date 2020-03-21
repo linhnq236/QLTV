@@ -1,0 +1,21 @@
+table#dataTableBorrow.table.table-striped.table-bordered.table-sm cellspacing="0" width="100%"
+  thead
+     tr
+      th.th-sm #{I18n.t('mybook.code')}
+      th.th-sm #{I18n.t('mybook.name')}
+      th.th-sm #{I18n.t('mybook.date')}
+      th.th-sm #{I18n.t('mybook.status')}
+  tbody
+    - @borrowbooks.each do |borrow|
+      tr
+        td
+          = borrow.book&.name
+        td
+          = borrow.book&.amount&.code
+        td
+  tfoot
+    tr
+      th.th-sm #{I18n.t('mybook.code')}
+      th.th-sm #{I18n.t('mybook.name')}
+      th.th-sm #{I18n.t('mybook.date')}
+      th.th-sm #{I18n.t('mybook.status')}

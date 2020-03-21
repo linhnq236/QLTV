@@ -48,162 +48,174 @@
 // }
 .product{
 	height: auto;
-    background-color: #ECECEC;
+  background-color: #ECECEC;
 }
 .container{
 	margin: auto;
-    padding: 15px 15px;
-    width: 1230px;
+  padding: 15px 15px;
+  width: 1230px;
 }
 .container_left{
-	background: url(asset_path('pattern.png'));
+	// background: url(asset_path('pattern.png'));
+  background: #122d48;
   border-radius: 5px;
   float: left;
 	width: 100%;
 }
 .container_right{
-	 width: 97%;
-    float: left;
-    /*background: url(../image/pattern1.png);*/
-    background-color: #ffff;
+	width: 97%;
+  float: left;
+  /*background: url(../image/pattern1.png);*/
+  background-color: #ffff;
 }
 .list_left{
 	padding: 10px 20px 0px;
 }
 .title_list{
 	border-bottom: 2px solid #fff;
-    padding-bottom: 4px;
+  padding-bottom: 4px;
 }
 .title_list h3{
 	color: #fff;
-    font-size: 2em;
-    font-weight: 600;
-    line-height: 1.1;
+  font-size: 2em;
+  font-weight: 600;
+  line-height: 1.1;
 }
 .dropdown{
 	width: auto;
-    height: auto;
-    padding: 0;
-    list-style: none;
-    margin: 1.5em 0;
+  height: auto;
+  padding: 0;
+  list-style: none;
+  margin: 1.5em 0;
 }
 .dropdown li a {
-    text-decoration: none;
-    width: 100%;
-    margin: 0.3em 0;
-    display: inline-block;
-    font-size: 1.1em;
-    color: #fff;
-
+  text-decoration: none;
+  width: 100%;
+  margin: 0.3em 0;
+  display: inline-block;
+  font-size: 1.1em;
+  color: #fff;
 }
 .dropdown ul{
 	padding-left: 15px;
-    display: none;
+  display: none;
 }
 .dropdown li ul li{
 	list-style-type: none;
 }
 .dropdown li ul li a{
 	text-decoration: none;
-    width: 100%;
-    margin: 0.3em 0;
-    display: inline-block;
-    font-size: 1.1em;
-    color: #fff;
+  width: 100%;
+  margin: 0.3em 0;
+  display: inline-block;
+  font-size: 1.8em;
+  color: #fff;
+}
+.dropdown li ul li a:hover{
+	background: #1c7ad9;
+}
+.dropdown li ul li a{
+	padding: 2%;
+}
+.dropdown h5{
+	padding: 2%;
+}
+.dropdown h5:hover{
+	background: #1c7ad9;
+	cursor: pointer;
 }
 .main-left{
-    padding: 0px 20px;
-
+  padding: 0px 20px;
 }
 .of-left{
-    border-bottom: 2px solid #fff;
-    padding-bottom: 4px
+  border-bottom: 2px solid #fff;
+  padding-bottom: 4px
 }
 .of-left h3{
-    font-size: 2em;
-    color: #fff;
+  font-size: 2em;
+  color: #fff;
 }
 .book-gird{
-    float: left;
-    width: 30%;
-    height: 113px;
+  float: left;
+  width: 30%;
+  height: 113px;
 }
 .book-gird a img{
-    display: block;
-    max-width: 100%;
-    height: auto;
-    max-height: 240px;
-		height: 105px;
+  display: block;
+  max-width: 100%;
+  height: auto;
+  max-height: 240px;
+	height: 105px;
 }
 .book-gird1{
-    float: right;
-    width: 62%;
+  float: right;
+  width: 62%;
 }
 .book-gird1 h6{
-    color: #fff;
-    font-weight: 100;
-    line-height: 30px;
-    font-size: large;
+  color: #fff;
+  font-weight: 100;
+  line-height: 30px;
+  font-size: large;
 }
 .product-go{
-     margin-top: 1.5em;
+   margin-top: 1.5em;
 }
 .bottom-book{
-    padding: 4px 3px;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    margin-top: 5px;
+  padding: 4px 3px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  margin-top: 5px;
 }
 .bottom-book:hover{
-    background-color: red;
-    color: #fff;
+  background-color: red;
+  color: #fff;
 }
 .book-gird1 a{
-    text-decoration: none;
+  text-decoration: none;
 }
 .book-gird1 h6:hover{
-    color: #9a8484;
-    transition: 0.8s all;
+  color: #9a8484;
+  transition: 0.8s all;
 }
 .bottom_left{
-    position: relative;
-    margin: 2em 0;
-    padding: 0px 20px;
+  position: relative;
+  margin: 2em 0;
+  padding: 0px 20px;
 }
 .bottom_left img{
-    max-width: 100%;
-    height: auto;
-    max-height: 274px;
-    width: 265px
+  max-width: 100%;
+  height: auto;
+  max-height: 274px;
+  width: 265px
 }
 .sach-sapve{
-    position: absolute;
-    top: 0;
-    padding: 10px;
-    width: 80%;
+  position: absolute;
+  top: 0;
+  padding: 10px;
+  width: 80%;
 }
 .sach-sapve h3{
-    color: #fff;
-    font-size: 30px;
-    text-align: center;
-    margin-top: 18px;
-    background-color: rgba(193, 193, 193, 0.38);
+  color: #fff;
+  font-size: 30px;
+  text-align: center;
+  margin-top: 18px;
+  background-color: rgba(193, 193, 193, 0.38);
 }
 .container_right h2{
-    margin: 0 auto;
-    padding: 10px 30px;
-    font-weight: 200;
+  margin: 0 auto;
+  padding: 10px 30px;
+  font-weight: 200;
 }
 .container_right h2 p {
-    margin: 0;
-    font-size: 30px;
-    margin-bottom: 15px;
+  margin: 0;
+  font-size: 30px;
+  margin-bottom: 15px;
 }
 .product-detail{
-    padding-left: 15px;
-    padding-right: 15px;
-    width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 100%;
 }
 .col-product{
 	width: 100%;
@@ -214,48 +226,48 @@
   margin-bottom: 2em;
 }
 .col_product1 img{
-    width: 100% !important;
-		height: 179px !important;
-    height: 230px;
+  width: 100% !important;
+	height: 179px !important;
+  height: 230px;
 }
 .col_product1 p{
-    text-align: center;
-    line-height: 1.3em;
-    padding: 0.5em 0.5em 0px;
-    color: #050505;
-    font-size: larger;
+  text-align: center;
+  line-height: 1.3em;
+  padding: 0.5em 0.5em 0px;
+  color: #050505;
+  font-size: larger;
 }
 .col_bottom{
-    text-align: center;
+  text-align: center;
 }
 .product1_bottom{
-    padding: 5px;
+  padding: 5px;
 }
 .col_product1 h3{
-    font-size: 15px;
-    font-weight: 400;
-    text-align: center;
-    line-height: 1.3;
-    margin: 0 0 15px;
-    color: #004835
+  font-size: 15px;
+  font-weight: 400;
+  text-align: center;
+  line-height: 1.3;
+  margin: 0 0 15px;
+  color: #004835
 }
 .product1_bottom{
-    cursor: pointer;
+  cursor: pointer;
 }
 .product1_bottom:hover{
-    background-color: #004835;
-    color: #ffff;
+  background-color: #004835;
+  color: #ffff;
 }
 .col_product1{
-    box-shadow: 0 -1px 14px #bababa;
-    border-bottom: 2px solid #eb6a01;
-    padding-bottom: 14px;
+  box-shadow: 0 -1px 14px #bababa;
+  border-bottom: 2px solid #eb6a01;
+  padding-bottom: 14px;
 }
 .col_product1:hover{
-    transition: 0.5s;
-    padding-left: 10px;
-    padding-right: 10px;
-    margin-top: -5px;
+  transition: 0.5s;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-top: -5px;
 }
 .naviga{
 	clear: both !important;

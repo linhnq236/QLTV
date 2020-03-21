@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :borrows
   put "accept_borrow", to: "borrows#accept_borrow"
   put "pay_book", to: "borrows#pay_book"
+  get "mybook", to: "borrows#mybook"
   resources :users
   get "profile", to: "users#edit"
   post "update", to: "users#update"
