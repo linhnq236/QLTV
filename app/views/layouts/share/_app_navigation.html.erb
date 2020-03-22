@@ -1,0 +1,38 @@
+  <div class="app_navigation">
+    <div class="row">
+    <ul class="col-sm-12">
+        <% if user_signed_in? %>
+            <% if current_user.admin == 1%>
+            <li class="col-sm-12">
+              <%= link_to(I18n.t('layout.equipment'), controller_equipment_path) %>
+            </li>
+            <li  class="col-sm-12">
+              <%= link_to(I18n.t('layout.borrow'),'/borrows') %>
+            </li>
+            <li  class="col-sm-12">
+              <%= link_to(I18n.t('layout.history'),'/histories') %>
+            </li>
+            <% elsif  current_user.admin == 2%>
+            <li  class="col-sm-12">
+              <%= link_to(I18n.t('layout.logout'), destroy_user_session_path, method: :delete) %>
+            </li>
+            <% else %>
+            <li  class="col-sm-12">
+              <%= link_to(I18n.t('layout.mybook'), mybook_path) %>
+            </li>
+            <li  class="col-sm-12">
+              <%= link_to(I18n.t('layout.book'), '/books') %>
+            </li>
+            <% end%>
+        <% end %>
+        <li  class="col-sm-12">
+          <%= link_to(I18n.t('layout.home'), root_path) %>
+        </li>
+        <li  class="col-sm-12">
+          <%= link_to(I18n.t('layout.introduce'), introduce_path) %>
+        </li>
+    </ul>
+
+  </div>
+
+</div>

@@ -1,8 +1,10 @@
 <div class="container_right">
-  <form class="example search" action="">
-    <input type="text" placeholder="Search.." name="search" value="<%= @search %>">
-    <button type="submit"><i class="fa fa-search"></i></button>
-  </form>
+  <div class="active-pink-3 active-pink-4 mb-4">
+    <form class="form-inline d-flex md-form form-sm mt-0 search" action="">
+      <i class="fa fa-search" aria-hidden="true"></i>
+      <input class="form-control form-control-sm ml-3 w-40" type="text" placeholder="Search" name="search" value="<%= @search %>">
+    </form>
+  </div>
   <h2><p>Tất cả loại sách</p></h2>
   <div class="clear"></div>
   <div class="row">

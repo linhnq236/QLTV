@@ -428,3 +428,39 @@
     height: 2px;
     background-color: #004835;
 }
+.bar_menu{
+	display: none !important;
+}
+.app_navigation{
+	display: none;
+	background: #122d48;
+}
+.app_navigation>.row>ul>li>a{
+	font-size: 7px;
+	color: white;
+}
+// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 759px) {
+	.chitietmenu, .nav_header{
+			display: none !important;
+	}
+	main{
+		margin-top: -20% !important;
+	}
+	.bar_menu{
+		display: block !important;
+		position: fixed;
+		zoom: 3;
+		top: -2%;
+		cursor: pointer;
+		z-index: 100;
+		color: blue;
+		width: 50%;
+	}
+}
+@media (min-width: 760px) {
+	.chitietmenu, .nav_header{
+			display: block;
+	}
+
+}

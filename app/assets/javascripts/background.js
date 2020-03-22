@@ -14,4 +14,9 @@ $( document ).on('turbolinks:load', function() {
     })
     $("#text").css({"color":"white"})
   }
+  var width = $(window).width();
+  console.log(width);
+  $(".bar_menu").click(function(){
+    $(".app_navigation").animate({'width': 'toggle'});
+  })
 })

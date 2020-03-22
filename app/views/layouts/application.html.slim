@@ -32,6 +32,10 @@ html
     header.navbar.fixed-top.nav_header
       == render 'layouts/navigation'
       /== render 'layouts/share/search' if user_signed_in? &&current_user.admin == 0
+    <div class="bar_menu">
+  		<i class="fa fa-bars"></i>
+        == render 'layouts/share/app_navigation'
+  	</div>
     main[role="main"]
       == render 'layouts/messages'
       == yield
