@@ -35,11 +35,19 @@ vn:
     introduce: "GIỚI THIỆU"
     library: "THƯ VIỆN"
     mybook: "SÁCH CỦA TÔI"
+    acc: "Tài khoản"
   mybook:
     code: "Mã sách"
     name: "Tên sách"
     date: "Ngày mượn"
     status: "Tình trạng"
+    date_borrow: "Ngày nhận"
+    date_pay: "Ngày trả"
+    receiver: "Người nhận trả"
+    borrower: "Người cho mượn"
+    finish: "Trả thành công"
+    lose: "Bị mất"
+
   department:
     cntt: "Công nghệ thông tin"
     ctgt: "Công trình giao thông"
@@ -92,6 +100,8 @@ vn:
     delete: "Xóa"
     listall: "Tất cả sách"
     new_book: "Thêm sách"
+    processed: "Đang chờ xử lý"
+    borrowed: "Đang mượn"
   history:
     date_pay: "Ngày trả"
   button:

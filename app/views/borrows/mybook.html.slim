@@ -1,4 +1,4 @@
-table#dataTableBorrow.table.table-striped.table-bordered.table-sm cellspacing="0" width="100%"
+table#dataTableProcess.table.table-striped.table-bordered.table-sm cellspacing="0" width="100%"
   thead
      tr
       th.th-sm #{I18n.t('mybook.code')}
@@ -9,13 +9,57 @@ table#dataTableBorrow.table.table-striped.table-bordered.table-sm cellspacing="0
     - @borrowbooks.each do |borrow|
       tr
         td
+          - @amounts.each do |amount|
+            - active =  amount.active
+            = getBookCode(active,borrow.book_id,amount.book_id,amount.code)
+        td
           = borrow.book&.name
         td
-          = borrow.book&.amount&.code
+          = format_datetime(borrow.created_at)
         td
+          = check_status(borrow.allow)
   tfoot
     tr
       th.th-sm #{I18n.t('mybook.code')}
       th.th-sm #{I18n.t('mybook.name')}
       th.th-sm #{I18n.t('mybook.date')}
+      th.th-sm #{I18n.t('mybook.status')}
+h4 Lịch sử mượn sách
+
+table#dataTableHistory.table.table-striped.table-bordered.table-sm cellspacing="0" width="100%"
+  thead
+     tr
+      th.th-sm #{I18n.t('mybook.code')}
+      th.th-sm #{I18n.t('mybook.name')}
+      th.th-sm #{I18n.t('mybook.borrower')}
+      th.th-sm #{I18n.t('mybook.receiver')}
+      th.th-sm #{I18n.t('mybook.date_borrow')}
+      th.th-sm #{I18n.t('mybook.date_pay')}
+      th.th-sm #{I18n.t('mybook.status')}
+  tbody
+    - @histories.each do |borrow|
+      tr
+        td
+          = borrow.amount&.code
+        td
+          = borrow.book&.name
+        td
+          = get_staff(@users,borrow.staff_id_borrow)
+        td
+          = get_staff(@users,borrow.staff_id_pay)
+        td
+          = format_datetime(borrow.borrow_time)
+        td
+          = format_datetime(borrow.pay_time)
+        td
+          = check_staus_history(borrow.status)
+
+  tfoot
+    tr
+      th.th-sm #{I18n.t('mybook.code')}
+      th.th-sm #{I18n.t('mybook.name')}
+      th.th-sm #{I18n.t('mybook.borrower')}
+      th.th-sm #{I18n.t('mybook.receiver')}
+      th.th-sm #{I18n.t('mybook.date_borrow')}
+      th.th-sm #{I18n.t('mybook.date_pay')}
       th.th-sm #{I18n.t('mybook.status')}

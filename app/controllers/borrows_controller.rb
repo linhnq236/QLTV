@@ -66,7 +66,7 @@ class BorrowsController < ApplicationController
     amount_id = params[:amount_id]
     borrow = Borrow.where(book_id: book_id, user_id: user_id)
     amount = Amount.find(amount_id)
-    if borrow.update(allow: 1)
+    if borrow.update(allow: 1, staff_id_borrow: current_user.id)
       if amount.update(active: 1, user_id: user_id)
         render json:{notice: "OK"}
       else
@@ -93,6 +93,9 @@ class BorrowsController < ApplicationController
 
   def mybook
     @borrowbooks = Borrow.where(user_id:current_user.id).order("created_at DESC")
+    @amounts = Amount.all
+    @histories = History.where(user_id:current_user.id).order("created_at DESC")
+    @users = User.all
   end
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -113,10 +116,10 @@ class BorrowsController < ApplicationController
         return true
       end
     end
-    def create_historys staff_id,borrow_id,amount_id
+    def create_historys staff_id_pay,borrow_id,amount_id
       borrow = Borrow.where(id: borrow_id)
       borrow.each do |bor|
-        his = History.new(staff_id: staff_id, amount_id: amount_id,  user_id: bor.user_id, borrow_time: bor.updated_at, pay_time: DateTime.current, book_id: bor.book_id)
+        his = History.new(staff_id_pay: staff_id_pay, amount_id: amount_id,  user_id: bor.user_id, borrow_time: bor.updated_at, pay_time: DateTime.current, book_id: bor.book_id, staff_id_borrow: bor.staff_id_borrow)
         his.save
       end
       Borrow.delete(borrow_id)

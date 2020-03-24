@@ -1,8 +1,18 @@
 <div class="form-group">
+<button type="button" name="button">Thông tin cá nhân</button>
+<button type="button" name="button">Thây đổi password</button>
 <h1>Editing User</h1>
  <% @user.each do |u| %>
+   <label for="usr"><%= t('layout.email')%></label>
+   <%= text_field_tag :name, params[:name], value:"#{u.email}", class: "form-control", disabled:"true"%><br>
    <%= form_tag(update_path, method: "post") do %>
-      <label for="usr">Name:</label>
+      <label for="usr">Code</label>
+      <%= text_field_tag :name, params[:name], value:"#{u.name}", class: "form-control"%><br>
+      <label for="usr">Name</label>
+      <%= text_field_tag :name, params[:name], value:"#{u.name}", class: "form-control"%><br>
+      <label for="usr">Tel</label>
+      <%= text_field_tag :name, params[:name], value:"#{u.name}", class: "form-control"%><br>
+      <label for="usr">Address</label>
       <%= text_field_tag :name, params[:name], value:"#{u.name}", class: "form-control"%><br>
       <label for="usr">Department:</label>
      <%= submit_tag "Update", class: "form-control btn btn-success" %><br><br>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_14_102026) do
+ActiveRecord::Schema.define(version: 2020_03_23_082234) do
 
   create_table "amounts", force: :cascade do |t|
     t.string "code"
@@ -38,7 +38,6 @@ ActiveRecord::Schema.define(version: 2020_03_14_102026) do
     t.integer "type_id"
     t.integer "publisher_id"
     t.string "image"
-    t.string "code"
     t.integer "amount"
     t.index ["author_id"], name: "index_books_on_author_id"
     t.index ["publisher_id"], name: "index_books_on_publisher_id"
@@ -83,6 +82,10 @@ ActiveRecord::Schema.define(version: 2020_03_14_102026) do
     t.datetime "pay_time"
     t.integer "book_id"
     t.integer "amount_id"
+    t.integer "status"
+    t.integer "staff_id_pay"
+    t.integer "staff_id_borrow"
+    t.index ["staff_id"], name: "index_histories_on_staff_id"
   end
 
   create_table "historyalls", force: :cascade do |t|

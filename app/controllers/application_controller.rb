@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   before_action :authenticate_user!
   around_action :switch_locale
-  before_action :profile_user
+  # before_action :profile_user
   before_action :set_current_user
 
 
@@ -36,6 +36,7 @@ class ApplicationController < ActionController::Base
       # unless current_user.name.present? && current_user.admin == 0
       unless current_user.name.present?
         flash[:notice] = t("book.profileuser")
+        redirect_to root_path
       end
     end
   end

@@ -47,7 +47,7 @@ table#dataTableBorrow.table.table-striped.table-bordered.table-sm cellspacing="0
           td
             = format(b.created_at)
           td
-            - if b.allow == false
+            - if b.allow == 0
               <button class="btn btn-primary dis yes" data-userid="#{b.user_id}" data-bookid="#{b.book_id}" disabled="disabled">#{I18n.t('borrow.y')}</button>
               <button class="btn btn-danger">#{I18n.t('borrow.n')}</button>
             - else
