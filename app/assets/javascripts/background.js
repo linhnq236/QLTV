@@ -1,6 +1,6 @@
 $( document ).on('turbolinks:load', function() {
   pathname = $(location).attr('pathname');
-  console.log(pathname);
+  // console.log(pathname);
   if(pathname == "/" || pathname == "/vn"|| pathname == "/en" || pathname == "/introduce" || pathname == "/vn/introduce" || pathname == "/en/introduce" || pathname == "/vn/users/sign_in" || pathname == "/en/users/sign_in" ){
 
   }else{
@@ -14,8 +14,8 @@ $( document ).on('turbolinks:load', function() {
     })
     $("#text").css({"color":"white"})
   }
-  var width = $(window).width();
-  console.log(width);
+  // var width = $(window).width();
+  // console.log(width);
   $(".bar_menu").click(function(){
     $(".app_navigation").animate({'width': 'toggle'});
   })

@@ -7,7 +7,8 @@ html
     meta name="description" content="#{content_for?(:description) ? yield(:description) : 'QLTV'}"
     == stylesheet_link_tag "application", :media => 'all', 'data-turbolinks-track' => 'reload'
     == javascript_include_tag 'application', 'data-turbolinks-track' => 'reload'
-    == javascript_include_tag '/assets/datatable', 'data-turbolinks-track' => 'reload'
+    /== javascript_include_tag '/assets/datatable', 'data-turbolinks-track' => 'reload'
+    == javascript_include_tag '/assets/equipment', 'data-turbolinks-track' => 'reload'
     /== javascript_include_tag '/assets/zslideshow', 'data-turbolinks-track' => 'reload'
     == csrf_meta_tags
     <link rel="shortcut icon" type="image/png" href="#{asset_path("logo_bds-2730-43760")}">
@@ -21,6 +22,10 @@ html
     == javascript_include_tag '/assets/jquery.slides.js', 'data-turbolinks-track' => 'reload'
 
     == javascript_include_tag '/assets/jquery-confirm.min.js', 'data-turbolinks-track' => 'reload'
+    == javascript_include_tag '/assets/jquery.facedetection.js', 'data-turbolinks-track' => 'reload'
+    == javascript_include_tag '/assets/jquery.facedetection.min.js', 'data-turbolinks-track' => 'reload'
+    == javascript_include_tag '/assets/webcame.js', 'data-turbolinks-track' => 'reload'
+    == javascript_include_tag '/assets/webcame.min.js', 'data-turbolinks-track' => 'reload'
 
     <script src="https://cdn.ckeditor.com/4.13.1/standard/ckeditor.js"></script>
     == stylesheet_link_tag "/assets/jquery.dataTables.min.css", :media => 'all', 'data-turbolinks-track' => 'reload'
@@ -41,6 +46,6 @@ html
       == yield
       == include_gon
     == render 'layouts/share/footer'
-    div.calendar
-      - month_calendar do |date|
-        = date
+    /div.calendar
+      /- month_calendar do |date|
+        /= date

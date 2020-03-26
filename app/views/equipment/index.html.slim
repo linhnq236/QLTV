@@ -1,5 +1,5 @@
 h1 = I18n.t('menu.teacher.listequipment.title')
-
+i.fa.fa-camera-retro.fa-3x#turncamera
 table.table
   thead
     tr
@@ -19,4 +19,10 @@ br
 div#settime
 div#settimeout
 = link_to 'New Equipment', new_equipment_path
-= javascript_pack_tag 'equipment', 'data-turbolinks-track': 'reload'
+/= javascript_pack_tag 'equipment', 'data-turbolinks-track': 'reload'
+div.detectedface
+  /= image_tag('/assets/nen', class: "pic")
+  /h2#detect Detect face
+  div#results
+  div#my_camera
+  div#capture
