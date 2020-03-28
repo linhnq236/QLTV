@@ -4,7 +4,7 @@ class BooksController < ApplicationController
   before_action :check_student , only: [:index]
   before_action :check_active , only: [:index]
   before_action :check_staff , only: [:new, :create, :destroy, :update, :book_detail]
-
+  before_action :check_equipment , only: [:new]
   PER_PAGE = 12
   # GET /books
   # GET /books.json

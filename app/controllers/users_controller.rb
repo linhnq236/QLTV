@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
   skip_before_action :verify_authenticity_token
+  before_action :check_equipment , only: [:index]
+
   def index
     @users = User.order("code DESC").where(admin: 0)
   end
@@ -22,9 +24,14 @@ class UsersController < ApplicationController
     end
   end
   def update
-      a = User.where(:id=>current_user.id).update(:name=>params['name'])
-       flash[:notice] = "You have successfully edit."
-      redirect_to "/books"
+      user = User.where(:id=>current_user.id)
+      if user.update(:name=>params['name'], code: params[:code], tel: params[:tel], add: params[:add])
+        flash[:notice] = "You have successfully edit."
+        redirect_to "/profile"
+      else
+        flash[:notice] = "Edit fails."
+        redirect_to "/profile"
+      end
   end
   def create
     if User.where(email_params).exists?
