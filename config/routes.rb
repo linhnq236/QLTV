@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get "profile", to: "users#edit"
   post "update", to: "users#update"
   put "active_acc", to: "users#active_acc"
+  get "listalluser1", to: "users#listalluser"
   post "borrow_show", to: "borrows#create_by_show"
   get "borrows_book/:id", to: "borrows#index"
   resources :books

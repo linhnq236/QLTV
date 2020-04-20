@@ -7,6 +7,7 @@ vn:
     exists: "Email đã tồn tại."
     success: "Thêm thành công."
     fail: "Thêm thất bại."
+    success_update: "cập nhập thành công."
   layout:
     title: "PHẦN MỀM QUẢN LÝ THƯ VIỆN"
     home: "TRANG CHỦ"
@@ -36,6 +37,8 @@ vn:
     library: "THƯ VIỆN"
     mybook: "SÁCH CỦA TÔI"
     acc: "Tài khoản"
+    listalluser: "Tài Khoản 2"
+    cart: "Giỏ hàng"
   mybook:
     code: "Mã sách"
     name: "Tên sách"

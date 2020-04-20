@@ -1,7 +1,28 @@
 $( document ).on('turbolinks:load', function() {
   $(".btn-borrow>.detail").removeAttr("href");
   $(".btn-borrow>.hidden").remove();
+  var bookids=[];
+  var list_bookid;
   $(".bor").click(function(){
+    var borrow = $(this);
+    bookids.push(borrow.data("id"));
+    list_bookid = deduplicate(bookids);
+    if (typeof(Storage) !== "undefined") {
+      console.log(list_bookid);
+      localStorage.setItem("bookids",list_bookid);
+    }
+  })
+  function deduplicate(arr) {
+  let isExist = (arr, x) => arr.indexOf(x) > -1;
+  let ans = [];
+
+  arr.forEach(element => {
+    if(!isExist(ans, element)) ans.push(element);
+  });
+
+  return ans;
+}
+  $(".bor_send").click(function(){
     var borrow = $(this);
     dataBorrow = {
       borrow:{
@@ -26,10 +47,10 @@ $( document ).on('turbolinks:load', function() {
   $("#book_amount").keyup(function(){
     var amount = this.value;
     if (amount > 0){
-      console.log(amount);
-      for(i = 0; i < amount; i++){
-        $(".amount_code").append(`<input name='amount_code[]' placeholder='Nhập mã sách ${i + 1}' class='input_amount form-control'>`);
-      }
+      // console.log(amount);
+      // for(i = 0; i < amount; i++){
+        $(".amount_code").append(`<input name='amount_code' placeholder='Nhập mã sách' class='input_amount form-control'>`);
+      // }
     }else{
         $(".input_amount").remove();
     }
@@ -228,4 +249,57 @@ $( document ).on('turbolinks:load', function() {
       $(this).addClass('active');//danh dau da active
         }
     });
+  $('.cart').click(function(){
+    $.confirm({
+      title: I18n.t("book.new_type"),
+      content:
+      `<form action="" class="formName">
+      <div class="form-group">
+        <input type="text" placeholder="Thể loại mới" class="name form-control" required />
+      </div>
+      </form>`,
+      buttons: {
+          formSubmit: {
+              text: 'GỬI',
+              btnClass: 'btn-blue',
+              action: function () {
+                  var name = this.$content.find('.name').val();
+                  var department_id = this.$content.find('.select_department').val();
+                  if(!name || !department_id){
+                      $.alert('Không được để trống !');
+                      return false;
+                  }
+                  console.log(department_id);
+                  $.ajax({
+                    type: "POST",
+                    url : "/types",
+                    data:{
+                      type:{
+                        name: name,
+                        department_id: department_id
+                      }
+                    },
+                    success: function(repsonse){
+                      $.alert({
+                        title: false,
+                        content: repsonse["notice"],
+                        buttons: {
+                          confirm: function(){
+                            location.reload();
+                          }
+                        }
+                      });
+                    },
+                    error: function(repsonse){
+                      console.log(repsonse);
+                    }
+                  })
+              }
+          },
+          Hủy: {
+            btnClass: 'btn-danger',
+          },
+      },
+    });
+  })
 })

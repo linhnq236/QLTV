@@ -22,8 +22,8 @@ class UsersController < ApplicationController
     end
   end
   def update
-      a = User.where(:id=>current_user.id).update(:name=>params['name'])
-       flash[:notice] = "You have successfully edit."
+      a = User.where(:id=>current_user.id).update(:name=>params['name'],:code=>params['code'],:tel=>params['tel'],:add=>params['add'])
+       flash[:notice] = I18n.t('mes.success_update')
       redirect_to "/books"
   end
   def create
@@ -41,6 +41,10 @@ class UsersController < ApplicationController
   def profile
     @profile = User.joins(:department).select("users.*, departments.*").where(:id => current_user.id)
   end
+  def listalluser
+    @users = User.all
+  end
+
   private
   def user_params
     params.require(:user).permit(:email, :password, :password_confirmation)

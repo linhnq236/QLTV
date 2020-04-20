@@ -4,7 +4,7 @@ class BooksController < ApplicationController
   before_action :check_student , only: [:index]
   before_action :check_active , only: [:index]
   before_action :check_staff , only: [:new, :create, :destroy, :update, :book_detail]
-
+  # before_action :check_equipment
   PER_PAGE = 12
   # GET /books
   # GET /books.json
@@ -78,8 +78,13 @@ class BooksController < ApplicationController
     end
     getBookId = Book.where(name:@book.name)
     getBookId.each do |id_book|
-      params[:amount_code].each do |value|
-        Amount.new(code: value, book_id: id_book.id, active: 0).save
+      # params[:amount].each do |value|
+
+      amount_code = params[:amount_code]
+      amount = @book[:amount]
+      for i in 1..amount
+        rd = rand(100...999)
+        Amount.new(code:"#{amount_code}#{rd}", book_id: id_book.id, active: 0).save
       end
     end
   end

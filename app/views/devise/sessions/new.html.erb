@@ -25,13 +25,13 @@
 										<li>
                         <div class="field">
                           <%= f.label "#{I18n.t('layout.email')}" %><br />
-                          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+                          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "" %>
                         </div>
                       </li>
                       <li>
                         <div class="field">
                           <%= f.label "#{I18n.t('layout.password')}" %><br />
-                          <%= f.password_field :password, autocomplete: "current-password", class: "form-control" %>
+                          <%= f.password_field :password, autocomplete: "current-password", class: "" %>
                         </div>
                       </li>
                         <% if devise_mapping.rememberable? %>
@@ -41,7 +41,7 @@
                         <% end %>
                         <li>
                           <div class="actions">
-                            <%= f.submit "#{I18n.t('button.login')}", class: "form-control btn btn-primary" %>
+                            <%= f.submit "#{I18n.t('button.login')}", class: "btn-dangnhap" %>
                           </div>
                         </li>
                     <% end %>

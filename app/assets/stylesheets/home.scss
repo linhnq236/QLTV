@@ -20,6 +20,7 @@
     position: relative;
     font-weight: 600;
     position: relative;
+		font-family: initial;
 }
 #menu ul li a:before {
     content: '';
@@ -91,6 +92,7 @@
 #menu ul{
 	list-style: none;
 	width: 100%;
+	margin-bottom: 1px;
 }
 #menu ul li{
 	display: inline-block;
@@ -115,7 +117,8 @@
     font-size: 17px;
     color: #004835;
     font-weight: 600;
-    text-align: center
+    text-align: center;
+		font-family: initial;
 }
 /*slide*/
 .intro{
@@ -196,6 +199,12 @@
     margin-left: 21%;
     margin-right: 21%;
 }
+@media only screen and (max-width: 620px){
+  .mota-gioithieu p{
+      margin-left:1%;
+      margin-right:1%;
+  }
+}
 .mota-gioithieu p strong{
     font-weight: 700;
 }
@@ -233,10 +242,12 @@
 @media only screen and (min-width:630px) and (max-width: 930px){
     .slogan h3{
         font-size: 3em;
-
     }
     .slogan h4{
         font-size: 3em;
+    }
+    .slogan {
+        top: 30%;
     }
 }
 @media screen and (max-width:629px){
@@ -445,7 +456,7 @@
 			display: none !important;
 	}
 	main{
-		margin-top: -20% !important;
+		// margin-top: -20% !important;
 	}
 	.bar_menu{
 		display: block !important;
@@ -463,4 +474,10 @@
 			display: block;
 	}
 
+}
+.header_menu{
+	padding:0px 0px!important;
+}
+.rolemain{
+	margin-top: -2.6%;
 }

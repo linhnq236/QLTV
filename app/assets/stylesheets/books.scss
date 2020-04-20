@@ -80,6 +80,7 @@
   font-size: 2em;
   font-weight: 600;
   line-height: 1.1;
+	font-family: initial;
 }
 .dropdown{
 	width: auto;
@@ -116,9 +117,11 @@
 }
 .dropdown li ul li a{
 	padding: 2%;
+	font-family: initial;
 }
 .dropdown h5{
 	padding: 2%;
+	font-family: initial;
 }
 .dropdown h5:hover{
 	background: #1c7ad9;

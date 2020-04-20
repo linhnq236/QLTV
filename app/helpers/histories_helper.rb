@@ -10,7 +10,7 @@ module HistoriesHelper
       if status == 0
         return t('mybook.finish')
       else
-        return t('mybook.lose')
+        return t('mybook.finish')
       end
   end
 end
