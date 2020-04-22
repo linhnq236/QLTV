@@ -9,6 +9,7 @@ vn:
     fail: "Thêm thất bại."
     success_update: "cập nhập thành công."
   layout:
+    cart: "Giỏ hàng"
     title: "PHẦN MỀM QUẢN LÝ THƯ VIỆN"
     home: "TRANG CHỦ"
     equipment: "THIẾT BỊ"

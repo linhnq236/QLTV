@@ -1,6 +1,5 @@
 $( document ).on('turbolinks:load', function() {
   var my = setInterval(autoload, 1000);
-  console.log(gon.equipment);
   function autoload(){
     $.each(gon.equipment, function( index, value ) {
       turnoff(value["timer"], value["timeout"], value["id"]);

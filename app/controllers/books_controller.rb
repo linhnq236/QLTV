@@ -4,6 +4,7 @@ class BooksController < ApplicationController
   before_action :check_student , only: [:index]
   before_action :check_active , only: [:index]
   before_action :check_staff , only: [:new, :create, :destroy, :update, :book_detail]
+  skip_before_action :verify_authenticity_token
   # before_action :check_equipment
   PER_PAGE = 12
   # GET /books
@@ -112,7 +113,7 @@ class BooksController < ApplicationController
       format.json { head :no_content }
     end
   end
-
+  
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_book

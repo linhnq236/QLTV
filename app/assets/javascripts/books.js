@@ -250,56 +250,69 @@ $( document ).on('turbolinks:load', function() {
         }
     });
   $('.cart').click(function(){
-    $.confirm({
-      title: I18n.t("book.new_type"),
-      content:
-      `<form action="" class="formName">
-      <div class="form-group">
-        <input type="text" placeholder="Thể loại mới" class="name form-control" required />
-      </div>
-      </form>`,
-      buttons: {
-          formSubmit: {
-              text: 'GỬI',
-              btnClass: 'btn-blue',
-              action: function () {
-                  var name = this.$content.find('.name').val();
-                  var department_id = this.$content.find('.select_department').val();
-                  if(!name || !department_id){
-                      $.alert('Không được để trống !');
-                      return false;
-                  }
-                  console.log(department_id);
-                  $.ajax({
-                    type: "POST",
-                    url : "/types",
-                    data:{
-                      type:{
-                        name: name,
-                        department_id: department_id
-                      }
-                    },
-                    success: function(repsonse){
-                      $.alert({
-                        title: false,
-                        content: repsonse["notice"],
-                        buttons: {
-                          confirm: function(){
-                            location.reload();
-                          }
-                        }
-                      });
-                    },
-                    error: function(repsonse){
-                      console.log(repsonse);
-                    }
-                  })
-              }
-          },
-          Hủy: {
-            btnClass: 'btn-danger',
-          },
+    console.log(localStorage.bookids);
+    $.ajax({
+      type: "POST",
+      url : "/api/cart",
+      data:{
+          bookids: localStorage.bookids,
       },
-    });
+      success: function(repsonse){
+        var html = '';
+        $.each(repsonse['data'], function( index, value ) {
+          $.each(value, function(index1, value1){
+            console.log(value1);
+            html += `
+              <div class="col-sm-3">${value1["image"]}</div>
+              <div class="col-sm-3">${value1["name"]}</div>
+              <div class="col-sm-3">${value1["author_name"]}</div>
+              <div class="col-sm-3">
+                <i class="fa fa-trash"> </i>
+              </div>
+            `
+          })
+        })
+        $.confirm({
+          columnClass: 'col-md-12',
+          closeIcon: true,
+          closeIconClass: 'fa fa-close',
+          title: I18n.t("layout.cart"),
+          content:
+          `<form action="" class="formName">
+            <div class="row">
+              <div class="col-sm-3">Hình ảnh</div>
+              <div class="col-sm-3">Tên sách</div>
+              <div class="col-sm-3">Tác giả</div>
+              <div class="col-sm-3">Hủy</div>
+            </div>
+            <div class="row">
+              ${html}
+            </div>
+          </form>`,
+          buttons: {
+              formSubmit: {
+                  text: 'Submit',
+                  btnClass: 'btn-blue',
+                  action: function () {
+                      var name = this.$content.find('.name').val();
+                      if(!name){
+                          $.alert('provide a valid name');
+                          return false;
+                      }
+                      $.alert('Your name is ' + name);
+                  }
+              },
+              cancel: function () {
+                  //close
+              },
+          },
+        })
+
+      },
+      error: function(repsonse){
+        console.log(repsonse);
+      }
+    })
+
   })
 })

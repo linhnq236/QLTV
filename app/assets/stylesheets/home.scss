@@ -56,7 +56,30 @@
     color: #b05c1e;
 		background: none !important;
 }
-
+#menu ul li:hover span:before{
+		width: 50%;
+		transform: translateX(100%);
+}
+#menu ul li:hover span::after {
+		width: 50%;
+		transform: translateX(-100%);
+}
+#menu span:hover{
+		color: #b05c1e;
+		background: none !important;
+}
+.cart{
+		text-decoration: none;
+    text-transform: uppercase;
+    display: block;
+    font-size: 17px;
+    color: #004835;
+    transition: all .3s ease-in-out;
+    font-weight: 600;
+    position: relative;
+    font-family: initial;
+		cursor: pointer;
+}
 .left-menu{
     width: calc(51% - 83px);
     float: left;
