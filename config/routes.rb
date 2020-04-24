@@ -38,8 +38,10 @@ Rails.application.routes.draw do
     end
     namespace "api" do
       resources :authors
+      resources :borrows
       resources :books
       post "cart", to: "books#cart"
+      post "cart_errors", to: "books#cart_errors"
     end
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

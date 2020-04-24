@@ -8,9 +8,9 @@ $( document ).on('turbolinks:load', function() {
     bookids.push(borrow.data("id"));
     list_bookid = deduplicate(bookids);
     if (typeof(Storage) !== "undefined") {
-      console.log(list_bookid);
       localStorage.setItem("bookids",list_bookid);
     }
+    $.alert("Them thanh cong");
   })
   function deduplicate(arr) {
   let isExist = (arr, x) => arr.indexOf(x) > -1;
@@ -249,70 +249,122 @@ $( document ).on('turbolinks:load', function() {
       $(this).addClass('active');//danh dau da active
         }
     });
+  // show vào giỏ hàng
   $('.cart').click(function(){
-    console.log(localStorage.bookids);
+    call_cart();
+  })
+  // Get data để show ra giỏ hàng
+  function call_cart(){
     $.ajax({
       type: "POST",
       url : "/api/cart",
       data:{
-          bookids: localStorage.bookids,
+        bookids: localStorage.bookids,
       },
       success: function(repsonse){
         var html = '';
+        var html_err = '';
         $.each(repsonse['data'], function( index, value ) {
           $.each(value, function(index1, value1){
-            console.log(value1);
             html += `
-              <div class="col-sm-3">${value1["image"]}</div>
-              <div class="col-sm-3">${value1["name"]}</div>
-              <div class="col-sm-3">${value1["author_name"]}</div>
-              <div class="col-sm-3">
-                <i class="fa fa-trash"> </i>
+              <div class="col-sm-4 cart_image">
+                <input type="checkbox" value="${value1["id"]}" class="float-left item cart_align">
+                ${value1["image"]}
+              </div>
+              <div class="col-sm-4">
+                <div class="cart_align">${value1["name"]}</div>
+              </div>
+              <div class="col-sm-4">
+                <div class="cart_align">${value1["author_name"]}</div>
               </div>
             `
           })
         })
         $.confirm({
-          columnClass: 'col-md-12',
+          columnClass: 'col-md-10',
           closeIcon: true,
           closeIconClass: 'fa fa-close',
           title: I18n.t("layout.cart"),
           content:
-          `<form action="" class="formName">
-            <div class="row">
-              <div class="col-sm-3">Hình ảnh</div>
-              <div class="col-sm-3">Tên sách</div>
-              <div class="col-sm-3">Tác giả</div>
-              <div class="col-sm-3">Hủy</div>
+          `<form action="" class="formName col-md-12">
+            <div class="row text-center">
+              <div class="col-sm-4"><input type="checkbox" class="float-left all_item">Hình ảnh</div>
+              <div class="col-sm-4">Tên sách</div>
+              <div class="col-sm-4">Tác giả</div>
             </div>
-            <div class="row">
+            <div class="row text-center">
               ${html}
             </div>
           </form>`,
           buttons: {
+              Hủy:{
+                btnClass: 'btn-secondary cancel float-right',
+              },
               formSubmit: {
-                  text: 'Submit',
-                  btnClass: 'btn-blue',
+                  text: 'Gửi',
+                  btnClass: 'btn-primary submit float-right',
                   action: function () {
-                      var name = this.$content.find('.name').val();
-                      if(!name){
-                          $.alert('provide a valid name');
-                          return false;
-                      }
-                      $.alert('Your name is ' + name);
+                    dataBorrow = {
+                      bookids: localStorage.bookids
+                    };
+                    $.ajax({
+                        type: 'POST',
+                        url: "/api/borrows",
+                        data: dataBorrow,
+                        success: function(repsonse) {
+                          localStorage.clear();
+                          $.ajax({
+                            type: "POST",
+                            url : "/api/cart_errors",
+                            data:{
+                                bookids: repsonse["data"].join(","),
+                            },
+                            success: function(repsonse){
+                              $.each(repsonse['data'], function( index, value ) {
+                                $.each(value, function(index1, value1){
+                                  html_err += `<div>Sách ${value1["name"]} của tác giả ${value1["author_name"]} đã được mược hoặc đã hết số lượng.</div>`
+                                })
+                              })
+                              $.alert({
+                                title: false,
+                                content: `${html_err}`,
+                              });
+                            }
+                          })
+
+                        },
+                        error: function(repsonse) {
+                          console.log(repsonse);
+                        }
+                    })
                   }
               },
-              cancel: function () {
-                  //close
+              Xóa: {
+                  btnClass: 'btn-danger delete float-left',
+                  action: function(){
+                    var idItems = [];
+                    var idItem = this.$content.find('.item:checked').val();
+                    $.each($(".item:checked"), function(){
+                        idItems.push($(this).val());
+                    });
+                    if(!idItem){
+                        $.alert('Chua chon san pham');
+                        return false;
+                    }
+                  // removeItems = idItems.join(",");
+                  $.each(idItems, function(index, value){
+                    idItems = localStorage.bookids.replace(value, "");
+                    localStorage.setItem("bookids",idItems);
+                  })
+                  call_cart();
+                }
               },
           },
         })
-
       },
       error: function(repsonse){
         console.log(repsonse);
       }
     })
-
-  })
+  }
 })

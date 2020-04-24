@@ -33,7 +33,29 @@
     transition: .5s;
     mix-blend-mode: multiply;
 }
+.cart:before {
+    content: '';
+    width: 0px;
+    height: 3px;
+    background: #004835;
+    position: absolute;
+    top: 120%;
+    left: 0;
+    transition: .5s;
+    mix-blend-mode: multiply;
+}
 #menu ul li a:after {
+    content: '';
+    width: 0px;
+    height: 3px;
+    background: #541304;
+    position: absolute;
+    top: 120%;
+    right: 0;
+    transition: .5s;
+    mix-blend-mode: multiply;
+}
+.cart:after {
     content: '';
     width: 0px;
     height: 3px;
@@ -121,6 +143,21 @@
 	display: inline-block;
 	padding: 7px 1px 7px 1px;
 }
+.blink {
+  animation: blink-animation 1s steps(5, start) infinite;
+  -webkit-animation: blink-animation 1s steps(5, start) infinite;
+}
+@keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
+@-webkit-keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
+
 .chitietmenu{
     margin: auto;
     width: 100%;
@@ -502,5 +539,5 @@
 	padding:0px 0px!important;
 }
 .rolemain{
-	margin-top: -2.6%;
+	margin-top: -2%;
 }
