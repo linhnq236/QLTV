@@ -11,4 +11,10 @@ module BorrowsHelper
       return I18n.t("book.borrowed")
     end
   end
+  def confirm val1,val2,active
+    str = "selected id=ds_select ds=1";
+    if val1==val2 && active==true
+      return str
+    end
+  end
 end

@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get "profile", to: "users#edit"
   post "update", to: "users#update"
   put "active_acc", to: "users#active_acc"
+  get "listalluser1", to: "users#listalluser"
   post "borrow_show", to: "borrows#create_by_show"
   get "borrows_book/:id", to: "borrows#index"
   resources :books
@@ -30,9 +31,17 @@ Rails.application.routes.draw do
     get "introduce", to: "home#introduce"
     devise_for :users
     get "/logout", to: "devise/registrations#destroy "
-    namespace "api" do
+    namespace "admin" do
       root to: "equipment#index"
+      resources :users
       resources :equipment
+    end
+    namespace "api" do
+      resources :authors
+      resources :borrows
+      resources :books
+      post "cart", to: "books#cart"
+      post "cart_errors", to: "books#cart_errors"
     end
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

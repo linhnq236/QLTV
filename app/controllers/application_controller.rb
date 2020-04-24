@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   around_action :switch_locale
   # before_action :profile_user
   before_action :set_current_user
+  before_action :check_equipment
 
 
   dino_blink = require "dino_blink"
@@ -43,6 +44,10 @@ class ApplicationController < ActionController::Base
 
    def set_current_user
      User.current = current_user
+   end
+
+   def check_equipment
+     gon.equipment = Equipment.all
    end
 
   private
