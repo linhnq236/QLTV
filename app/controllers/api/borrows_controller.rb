@@ -4,7 +4,6 @@ module Api
 
     def create
       bookids = params[:bookids]
-      byebug
       array_errors = []
       bookids.split(",").each do |id|
         if Borrow.where(book_id: id, user_id: current_user.id).exists?

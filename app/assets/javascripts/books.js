@@ -319,6 +319,13 @@ $( document ).on('turbolinks:load', function() {
                               bookids: repsonse["data"].join(","),
                           },
                           success: function(repsonse){
+                            if(repsonse["data"].length == 0){
+                              $.alert({
+                                title: false,
+                                content: "Gủi thành công",
+                              });
+                              return false;
+                            }
                             $.each(repsonse['data'], function( index, value ) {
                               $.each(value, function(index1, value1){
                                 html_err += `<div>Sách ${value1["name"]} của tác giả ${value1["author_name"]} đã được mược hoặc đã hết số lượng.</div>`
