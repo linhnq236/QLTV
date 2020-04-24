@@ -30,8 +30,9 @@ Rails.application.routes.draw do
     get "introduce", to: "home#introduce"
     devise_for :users
     get "/logout", to: "devise/registrations#destroy "
-    namespace "api" do
+    namespace "admin" do
       root to: "equipment#index"
+      resources :users
       resources :equipment
     end
   end
