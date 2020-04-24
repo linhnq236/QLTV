@@ -249,8 +249,8 @@ $( document ).on('turbolinks:load', function() {
   $('.cart').click(function(){
     call_cart();
   })
-  size = localStorage.bookids.replace(",", "");
-  $(".cart_size").html(size.length);
+  // size = localStorage.bookids.replace(",", "");
+  // $(".cart_size").html(size.length);
 
   // Get data để show ra giỏ hàng
   function call_cart(){

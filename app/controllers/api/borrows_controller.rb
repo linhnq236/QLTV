@@ -4,9 +4,11 @@ module Api
 
     def create
       bookids = params[:bookids]
+      byebug
       array_errors = []
       bookids.split(",").each do |id|
-        if Borrow.where(book_id: id, user_id: current_user.id).exists? || check_amount_book(id) == true
+        if Borrow.where(book_id: id, user_id: current_user.id).exists?
+          # || check_amount_book(id) == true
           array_errors.push(id)
         else
           @borrow = Borrow.new(book_id: id, user_id: current_user.id, allow: 0).save
@@ -15,8 +17,6 @@ module Api
       render json: {data: array_errors}
     end
   end
-
-  private
 
   def check_amount_book id
     amount = Book.find(id).amount
