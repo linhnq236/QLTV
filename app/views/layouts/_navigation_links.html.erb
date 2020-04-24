@@ -4,6 +4,7 @@
 				<ul>
 					<div class="left-menu">
 						<% if user_signed_in? %>
+
 						    <% if current_user.admin == 1%>
 								<li>
 									<%= link_to(I18n.t('layout.equipment'), controller_equipment_path) %>
@@ -14,18 +15,26 @@
 								<li>
 									<%= link_to(I18n.t('layout.history'),'/histories') %>
 								</li>
+
+
 						    <% elsif  current_user.admin == 2%>
 								<li>
-									<%= link_to(I18n.t('layout.logout'), destroy_user_session_path, method: :delete) %>
+									<%= link_to(I18n.t('layout.listalluser'), '/listalluser1') %>
 								</li>
+
+
 						    <% else %>
 								<li>
 									<%= link_to(I18n.t('layout.mybook'), mybook_path) %>
 								</li>
 								<li>
+									<span class="cart"><%=I18n.t('layout.cart')%></span>
+								</li>
+								<li>
 									<%= link_to(I18n.t('layout.book'), '/books') %>
 								</li>
 						    <% end%>
+
 						<% end %>
 						<li>
 							<%= link_to(I18n.t('layout.introduce'), introduce_path) %>

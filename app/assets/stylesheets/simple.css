@@ -3,9 +3,9 @@
  */
 main {
   background-color: #eee;
-  padding-bottom: 80px;
+  /* padding-bottom: 80px; */
   width: 100%;
-  min-height: 800px;
+  /* min-height: 800px; */
   }
 header {
   border: 1px solid #d4d4d4;
@@ -49,5 +49,10 @@ ul.nav li a {
   color: #b94a48;
 }
 .mtop {
-    margin-top: 9rem!important;
+    margin-top: 9rem;
+}
+@media (max-width: 759px){
+  .mtop{
+    margin-top: 0px!important;
+  }
 }

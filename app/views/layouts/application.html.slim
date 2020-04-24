@@ -33,15 +33,15 @@ html
     == javascript_include_tag '/assets/swiper.min.js', 'data-turbolinks-track' => 'reload'
     == stylesheet_link_tag "/assets/swiper.css", :media => 'all', 'data-turbolinks-track' => 'reload'
     == stylesheet_link_tag "/assets/swiper.min.css", :media => 'all', 'data-turbolinks-track' => 'reload'
-  body.container-fluid.mtop
-    header.navbar.fixed-top.nav_header
+  body.container-fluid.mtop.ntop
+    header.navbar.fixed-top.nav_header.header_menu
       == render 'layouts/navigation'
       /== render 'layouts/share/search' if user_signed_in? &&current_user.admin == 0
     <div class="bar_menu">
   		<i class="fa fa-bars"></i>
         == render 'layouts/share/app_navigation'
   	</div>
-    main[role="main"]
+    main.rolemain[role="main"]
       == render 'layouts/messages'
       == yield
       == include_gon

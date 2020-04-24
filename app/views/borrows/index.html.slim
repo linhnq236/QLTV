@@ -31,17 +31,21 @@ table#dataTableBorrow.table.table-striped.table-bordered.table-sm cellspacing="0
         tr
           td
             - amountidtem = 0
+            <select class="select_code">
+            option value="0" mã sách
             - @amounts.each do |amount|
-              - if amount.book_id == b.book_id
-                - if amount.user_id == b.user_id && amount.active == true
-                  - amountidtem = amount.id
-                  span.code_check data-amountid ="#{amount.id}"
-                    = amount.code
-                  br
-                - elsif amount.active == false
-                  <input type="radio" name="code" class="code" value="#{amount.id}">
-                  = amount.code
-                  br
+              /- if amount.book_id == b.book_id
+              /  - if amount.user_id == b.user_id && amount.active == true
+              - amountidtem = amount.id
+              /    span.code_check data-amountid ="#{amount.id}"
+              /      = amount.code
+              /    br
+              /  - elsif amount.active == false
+                / <input type="radio" name="code" class="code" value="#{amount.id}">
+              <option class="code" name="code" value="#{amount.id}" #{confirm(amount.book_id,b.book_id,amount.active)}>
+               = amount.code
+              </option>
+            </select>
           td
             = b.book&.name
           td

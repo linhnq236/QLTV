@@ -1,7 +1,28 @@
 $( document ).on('turbolinks:load', function() {
   $(".btn-borrow>.detail").removeAttr("href");
   $(".btn-borrow>.hidden").remove();
+  var bookids=[];
+  var list_bookid;
   $(".bor").click(function(){
+    var borrow = $(this);
+    bookids.push(borrow.data("id"));
+    list_bookid = deduplicate(bookids);
+    if (typeof(Storage) !== "undefined") {
+      console.log(list_bookid);
+      localStorage.setItem("bookids",list_bookid);
+    }
+  })
+  function deduplicate(arr) {
+  let isExist = (arr, x) => arr.indexOf(x) > -1;
+  let ans = [];
+
+  arr.forEach(element => {
+    if(!isExist(ans, element)) ans.push(element);
+  });
+
+  return ans;
+}
+  $(".bor_send").click(function(){
     var borrow = $(this);
     dataBorrow = {
       borrow:{
@@ -26,10 +47,10 @@ $( document ).on('turbolinks:load', function() {
   $("#book_amount").keyup(function(){
     var amount = this.value;
     if (amount > 0){
-      console.log(amount);
-      for(i = 0; i < amount; i++){
-        $(".amount_code").append(`<input name='amount_code[]' placeholder='Nhập mã sách ${i + 1}' class='input_amount form-control'>`);
-      }
+      // console.log(amount);
+      // for(i = 0; i < amount; i++){
+        $(".amount_code").append(`<input name='amount_code' placeholder='Nhập mã sách' class='input_amount form-control'>`);
+      // }
     }else{
         $(".input_amount").remove();
     }
@@ -228,4 +249,70 @@ $( document ).on('turbolinks:load', function() {
       $(this).addClass('active');//danh dau da active
         }
     });
+  $('.cart').click(function(){
+    console.log(localStorage.bookids);
+    $.ajax({
+      type: "POST",
+      url : "/api/cart",
+      data:{
+          bookids: localStorage.bookids,
+      },
+      success: function(repsonse){
+        var html = '';
+        $.each(repsonse['data'], function( index, value ) {
+          $.each(value, function(index1, value1){
+            console.log(value1);
+            html += `
+              <div class="col-sm-3">${value1["image"]}</div>
+              <div class="col-sm-3">${value1["name"]}</div>
+              <div class="col-sm-3">${value1["author_name"]}</div>
+              <div class="col-sm-3">
+                <i class="fa fa-trash"> </i>
+              </div>
+            `
+          })
+        })
+        $.confirm({
+          columnClass: 'col-md-12',
+          closeIcon: true,
+          closeIconClass: 'fa fa-close',
+          title: I18n.t("layout.cart"),
+          content:
+          `<form action="" class="formName">
+            <div class="row">
+              <div class="col-sm-3">Hình ảnh</div>
+              <div class="col-sm-3">Tên sách</div>
+              <div class="col-sm-3">Tác giả</div>
+              <div class="col-sm-3">Hủy</div>
+            </div>
+            <div class="row">
+              ${html}
+            </div>
+          </form>`,
+          buttons: {
+              formSubmit: {
+                  text: 'Submit',
+                  btnClass: 'btn-blue',
+                  action: function () {
+                      var name = this.$content.find('.name').val();
+                      if(!name){
+                          $.alert('provide a valid name');
+                          return false;
+                      }
+                      $.alert('Your name is ' + name);
+                  }
+              },
+              cancel: function () {
+                  //close
+              },
+          },
+        })
+
+      },
+      error: function(repsonse){
+        console.log(repsonse);
+      }
+    })
+
+  })
 })
