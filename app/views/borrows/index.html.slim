@@ -52,10 +52,10 @@ table#dataTableBorrow.table.table-striped.table-bordered.table-sm cellspacing="0
             = format(b.created_at)
           td
             - if b.allow == 0
-              <button class="btn btn-primary dis yes" data-userid="#{b.user_id}" data-bookid="#{b.book_id}" disabled="disabled">#{I18n.t('borrow.y')}</button>
-              <button class="btn btn-danger">#{I18n.t('borrow.n')}</button>
+                <button class="btn btn-primary dis yes" data-userid="#{b.user_id}" data-bookid="#{b.book_id}" disabled="disabled">#{I18n.t('borrow.y')}</button>
+                <button class="btn btn-danger">#{I18n.t('borrow.n')}</button>
             - else
-              <button class="btn btn-primary pay" data-userid="#{b.user_id}" data-bookid="#{b.book_id}" data-amountid="#{amountidtem}" data-borrowid="#{b.id}"">#{I18n.t('borrow.pa')}</button>
+                <button class="btn btn-primary pay" data-userid="#{b.user_id}" data-bookid="#{b.book_id}" data-amountid="#{amountidtem}" data-borrowid="#{b.id}"">#{I18n.t('borrow.pa')}</button>
     tfoot
       tr
        th.th-sm #{I18n.t('borrow.book_code')}
