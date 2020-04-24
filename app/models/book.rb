@@ -14,7 +14,7 @@ class Book < ApplicationRecord
 
   def self.search(search_word)
    pattern = "%#{search_word}%"
-   where("books.name LIKE ? OR books.code LIKE ?", pattern,pattern )
+   where("books.name LIKE ?",pattern )
   end
 
   def create_logs

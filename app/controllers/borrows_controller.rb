@@ -2,7 +2,7 @@ class BorrowsController < ApplicationController
   before_action :set_borrow, only: [:show, :edit, :update, :destroy]
   skip_before_action :verify_authenticity_token
   before_action :check_staff, only: [:index]
-  before_action :check_equipment , only: [:index]
+  # before_action :check_equipment, only:[:index]
 
   # GET /borrows
   # GET /borrows.json

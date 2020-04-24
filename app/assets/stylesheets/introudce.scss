@@ -4,7 +4,8 @@
   background-position: center center;
   position: relative;
   background-attachment: fixed;
-  height: 525px;
+  height: 43em;
+	font-family: initial;
 }
 .main_conten{
 	max-width: 100%;
@@ -156,6 +157,7 @@
     padding: 40px;
     background-color: rgba(255,255,255,.8);
     max-width: 600px;
+
 }
 .noidung_header_title h3{
 	font-weight: 700;
@@ -225,6 +227,7 @@
 .list1 p{
 	line-height: 1.6;
 	font-size: larger;
+	font-family: initial;
 }
 .dichvu_thongtin{
 	background-image: url(asset_path('thu.png'));
@@ -284,6 +287,9 @@
     text-transform: uppercase;
     color: #004835;
     margin: 0 0 20px;
+}
+.boxtitle_noidung h3{
+	font-weight: 600;
 }
 .boxlist_noidung p{
 	font-weight: 300;

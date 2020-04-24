@@ -6,10 +6,11 @@ $( document ).on('turbolinks:load', function() {
   }else{
     $(".nav_header").css({"background":"#122d48"})
     $("#menu ul li a ").css({"color":"white"})
-    $("#menu ul li a ").mouseover(function(){
+    $(".cart").css({"color":"white"})
+    $("#menu ul li a, .cart ").mouseover(function(){
       $(this).css({"color":"blue"})
     })
-    $("#menu ul li a ").mouseout(function(){
+    $("#menu ul li a, .cart ").mouseout(function(){
       $(this).css({"color":"white"})
     })
     $("#text").css({"color":"white"})

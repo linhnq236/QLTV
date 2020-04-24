@@ -20,6 +20,7 @@
     position: relative;
     font-weight: 600;
     position: relative;
+		font-family: initial;
 }
 #menu ul li a:before {
     content: '';
@@ -32,7 +33,29 @@
     transition: .5s;
     mix-blend-mode: multiply;
 }
+.cart:before {
+    content: '';
+    width: 0px;
+    height: 3px;
+    background: #004835;
+    position: absolute;
+    top: 120%;
+    left: 0;
+    transition: .5s;
+    mix-blend-mode: multiply;
+}
 #menu ul li a:after {
+    content: '';
+    width: 0px;
+    height: 3px;
+    background: #541304;
+    position: absolute;
+    top: 120%;
+    right: 0;
+    transition: .5s;
+    mix-blend-mode: multiply;
+}
+.cart:after {
     content: '';
     width: 0px;
     height: 3px;
@@ -55,7 +78,30 @@
     color: #b05c1e;
 		background: none !important;
 }
-
+#menu ul li:hover span:before{
+		width: 50%;
+		transform: translateX(100%);
+}
+#menu ul li:hover span::after {
+		width: 50%;
+		transform: translateX(-100%);
+}
+#menu span:hover{
+		color: #b05c1e;
+		background: none !important;
+}
+.cart{
+		text-decoration: none;
+    text-transform: uppercase;
+    display: block;
+    font-size: 17px;
+    color: #004835;
+    transition: all .3s ease-in-out;
+    font-weight: 600;
+    position: relative;
+    font-family: initial;
+		cursor: pointer;
+}
 .left-menu{
     width: calc(51% - 83px);
     float: left;
@@ -91,11 +137,27 @@
 #menu ul{
 	list-style: none;
 	width: 100%;
+	margin-bottom: 1px;
 }
 #menu ul li{
 	display: inline-block;
 	padding: 7px 1px 7px 1px;
 }
+.blink {
+  animation: blink-animation 1s steps(5, start) infinite;
+  -webkit-animation: blink-animation 1s steps(5, start) infinite;
+}
+@keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
+@-webkit-keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
+
 .chitietmenu{
     margin: auto;
     width: 100%;
@@ -115,7 +177,8 @@
     font-size: 17px;
     color: #004835;
     font-weight: 600;
-    text-align: center
+    text-align: center;
+		font-family: initial;
 }
 /*slide*/
 .intro{
@@ -196,6 +259,12 @@
     margin-left: 21%;
     margin-right: 21%;
 }
+@media only screen and (max-width: 620px){
+  .mota-gioithieu p{
+      margin-left:1%;
+      margin-right:1%;
+  }
+}
 .mota-gioithieu p strong{
     font-weight: 700;
 }
@@ -233,10 +302,12 @@
 @media only screen and (min-width:630px) and (max-width: 930px){
     .slogan h3{
         font-size: 3em;
-
     }
     .slogan h4{
         font-size: 3em;
+    }
+    .slogan {
+        top: 30%;
     }
 }
 @media screen and (max-width:629px){
@@ -445,7 +516,7 @@
 			display: none !important;
 	}
 	main{
-		margin-top: -20% !important;
+		// margin-top: -20% !important;
 	}
 	.bar_menu{
 		display: block !important;
@@ -463,4 +534,10 @@
 			display: block;
 	}
 
+}
+.header_menu{
+	padding:0px 0px!important;
+}
+.rolemain{
+	margin-top: -2%;
 }

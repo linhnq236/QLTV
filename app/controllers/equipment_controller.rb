@@ -14,9 +14,9 @@ class EquipmentController < ApplicationController
     @equipment = Equipment.all
     gon.equipment = Equipment.all
     board = Dino::Board.new(Dino::TxRx.new)
-    led = Dino::Components::Led.new(pin: 13, board: board)
-    led1 = Dino::Components::Led.new(pin: 14, board: board)
-    led2 = Dino::Components::Led.new(pin: 15, board: board)
+    led = Dino::Components::Led.new(pin: 5, board: board)
+    led1 = Dino::Components::Led.new(pin: 4, board: board)
+    led2 = Dino::Components::Led.new(pin: 14, board: board)
 
     @equipment.each do |q|
 

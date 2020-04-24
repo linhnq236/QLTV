@@ -24,14 +24,9 @@ class UsersController < ApplicationController
     end
   end
   def update
-      user = User.where(:id=>current_user.id)
-      if user.update(:name=>params['name'], code: params[:code], tel: params[:tel], add: params[:add])
-        flash[:notice] = "You have successfully edit."
-        redirect_to "/profile"
-      else
-        flash[:notice] = "Edit fails."
-        redirect_to "/profile"
-      end
+      a = User.where(:id=>current_user.id).update(:name=>params['name'],:code=>params['code'],:tel=>params['tel'],:add=>params['add'])
+       flash[:notice] = I18n.t('mes.success_update')
+      redirect_to "/books"
   end
   def create
     if User.where(email_params).exists?
@@ -48,6 +43,10 @@ class UsersController < ApplicationController
   def profile
     @profile = User.joins(:department).select("users.*, departments.*").where(:id => current_user.id)
   end
+  def listalluser
+    @users = User.all
+  end
+
   private
   def user_params
     params.require(:user).permit(:email, :password, :password_confirmation)
