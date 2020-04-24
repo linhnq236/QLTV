@@ -27,8 +27,8 @@
 								<li>
 									<%= link_to(I18n.t('layout.mybook'), mybook_path) %>
 								</li>
-								<li>
-									<span class="cart"><%=I18n.t('layout.cart')%></span>
+								<li class="menu_cart">
+									<span class="cart"><%=I18n.t('layout.cart')%><small class="cart_size"></small></span>
 								</li>
 								<li>
 									<%= link_to(I18n.t('layout.book'), '/books') %>

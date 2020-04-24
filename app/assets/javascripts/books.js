@@ -2,15 +2,17 @@ $( document ).on('turbolinks:load', function() {
   $(".btn-borrow>.detail").removeAttr("href");
   $(".btn-borrow>.hidden").remove();
   var bookids=[];
+  var ids = [];
   var list_bookid;
   $(".bor").click(function(){
     var borrow = $(this);
     bookids.push(borrow.data("id"));
     list_bookid = deduplicate(bookids);
     if (typeof(Storage) !== "undefined") {
+      // localStorage.setItem("bookids",JSON.stringify(list_bookid));
       localStorage.setItem("bookids",list_bookid);
     }
-    $.alert("Them thanh cong");
+    $.alert("Thêm thành công.");
   })
   function deduplicate(arr) {
   let isExist = (arr, x) => arr.indexOf(x) > -1;
@@ -247,6 +249,9 @@ $( document ).on('turbolinks:load', function() {
   $('.cart').click(function(){
     call_cart();
   })
+  size = localStorage.bookids.replace(",", "");
+  $(".cart_size").html(size.length);
+
   // Get data để show ra giỏ hàng
   function call_cart(){
     $.ajax({
