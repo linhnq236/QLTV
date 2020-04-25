@@ -40,8 +40,10 @@ Rails.application.routes.draw do
       resources :authors
       resources :borrows
       resources :books
+      resources :users
       post "cart", to: "books#cart"
       post "cart_errors", to: "books#cart_errors"
+      put "setpassword/:id", to: "users#setpassword"
     end
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

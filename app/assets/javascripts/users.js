@@ -37,24 +37,6 @@ $( document ).on('turbolinks:load', function() {
       }
     })
   })
-  // $(".input_acc").keyup(function(){
-  //   var acc = $(this).val();
-  //   if(acc != ''){
-  //     for(i = 0; i < acc; i++){
-  //       $(".add_acc").append(`
-  //         <div class='row'>
-  //           <div class='col-sm-3'>
-  //             <input type='email' name='email[]' class='form-control form-new-acc email' placeholder='Email tài khoản thứ ${i + 1}'></input>
-  //             <div class='error'></div>
-  //           </div>
-  //         </div>
-  //         `);
-  //     }
-
-    // }else{
-    //   $(".form-new-acc").remove();
-    // }
-  // })
   // Gui data create user -> /users
   function validateEmail($email) {
     var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
@@ -83,6 +65,30 @@ $( document ).on('turbolinks:load', function() {
         })
       }else{
         $(".err").append("Email is not available<br>");
+      }
+    })
+  })
+  $(".changepassword").click(function(){
+    var id = $(this).data("id");
+    console.log(id);
+    $.confirm({
+      title: "Thay doi mat khau",
+      content: "Khoi phuc mac dinh lai password",
+      closeIcon: true,
+      buttons: {
+        confirm: function(){
+          $.ajax({
+            type: "PUT",
+            url: "/api/setpassword/"+id,
+            data: 1,
+            success: function(repsonse){
+              alertMess(repsonse["notice"])
+            },
+            error: function(repsonse){
+              console.log(repsonse);
+            }
+          })
+        }
       }
     })
   })
