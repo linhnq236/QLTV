@@ -52,6 +52,7 @@ gem 'will_paginate-bootstrap4'
 gem "whenever"
 gem "font-awesome-rails"
 gem 'font-awesome-sass', '~> 4.2.0'
+gem 'pivot_table'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 

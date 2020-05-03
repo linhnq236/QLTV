@@ -249,8 +249,24 @@ $( document ).on('turbolinks:load', function() {
   $('.cart').click(function(){
     call_cart();
   })
+  // filler books
+  // $("#input_book").on("keyup", function() {
+  //   var value = $(this).val().toLowerCase();
+  //   $(".row .col-sm-3 .col-product").filter(function() {
+  //     $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+  //   });
+  // });
   // size = localStorage.bookids.replace(",", "");
   // $(".cart_size").html(size.length);
+
+  // loc sach co ten theo chữ cái
+  for (var i = 65; i <= 90; i++) {
+    char = String.fromCharCode(i);
+    $(".show_character").append(`<a class="p-2 text-center" href="/books?char=${char}">${char}</a>`);
+  }
+  $(".show_character").mouseout(function(){
+    $(this).css({"color":"blue"})
+  })
 
   // Get data để show ra giỏ hàng
   function call_cart(){
@@ -287,7 +303,7 @@ $( document ).on('turbolinks:load', function() {
           content:
           `<form action="" class="formName col-md-12">
             <div class="row text-center">
-              <div class="col-sm-4"><input type="checkbox" class="float-left all_item">Hình ảnh</div>
+              <div class="col-sm-4">Hình ảnh</div>
               <div class="col-sm-4">Tên sách</div>
               <div class="col-sm-4">Tác giả</div>
             </div>

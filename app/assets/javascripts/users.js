@@ -92,4 +92,57 @@ $( document ).on('turbolinks:load', function() {
       }
     })
   })
+  // Fillter search user
+  $("#input_user").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#fillteruser tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+  function putDataUser(id, action,disable){
+    $.ajax({
+      type: "PUT",
+      url : "/admin/users/"+id,
+      data: {
+        active: action,
+        dis: disable
+      },
+      success: function(repsonse){
+        // alertMess(repsonse["notice"])
+      },
+      error: function(repsonse){
+        console.log(repsonse);
+      }
+    })
+  }
+  $("#fillteruser tr").click(function(){
+    id = $(this).data("id");
+    disable = $(this).data("disable");
+    $.confirm({
+      icon: 'fa fa-warning',
+      closeIcon: true,
+      title: I18n.t("user.do"),
+      content: I18n.t("mes.user_conf"),
+      buttons:{
+        Xóa: {
+          btnClass: "btn-danger float-right",
+          action: function(){
+            putDataUser(id,3,disable);
+          }
+        },
+        Khóa: {
+          btnClass: "btn-warning float-right",
+          action: function(){
+            putDataUser(id,2,disable);
+          }
+        },
+        MậtKhẩu: {
+          btnClass: "btn-primary float-right",
+          action: function(){
+            putDataUser(id,1,disable);
+          }
+        },
+      }
+    })
+  })
 })
