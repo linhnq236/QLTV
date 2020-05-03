@@ -1,9 +1,13 @@
 <div class="container_right">
-  <div class="active-pink-3 active-pink-4 mb-4">
+  <div class="active-pink-3 active-pink-4 mb-4 p-2">
     <form class="form-inline d-flex md-form form-sm mt-0 search" action="">
       <i class="fa fa-search" aria-hidden="true"></i>
-      <input class="form-control form-control-sm ml-3 w-40" type="text" placeholder="Search" name="search" value="<%= @search %>">
+      <input class="form-control form-control-sm ml-3 w-40" type="text" placeholder="<%=I18n.t("layout.search") %>" name="search" value="<%= @search %>">
     </form>
+    <!-- <input class="form-control" id="input_book" type="text" placeholder="Search.."> -->
+  </div>
+  <div class="show_character">
+
   </div>
   <h2><p>Tất cả loại sách</p></h2>
   <div class="clear"></div>

@@ -7,8 +7,10 @@ table#dataTableBorrow.table.table-striped.table-bordered.table-sm cellspacing="0
   tbody
     - @borrows.each do |borrow|
       tr
-        td
+        <td class="borr_notice borr_notice#{borrow.user_id}" data-userid = "#{borrow.user_id}">
           = borrow.user.code
+          <small class="notice notice#{borrow.user_id}"></small>
+        </td>
         td
           = borrow.user.name
         td

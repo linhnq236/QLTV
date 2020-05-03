@@ -35,4 +35,15 @@ module BorrowsHelper
       end
     end
   end
+  def notice_accept_borrow borrow_users, user
+    count = []
+    borrow_users.each do |u|
+      if u.user_id == user
+        count.push(u.user_id)
+        return count.size
+      else
+        return ""
+      end
+    end
+  end
 end
