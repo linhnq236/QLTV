@@ -1,4 +1,6 @@
 $( document ).on('turbolinks:load', function() {
+  // count notices
+  $(".borrow_notice").text(gon.notices.length);
   // pay book
   $(".pay").click(function(){
     var bookid = $(this).data("bookid");

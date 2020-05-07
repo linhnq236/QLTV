@@ -72,6 +72,8 @@ vn:
     ytsk: "Y tế - sức khỏe"
     nn: "Ngoại ngữ"
     lvtn: "Luận văn tốt nghiệp"
+    ktvt: "Kinh tế vận tải"
+    tg: "Tôn giáo"
     docu: "Tài liệu thư viện"
   borrow:
     success: "Mượn sách %{name} thành công !"

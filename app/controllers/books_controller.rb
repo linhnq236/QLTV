@@ -17,7 +17,7 @@ class BooksController < ApplicationController
       if params[:char].present?
         @books = Book.search(params[:char]).order("created_at DESC").paginate(page: params[:page], per_page: PER_PAGE)
       else
-        @books = Book.all.paginate(page: params[:page], per_page: PER_PAGE)
+        @books = Book.group(:type_id).paginate(page: params[:page], per_page: PER_PAGE)
       end
     end
     @types = Type.all

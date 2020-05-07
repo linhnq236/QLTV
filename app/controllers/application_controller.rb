@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   # before_action :profile_user
   before_action :set_current_user
   before_action :check_equipment
+  before_action :check_notices
 
 
   dino_blink = require "dino_blink"
@@ -52,6 +53,10 @@ class ApplicationController < ActionController::Base
 
    def check_equipment
      gon.equipment = Equipment.all
+   end
+
+   def check_notices
+     gon.notices = Borrow.where(allow: 0)
    end
 
   private

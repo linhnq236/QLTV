@@ -6,6 +6,10 @@ $( document ).on('turbolinks:load', function() {
   var list_bookid;
   $(".bor").click(function(){
     var borrow = $(this);
+    if(bookids.length >= 4){
+      $.alert("Thêm đủ số lượng sách.");
+      return false;
+    }
     bookids.push(borrow.data("id"));
     list_bookid = deduplicate(bookids);
     if (typeof(Storage) !== "undefined") {
@@ -381,6 +385,12 @@ $( document ).on('turbolinks:load', function() {
                 call_cart();
               }
             },
+            Xóa_hết:{
+                btnClass: 'btn-danger delete float-left',
+                action: function(){
+                  localStorage.clear();
+              }
+            }
           },
         })
       },
