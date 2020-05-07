@@ -124,7 +124,9 @@ en:
     notice_common: "GENERAL NOTIFICATION "
     introduce: "INTROUDUCE"
     library: "LIBRARY"
-    cart: "Giỏ hàng"
+    mybook: "My book"
+    cart: "Shopping cart"
+    acc: "Setting"
   button:
     login: "Log in"
   menu:

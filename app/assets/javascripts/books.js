@@ -389,6 +389,7 @@ $( document ).on('turbolinks:load', function() {
                 btnClass: 'btn-danger delete float-left',
                 action: function(){
                   localStorage.clear();
+                  location.reload();
               }
             }
           },
