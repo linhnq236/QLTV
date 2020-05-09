@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   get "show_book/:id", to: "books#show_book"
   get "show_book_detail/:id", to: "books#show_book_detail"
   get "book_detail/:id", to: "books#book_detail"
+  get "book_detail_student/:id", to: "books#book_detail_student"
   resources :publishers
   resources :types
   resources :authors
@@ -47,6 +48,7 @@ Rails.application.routes.draw do
       put "setpassword/:id", to: "users#setpassword"
       post "notices", to: "borrows#notices"
       post "sum_notices", to: "borrows#sum_notices"
+      post "search_book", to: "books#search_book"
     end
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

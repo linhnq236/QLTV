@@ -15,9 +15,11 @@ table#dataTableProcess.table.table-striped.table-bordered.table-sm cellspacing="
         td
           = borrow.book&.name
         td
-          = format_datetime(borrow.created_at)
+          = format_datetime(borrow.updated_at)
         td
           = check_status(borrow.allow)
+          div.time_over
+            = time_borrow(@current_date, format(borrow.updated_at),borrow.allow)
   tfoot
     tr
       th.th-sm #{I18n.t('mybook.code')}

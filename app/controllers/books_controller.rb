@@ -50,6 +50,13 @@ class BooksController < ApplicationController
   def book_detail
     @book = Book.find(params[:id])
   end
+  def book_detail_student
+    @book = Book.find(params[:id])
+    @types = Type.all
+    @authors = Author.all
+    @publishers = Publisher.all
+    @departments = Department.all
+  end
 
   # GET /books/new
   def new

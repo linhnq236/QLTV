@@ -46,4 +46,9 @@ module BorrowsHelper
       end
     end
   end
+  def time_borrow currentdate, date_borrow, allow
+    if currentdate.to_time >= date_borrow.to_time.months_since(2) && allow == 1
+      return "Quá hạn"
+    end
+  end
 end

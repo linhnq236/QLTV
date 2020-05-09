@@ -1,0 +1,19 @@
+<div class="container_right">
+  <%= render "/books/share/search_book"%>
+  <h2><p>Tất cả loại sách</p></h2>
+  <div class="clear"></div>
+  <div class="row">
+    <div class="col-sm-3">
+      <div class="col-product">
+				<div class="col_product1" data-toggle="tooltip" data-html ="true" data-placement="top" title="<%= @book.name%>">
+					<a href="/show_book_detail/<%= @book.id%>"><%= convert_ckeditor(@book.image) %></a>
+					<p><%= @book.name.truncate(27)%></p>
+					<h3><%= @book.author.name%></h3>
+					<div class="col_bottom">
+						<button class="product1_bottom bor" data-id="<%= @book.id%>" type="submit" name="muonsach">Mượn sách</button>
+					</div>
+				</div>
+			</div>
+    </div>
+  </div>
+</div>

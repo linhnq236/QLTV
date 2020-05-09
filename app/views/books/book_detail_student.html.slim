@@ -1,0 +1,7 @@
+div.row
+  div.col-sm-3
+    /= render partial: 'books/share/type', locals: {types: @types, authors: @authors, department: @departments}
+    == render partial: 'books/share/left_menu',  locals: {types: @types, authors: @authors, department: @departments}
+  div.col-sm-9
+    div.row
+      == render partial: 'books/share/book_detail_student', locals: {book: @book }

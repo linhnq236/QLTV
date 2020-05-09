@@ -97,6 +97,7 @@ class BorrowsController < ApplicationController
     @amounts = Amount.all
     @histories = History.where(user_id:current_user.id).order("created_at DESC")
     @users = User.all
+    @current_date = Time.zone.now.to_date
   end
   private
     # Use callbacks to share common setup or constraints between actions.

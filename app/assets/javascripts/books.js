@@ -266,7 +266,7 @@ $( document ).on('turbolinks:load', function() {
   // loc sach co ten theo chữ cái
   for (var i = 65; i <= 90; i++) {
     char = String.fromCharCode(i);
-    $(".show_character").append(`<a class="p-2 text-center" href="/books?char=${char}">${char}</a>`);
+    $(".show_character").append(`<a class="p-1 text-center" href="/books?char=${char}">${char}</a>`);
   }
   $(".show_character").mouseout(function(){
     $(this).css({"color":"blue"})

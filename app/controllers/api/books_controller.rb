@@ -30,5 +30,11 @@ module Api
         render json:{data:books, status: 200}
       end
     end
+
+    def search_book
+      @search = params[:search]
+      @books = Book.search(@search).order("created_at DESC")
+      render json: {data: @books}
+    end
   end
 end
