@@ -13,6 +13,7 @@ div.new_book.d-none
 table#dataTableBook.listall.table.table-striped.table-bordered.table-sm cellspacing="0" width="100%"
   thead
      tr
+      th.th-sm #{I18n.t('book.code')}
       th.th-sm #{I18n.t('book.name')}
       th.th-sm #{I18n.t('book.author')}
       th.th-sm #{I18n.t('book.type')}
@@ -22,6 +23,8 @@ table#dataTableBook.listall.table.table-striped.table-bordered.table-sm cellspac
   tbody
     - @books.each do |book|
       tr
+        td
+          = colection_amount_code(@amounts,book.id)
         td.text-uppercase
           = book.name
         td.text-uppercase
@@ -37,6 +40,7 @@ table#dataTableBook.listall.table.table-striped.table-bordered.table-sm cellspac
           = link_to "#{I18n.t('book.delete')}", "#{book.id}", data: { confirm: "#{I18n.t('mes.delete')}" }, method: :delete, class: "btn btn-danger"
   tfoot
     tr
+      th.th-sm #{I18n.t('book.code')}
       th.th-sm #{I18n.t('book.name')}
       th.th-sm #{I18n.t('book.author')}
       th.th-sm #{I18n.t('book.type')}

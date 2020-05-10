@@ -65,6 +65,7 @@ class BooksController < ApplicationController
     @types = Type.all
     @authors = Author.all
     @publishers = Publisher.all
+    @amounts = Amount.all
     gon.departments = Department.all
   end
 
@@ -91,12 +92,11 @@ class BooksController < ApplicationController
     getBookId = Book.where(name:@book.name)
     getBookId.each do |id_book|
       # params[:amount].each do |value|
-
+      # tách chuỗi có chữ và số thành chuỗi: string.tr("0-9", "")
       amount_code = params[:amount_code]
       amount = @book[:amount]
       for i in 1..amount
-        rd = rand(100...999)
-        Amount.new(code:"#{amount_code}#{rd}", book_id: id_book.id, active: 0).save
+        Amount.new(code:"#{amount_code}#{i}", book_id: id_book.id, active: 0).save
       end
     end
   end

@@ -90,6 +90,7 @@ vn:
     y: "Có"
     n: "Không"
     pa: "Trả sách"
+    note: "Ghi chú"
   book:
     profileuser: "Cập nhật thông tin cá nhân."
     link: "Link"
@@ -115,6 +116,7 @@ vn:
     new_book: "Thêm sách"
     processed: "Đang chờ xử lý"
     borrowed: "Đang mượn"
+    code: "Mã sách"
   history:
     date_pay: "Ngày trả"
   admin:
@@ -164,7 +166,7 @@ vn:
       field_name: "Tên giá trị"
       value_old: "Giá trị cũ"
       value_new: "Giá trị mới"
-      staff_id: "Người thây đổi"
+      staff_id: "Người thay đổi"
       active: "Hoạt động"
       created_at: "Thời gian tạo"
       update_at: "Thời gian chỉnh sửa"

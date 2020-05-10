@@ -27,6 +27,7 @@ table#dataTableBorrow.table.table-striped.table-bordered.table-sm cellspacing="0
         th.th-sm #{I18n.t('borrow.book_code')}
         th.th-sm #{I18n.t('borrow.book_name')}
         th.th-sm #{I18n.t('borrow.date_borrow')}
+        th.th-sm #{I18n.t('borrow.note')}
         th.th-sm #{I18n.t('borrow.allow')}
     tbody
       - @books.each do |b|
@@ -50,7 +51,9 @@ table#dataTableBorrow.table.table-striped.table-bordered.table-sm cellspacing="0
           td
             = b.book&.name
           td
-            = format(b.created_at)
+            = format(b.updated_at)
+          td.time_over.text-center
+            = time_borrow(@current_date,format(b.updated_at),b.allow)
           td
             - if b.allow == 0
               <button class="btn btn-primary dis yes disbook#{b.book_id}" data-userid="#{b.user_id}" data-bookid="#{b.book_id}" disabled="disabled">#{I18n.t('borrow.y')}</button>
@@ -62,4 +65,5 @@ table#dataTableBorrow.table.table-striped.table-bordered.table-sm cellspacing="0
        th.th-sm #{I18n.t('borrow.book_code')}
        th.th-sm #{I18n.t('borrow.book_name')}
        th.th-sm #{I18n.t('borrow.date_borrow')}
+       th.th-sm #{I18n.t('borrow.note')}
        th.th-sm #{I18n.t('borrow.allow')}
