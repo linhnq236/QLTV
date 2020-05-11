@@ -16,7 +16,7 @@ html
     == stylesheet_link_tag "/assets/bootstrap.min.css", :media => 'all', 'data-turbolinks-track' => 'reload'
     == javascript_include_tag '/assets/jquery.min.js', 'data-turbolinks-track' => 'reload'
     /== javascript_include_tag '/assets/popper.min.js', 'data-turbolinks-track' => 'reload'
-    /<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     == stylesheet_link_tag "/assets/jquery-confirm.min.css", :media => 'all', 'data-turbolinks-track' => 'reload'
     == javascript_include_tag '/assets/jquery-latest.min.js', 'data-turbolinks-track' => 'reload'
 
@@ -46,6 +46,12 @@ html
       == render 'layouts/messages'
       == yield
       == include_gon(:init => true)
+      div.chat
+        - if user_signed_in?
+          == image_tag("mes", class:"chatmes cursor")
+      div.form_chat
+        div.close.text-danger.cursor.float-left.mt-0 X
+        == render 'layouts/share/message'
     == render 'layouts/share/footer'
     /div.calendar
       /- month_calendar do |date|
