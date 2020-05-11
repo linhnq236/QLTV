@@ -5,6 +5,7 @@ html
     title
       = content_for?(:title) ? yield(:title) : t("layout.title")
     meta name="description" content="#{content_for?(:description) ? yield(:description) : 'QLTV'}"
+    == action_cable_meta_tag
     == stylesheet_link_tag "application", :media => 'all', 'data-turbolinks-track' => 'reload'
     == javascript_include_tag 'application', 'data-turbolinks-track' => 'reload'
     /== javascript_include_tag '/assets/datatable', 'data-turbolinks-track' => 'reload'
@@ -14,7 +15,7 @@ html
     <link rel="shortcut icon" type="image/png" href="#{asset_path("logo_bds-2730-43760")}">
     == stylesheet_link_tag "/assets/bootstrap.min.css", :media => 'all', 'data-turbolinks-track' => 'reload'
     == javascript_include_tag '/assets/jquery.min.js', 'data-turbolinks-track' => 'reload'
-    == javascript_include_tag '/assets/popper.min.js', 'data-turbolinks-track' => 'reload'
+    /== javascript_include_tag '/assets/popper.min.js', 'data-turbolinks-track' => 'reload'
     /<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     == stylesheet_link_tag "/assets/jquery-confirm.min.css", :media => 'all', 'data-turbolinks-track' => 'reload'
     == javascript_include_tag '/assets/jquery-latest.min.js', 'data-turbolinks-track' => 'reload'
