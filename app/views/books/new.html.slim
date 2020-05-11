@@ -1,4 +1,5 @@
 h1 #{I18n.t('book.title')}
+
 div
   button.new_book_button_down.mr-1.mb-3.btn.btn-success <i class="fa fa-caret-down"></i> #{I18n.t('book.new_book')}
   button.new_book_button_up.d-none.mr-1.mb-3.btn.btn-success <i class="fa fa-caret-up"></i> #{I18n.t('book.new_book')}
@@ -12,7 +13,7 @@ div.new_book.d-none
   == render 'form'
 table#dataTableBook.listall.table.table-striped.table-bordered.table-sm cellspacing="0" width="100%"
   thead
-     tr
+     tr.text-center
       th.th-sm #{I18n.t('book.code')}
       th.th-sm #{I18n.t('book.name')}
       th.th-sm #{I18n.t('book.author')}
@@ -23,10 +24,10 @@ table#dataTableBook.listall.table.table-striped.table-bordered.table-sm cellspac
   tbody
     - @books.each do |book|
       tr
-        td
+        td.text-center.text-uppercase
           = colection_amount_code(@amounts,book.id)
         td.text-uppercase
-          = book.name
+          = link_to book.name, "/book_detail/#{book.id}", class:"nav-link"
         td.text-uppercase
           = book.author.name
         td.text-uppercase
@@ -36,7 +37,7 @@ table#dataTableBook.listall.table.table-striped.table-bordered.table-sm cellspac
         td
           = book.amount
         td
-          = link_to "#{I18n.t('book.detail')}", "/book_detail/#{book.id}", class: "btn btn-primary"
+          button.btn.btn-primary.addbook data-book_id="#{book.id}" data-book_code="#{colection_amount_code(@amounts,book.id)}" data-amount="#{book.amount}" #{I18n.t('book.addbook')}
           = link_to "#{I18n.t('book.delete')}", "#{book.id}", data: { confirm: "#{I18n.t('mes.delete')}" }, method: :delete, class: "btn btn-danger"
   tfoot
     tr

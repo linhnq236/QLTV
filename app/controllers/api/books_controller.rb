@@ -36,5 +36,20 @@ module Api
       @books = Book.search(@search).order("created_at DESC")
       render json: {data: @books}
     end
+
+    def addbook
+      amount = params[:amount]
+      book_id = params[:book_id]
+      book_code = params[:book_code]
+      book = Book.find(book_id)
+      book.update(amount: (book.amount + amount.to_i))
+      am_book = Amount.where(book_id: book_id.to_i)
+      start = am_book.size + 1
+      finish= am_book.size + amount.to_i
+      for i in start..finish
+        Amount.new(code:"#{book_code}#{i}", book_id: book_id, active: 0).save
+      end
+      render json:{notice: t("mes.success")}
+    end
   end
 end

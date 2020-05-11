@@ -45,6 +45,7 @@ vn:
     cart: "Giỏ hàng"
     logs: "Thao tác"
     search: "Tìm kiếm"
+    back: "Quay lại"
   cart:
     empty: "Giỏ hàng trống"
   mybook:
@@ -117,6 +118,7 @@ vn:
     processed: "Đang chờ xử lý"
     borrowed: "Đang mượn"
     code: "Mã sách"
+    addbook: "Thêm"
   history:
     date_pay: "Ngày trả"
   admin:

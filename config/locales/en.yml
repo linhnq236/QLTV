@@ -53,6 +53,8 @@ en:
     delete: "delete"
     listall: "All books"
     new_book: "More books"
+    code: "Code"
+    addbook: "Add"
   user:
     code: "student code"
     name: "First and last name"
@@ -127,6 +129,7 @@ en:
     mybook: "My book"
     cart: "Shopping cart"
     acc: "Setting"
+    back: "Back"
   button:
     login: "Log in"
   menu:

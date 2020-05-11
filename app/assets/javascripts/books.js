@@ -400,4 +400,51 @@ $( document ).on('turbolinks:load', function() {
       }
     })
   }
+  // add book
+  $(".addbook").click(function(){
+    var book_id = $(this).data("book_id");
+    var book_code =  $(this).data("book_code");
+    $.confirm({
+      columnClass: 'col-md-10',
+      closeIcon: true,
+      closeIconClass: 'fa fa-close',
+      title: I18n.t("layout.add"),
+      content:
+      `<form action="" class="formName col-md-12">
+        <input value="${book_code}" disabled>
+        <input type="number" class="amount" placeholder="Nhập số lượng sách thêm">
+      </form>`,
+      buttons: {
+        formSubmit: {
+          text: 'Gửi',
+          btnClass: 'btn-primary submit float-right',
+          action: function () {
+            var amount = this.$content.find('.amount').val();
+            if(!amount){
+                $.alert('Không được để trống hoặc phải nhập số!');
+                return false;
+            }
+            var dataBook = {
+              amount: amount,
+              book_id: book_id,
+              book_code: book_code
+            };
+            console.log(dataBook);
+            $.ajax({
+              type: "POST",
+              url: "/api/addbook",
+              data: dataBook,
+              success: function(repsonse){
+                $.alert(repsonse["notice"]);
+                location.reload();
+              },
+              error: function(repsonse){
+                console.log(repsonse);
+              }
+            })
+          }
+        }
+      }
+    })
+  })
 })
