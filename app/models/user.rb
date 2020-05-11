@@ -6,6 +6,7 @@ class User < ApplicationRecord
   has_many :timetables
   has_many :books
   has_many :histories
+  has_many :messages
 
   validates :email, uniqueness: true
   def self.current

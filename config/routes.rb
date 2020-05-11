@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  mount ActionCable.server => '/cable'
+  resources :messages
   mount Ckeditor::Engine => '/ckeditor'
   resources :users
   get "profile", to: "users#edit"
@@ -43,6 +45,7 @@ Rails.application.routes.draw do
       resources :borrows
       resources :books
       resources :users
+      resources :messages
       post "cart", to: "books#cart"
       post "cart_errors", to: "books#cart_errors"
       put "setpassword/:id", to: "users#setpassword"
