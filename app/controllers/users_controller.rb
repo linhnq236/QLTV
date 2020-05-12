@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
   skip_before_action :verify_authenticity_token
+  before_action :check_equipment , only: [:index]
+
   def index
     @users = User.order("code DESC").where(admin: 0)
   end

@@ -1,0 +1,6 @@
+h1 New message
+- @messages.each do |a|
+  p
+    b #{a.user&.name} :
+    span #{ a.content}
+== render '/messages/share/form'

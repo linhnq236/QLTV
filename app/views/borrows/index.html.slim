@@ -7,8 +7,10 @@ table#dataTableBorrow.table.table-striped.table-bordered.table-sm cellspacing="0
   tbody
     - @borrows.each do |borrow|
       tr
-        td
+        <td class="borr_notice borr_notice#{borrow.user_id}" data-userid = "#{borrow.user_id}">
           = borrow.user.code
+          <small class="notice notice#{borrow.user_id}"></small>
+        </td>
         td
           = borrow.user.name
         td
@@ -25,40 +27,43 @@ table#dataTableBorrow.table.table-striped.table-bordered.table-sm cellspacing="0
         th.th-sm #{I18n.t('borrow.book_code')}
         th.th-sm #{I18n.t('borrow.book_name')}
         th.th-sm #{I18n.t('borrow.date_borrow')}
+        th.th-sm #{I18n.t('borrow.note')}
         th.th-sm #{I18n.t('borrow.allow')}
     tbody
       - @books.each do |b|
         tr
           td
             - amountidtem = 0
-            <select class="select_code">
-            option value="0" mã sách
+            <select class="select_code bookid#{b.book_id}" data-id="#{b.book_id}">
+            option value="" data-bookid="0" mã sách
             - @amounts.each do |amount|
-              /- if amount.book_id == b.book_id
-              /  - if amount.user_id == b.user_id && amount.active == true
               - amountidtem = amount.id
-              /    span.code_check data-amountid ="#{amount.id}"
-              /      = amount.code
-              /    br
-              /  - elsif amount.active == false
-                / <input type="radio" name="code" class="code" value="#{amount.id}">
-              <option class="code" name="code" value="#{amount.id}" #{confirm(amount.book_id,b.book_id,amount.active)}>
-               = amount.code
-              </option>
+              - if amount.book_id == b.book_id
+                - if b.user_id == amount.user_id
+                  <option class="code option#{amount.book_id}" name="code" value="#{amount.id}" data-bookid="#{amount.book_id}" #{confirm(amount.book_id,b.book_id,amount.active,b.user_id, amount.user_id)}>
+                  = amount.code
+                - else
+                  - if amount.active == false
+                    <option class="code option#{amount.book_id}" name="code" value="#{amount.id}" data-bookid="#{amount.book_id}" #{confirm(amount.book_id,b.book_id,amount.active,b.user_id, amount.user_id)}>
+                    = amount.code
+                </option>
             </select>
           td
             = b.book&.name
           td
-            = format(b.created_at)
+            = format(b.updated_at)
+          td.time_over.text-center
+            = time_borrow(@current_date,format(b.updated_at),b.allow)
           td
             - if b.allow == 0
-                <button class="btn btn-primary dis yes" data-userid="#{b.user_id}" data-bookid="#{b.book_id}" disabled="disabled">#{I18n.t('borrow.y')}</button>
-                <button class="btn btn-danger">#{I18n.t('borrow.n')}</button>
+              <button class="btn btn-primary dis yes disbook#{b.book_id}" data-userid="#{b.user_id}" data-bookid="#{b.book_id}" disabled="disabled">#{I18n.t('borrow.y')}</button>
+              <button class="btn btn-danger">#{I18n.t('borrow.n')}</button>
             - else
-                <button class="btn btn-primary pay" data-userid="#{b.user_id}" data-bookid="#{b.book_id}" data-amountid="#{amountidtem}" data-borrowid="#{b.id}"">#{I18n.t('borrow.pa')}</button>
+              <button class="btn btn-primary pay" data-userid="#{b.user_id}" data-bookid="#{b.book_id}" data-amountid="#{amountidtem}" data-borrowid="#{b.id}"">#{I18n.t('borrow.pa')}</button>
     tfoot
       tr
        th.th-sm #{I18n.t('borrow.book_code')}
        th.th-sm #{I18n.t('borrow.book_name')}
        th.th-sm #{I18n.t('borrow.date_borrow')}
+       th.th-sm #{I18n.t('borrow.note')}
        th.th-sm #{I18n.t('borrow.allow')}

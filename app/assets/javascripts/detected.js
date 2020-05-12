@@ -97,9 +97,11 @@ $( document ).on('turbolinks:load', function() {
          }
          console.log("on");
          setTimeout(turn_led_on(1), 3000)
+         setTimeout(turn_led_on(2), 3000)
          return;
        }else{
          setTimeout(turn_led_off(1), 3000)
+         setTimeout(turn_led_off(2), 3000)
          return;
        }
      },

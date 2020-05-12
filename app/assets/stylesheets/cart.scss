@@ -24,3 +24,9 @@
 .menu_cart{
   position: relative;
 }
+.cart_image>ul{
+	display: none;
+}
+.cart_image>p:first-child{
+	display: block !important;
+}

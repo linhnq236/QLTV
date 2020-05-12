@@ -1,0 +1,6 @@
+<%= form_tag('/admin/users', method: :get, id: "changePage") do %>
+  <%= select_tag 'user',
+    options_for_select([["#{t("user.all")}","3"], ["#{t("user.admin")}","2"], ["#{t("user.teacher")}","1"], ["#{t("user.student")}","0"]], selected: params[:user], class:"form-control"),
+    {onchange: "$('#changePage').submit();" }
+  %>
+<% end %>

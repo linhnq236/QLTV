@@ -541,3 +541,33 @@
 .rolemain{
 	margin-top: -2%;
 }
+// chat message
+.chat{
+	position: fixed;
+	z-index: 100;
+	bottom: 12%;
+}
+.chatmes{
+	width: 25%;
+}
+.form_mes{
+	margin: 0 25%;
+}
+.form_chat{
+	display: none;
+	position: fixed;
+	z-index: 100;
+	bottom: 12%;
+}
+#messages{
+	max-height: 150px;
+	overflow: scroll;
+	background: white;
+	width: 207px;
+}
+.close{
+	margin-left: 100%;
+	border: 1px solid;
+	background: white;
+	opacity: 1;
+}

@@ -4,12 +4,12 @@
 <h1>Editing User</h1>
  <% @user.each do |u| %>
    <label for="usr"><%= t('layout.email')%></label>
-   <%= text_field_tag :name, params[:name], value:"#{u.email}", class: "form-control", disabled:"true"%><br>
+   <%= text_field_tag :name, params[:email], value:"#{u.email}", class: "form-control", disabled:"true", required: "required"%><br>
    <%= form_tag(update_path, method: "post") do %>
       <label for="usr">Code</label>
       <%= text_field_tag :code, params[:code], value:"#{u.code}", class: "form-control"%><br>
       <label for="usr">Name</label>
-      <%= text_field_tag :name, params[:name], value:"#{u.name}", class: "form-control"%><br>
+      <%= text_field_tag :name, params[:name], value:"#{u.name}", class: "form-control", required: "required"%><br>
       <label for="usr">Tel</label>
       <%= text_field_tag :tel, params[:tel], value:"#{u.tel}", class: "form-control"%><br>
       <label for="usr">Address</label>

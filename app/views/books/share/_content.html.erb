@@ -1,18 +1,12 @@
 <div class="container_right">
-  <div class="active-pink-3 active-pink-4 mb-4">
-    <form class="form-inline d-flex md-form form-sm mt-0 search" action="">
-      <i class="fa fa-search" aria-hidden="true"></i>
-      <input class="form-control form-control-sm ml-3 w-40" type="text" placeholder="Search" name="search" value="<%= @search %>">
-    </form>
-  </div>
+  <%= render "/books/share/search_book"%>
   <h2><p>Tất cả loại sách</p></h2>
   <div class="clear"></div>
   <div class="row">
     <% @books.each do |book|%>
       <div class="col-sm-3">
-
         <div class="col-product">
-					<div class="col_product1">
+					<div class="col_product1" data-toggle="tooltip" data-html ="true" data-placement="top" title="<%= book.name%>">
 						<a href="/show_book_detail/<%= book.id%>"><%= convert_ckeditor(book.image) %></a>
 						<p><%= book.name.truncate(27)%></p>
 						<h3><%= book.author.name%></h3>

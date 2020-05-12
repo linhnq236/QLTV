@@ -6,6 +6,10 @@ $( document ).on('turbolinks:load', function() {
   var list_bookid;
   $(".bor").click(function(){
     var borrow = $(this);
+    if(bookids.length >= 4){
+      $.alert("Thêm đủ số lượng sách.");
+      return false;
+    }
     bookids.push(borrow.data("id"));
     list_bookid = deduplicate(bookids);
     if (typeof(Storage) !== "undefined") {
@@ -249,8 +253,24 @@ $( document ).on('turbolinks:load', function() {
   $('.cart').click(function(){
     call_cart();
   })
+  // filler books
+  // $("#input_book").on("keyup", function() {
+  //   var value = $(this).val().toLowerCase();
+  //   $(".row .col-sm-3 .col-product").filter(function() {
+  //     $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+  //   });
+  // });
   // size = localStorage.bookids.replace(",", "");
   // $(".cart_size").html(size.length);
+
+  // loc sach co ten theo chữ cái
+  for (var i = 65; i <= 90; i++) {
+    char = String.fromCharCode(i);
+    $(".show_character").append(`<a class="p-1 text-center" href="/books?char=${char}">${char}</a>`);
+  }
+  $(".show_character").mouseout(function(){
+    $(this).css({"color":"blue"})
+  })
 
   // Get data để show ra giỏ hàng
   function call_cart(){
@@ -287,7 +307,7 @@ $( document ).on('turbolinks:load', function() {
           content:
           `<form action="" class="formName col-md-12">
             <div class="row text-center">
-              <div class="col-sm-4"><input type="checkbox" class="float-left all_item">Hình ảnh</div>
+              <div class="col-sm-4">Hình ảnh</div>
               <div class="col-sm-4">Tên sách</div>
               <div class="col-sm-4">Tác giả</div>
             </div>
@@ -365,6 +385,13 @@ $( document ).on('turbolinks:load', function() {
                 call_cart();
               }
             },
+            Xóa_hết:{
+                btnClass: 'btn-danger delete float-left',
+                action: function(){
+                  localStorage.clear();
+                  location.reload();
+              }
+            }
           },
         })
       },
@@ -373,4 +400,51 @@ $( document ).on('turbolinks:load', function() {
       }
     })
   }
+  // add book
+  $(".addbook").click(function(){
+    var book_id = $(this).data("book_id");
+    var book_code =  $(this).data("book_code");
+    $.confirm({
+      columnClass: 'col-md-10',
+      closeIcon: true,
+      closeIconClass: 'fa fa-close',
+      title: I18n.t("layout.add"),
+      content:
+      `<form action="" class="formName col-md-12">
+        <input value="${book_code}" disabled>
+        <input type="number" class="amount" placeholder="Nhập số lượng sách thêm">
+      </form>`,
+      buttons: {
+        formSubmit: {
+          text: 'Gửi',
+          btnClass: 'btn-primary submit float-right',
+          action: function () {
+            var amount = this.$content.find('.amount').val();
+            if(!amount){
+                $.alert('Không được để trống hoặc phải nhập số!');
+                return false;
+            }
+            var dataBook = {
+              amount: amount,
+              book_id: book_id,
+              book_code: book_code
+            };
+            console.log(dataBook);
+            $.ajax({
+              type: "POST",
+              url: "/api/addbook",
+              data: dataBook,
+              success: function(repsonse){
+                $.alert(repsonse["notice"]);
+                location.reload();
+              },
+              error: function(repsonse){
+                console.log(repsonse);
+              }
+            })
+          }
+        }
+      }
+    })
+  })
 })

@@ -14,7 +14,11 @@ class BooksController < ApplicationController
       @search = params[:search];
       @books = Book.search(@search).order("created_at DESC").paginate(page: params[:page], per_page: PER_PAGE)
     else
-      @books = Book.all.paginate(page: params[:page], per_page: PER_PAGE)
+      if params[:char].present?
+        @books = Book.search(params[:char]).order("created_at DESC").paginate(page: params[:page], per_page: PER_PAGE)
+      else
+        @books = Book.group(:type_id).paginate(page: params[:page], per_page: PER_PAGE)
+      end
     end
     @types = Type.all
     @authors = Author.all
@@ -46,6 +50,13 @@ class BooksController < ApplicationController
   def book_detail
     @book = Book.find(params[:id])
   end
+  def book_detail_student
+    @book = Book.find(params[:id])
+    @types = Type.all
+    @authors = Author.all
+    @publishers = Publisher.all
+    @departments = Department.all
+  end
 
   # GET /books/new
   def new
@@ -54,6 +65,7 @@ class BooksController < ApplicationController
     @types = Type.all
     @authors = Author.all
     @publishers = Publisher.all
+    @amounts = Amount.all
     gon.departments = Department.all
   end
 
@@ -80,12 +92,11 @@ class BooksController < ApplicationController
     getBookId = Book.where(name:@book.name)
     getBookId.each do |id_book|
       # params[:amount].each do |value|
-
+      # tách chuỗi có chữ và số thành chuỗi: string.tr("0-9", "")
       amount_code = params[:amount_code]
       amount = @book[:amount]
       for i in 1..amount
-        rd = rand(100...999)
-        Amount.new(code:"#{amount_code}#{rd}", book_id: id_book.id, active: 0).save
+        Amount.new(code:"#{amount_code}#{i}", book_id: id_book.id, active: 0).save
       end
     end
   end
@@ -113,7 +124,7 @@ class BooksController < ApplicationController
       format.json { head :no_content }
     end
   end
-  
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_book

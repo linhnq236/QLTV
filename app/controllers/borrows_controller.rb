@@ -7,6 +7,7 @@ class BorrowsController < ApplicationController
   # GET /borrows
   # GET /borrows.json
   def index
+    @current_date = Time.zone.now.to_date
     @borrows = Borrow.order(:user_id).select("distinct(user_id)")
     if params[:id].present?
       @books = Borrow.where(user_id: params[:id])
@@ -97,6 +98,7 @@ class BorrowsController < ApplicationController
     @amounts = Amount.all
     @histories = History.where(user_id:current_user.id).order("created_at DESC")
     @users = User.all
+    @current_date = Time.zone.now.to_date
   end
   private
     # Use callbacks to share common setup or constraints between actions.
