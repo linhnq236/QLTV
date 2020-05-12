@@ -11,7 +11,7 @@ table#dataTableProcess.table.table-striped.table-bordered.table-sm cellspacing="
         td
           - @amounts.each do |amount|
             - active =  amount.active
-            = getBookCode(active,borrow.book_id,amount.book_id,amount.code)
+            = getBookCode(borrow.book_id,amount.book_id,amount.code,current_user.id,amount.user_id)
         td
           = borrow.book&.name
         td

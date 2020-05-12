@@ -68,14 +68,20 @@ en:
     acc_mess_succ: "Đã %{mes} successful account."
     placeholder: "Enter a new email"
     submit: "To send"
+    acc_exists: "Email: %{email} is exists."
+#javascript using I18n.t()
+    do: "Hãy cẩn thận khi thao tác"
   department:
     it: "Informatin Technology"
     ec: "Economic"
-  message:
+  mes:
     delete: "Do you want to delete ?"
     exists: "Email already exists."
     success: "More success."
     fail: "More failures."
+#javascript using I18n.t()
+    user_conf: "- Nút MậtKhẩu là khôi phục lại mật khẩu từ đầu. <br> - Nút Khóa là khóa lại tài khoản sử dụng. <br> - Nút Xóa là xóa tài khoản."
+
   date:
       abbr_day_names: [CN, T2 ,T3,T4 ,T5 ,T6 ,T7]
       order: [ !ruby/symbol day, !ruby/symbol month, !ruby/symbol year ]
@@ -118,6 +124,7 @@ en:
     notice_common: "GENERAL NOTIFICATION "
     introduce: "INTROUDUCE"
     library: "LIBRARY"
+    cart: "Giỏ hàng"
   button:
     login: "Log in"
   menu:

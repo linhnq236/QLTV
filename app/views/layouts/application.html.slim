@@ -44,7 +44,7 @@ html
     main.rolemain[role="main"]
       == render 'layouts/messages'
       == yield
-      == include_gon
+      == include_gon(:init => true)
     == render 'layouts/share/footer'
     /div.calendar
       /- month_calendar do |date|

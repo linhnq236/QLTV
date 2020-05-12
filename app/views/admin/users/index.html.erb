@@ -1,0 +1,53 @@
+<div class="row">
+  <div class="col-sm-3">
+    <%= render "admin/users/share/select_row"%>
+  </div>
+  <div class="col-sm-6">
+    <form class="form-for" action="/admin/users" method="post">
+      <div class="">
+        <input type="email" name="email" placeholder="<%= t('user.placeholder')%>" class="form-control" required>
+      </div>
+      <div class="row text-center">
+        <div class="col-sm-4">
+          <input type="radio" checked name="admin" value="2"><%=t("user.admin") %>
+        </div>
+        <div class="col-sm-4">
+          <input type="radio" name="admin" value="1"><%=t("user.teacher") %>
+        </div>
+        <div class="col-sm-4">
+          <input type="radio" name="admin" value="0"><%=t("user.student") %>
+        </div>
+      </div>
+      <div class="text-center">
+        <input type="submit" class="btn btn-primary" value="<%=I18n.t('user.submit')%>">
+      </div>
+    </form>
+  </div>
+  <div class="col-sm-3">
+    <input class="form-control" id="input_user" type="text" placeholder="Search..">
+  </div>
+</div>
+<table class="table table-bordered">
+  <thead class="text-center">
+    <th><%= I18n.t('user.code') %></th>
+    <th><%= I18n.t('user.name') %></th>
+    <th><%= I18n.t('user.tel') %></th>
+    <th><%= I18n.t('user.email') %></th>
+    <th><%= I18n.t('user.add') %></th>
+    <th><%= I18n.t('user.manage') %></th>
+  </thead>
+  <tbody id="fillteruser" class="cursor">
+    <% @users.each do |user| %>
+    <tr class="item_user" data-id="<%= user.id%>" data-disable="<%= check_disable(user.disable)%>" style="background:<%=mark_account_disable(user.disable)%>">
+      <td><%= check_empty_code(user.code) %></td>
+      <td><%= check_empty_name(user.name) %></td>
+      <td><%= check_empty_tel(user.tel) %></td>
+      <td><%= user.email %></td>
+      <td><%= check_empty_add(user.add) %></td>
+      <td><%= manager(user.admin) %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= will_paginate @users, :class => "clearfix mt-4 ml-4 naviga" %>
+<%= render "admin/users/share/fix_pagination" if @users.size.to_i < @per_page.to_i%>

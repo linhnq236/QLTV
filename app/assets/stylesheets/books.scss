@@ -282,3 +282,10 @@
 .custom-pagi{
 	margin: 0px 41%;
 }
+.col-product>div>a>ul{
+	display: none;
+}
+.col-product>div>a>p:first-child{
+	display: block !important;
+
+}

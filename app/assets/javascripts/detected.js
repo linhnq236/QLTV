@@ -1,34 +1,5 @@
 $( document ).on('turbolinks:load', function() {
-  // setInterval(detectedface, 1000);
-  // $("#detect").click(function(){
-  //   $(".pic").faceDetection({
-  //     complete:function(faces){
-  //       // turn_led_13(1);
-  //       if(faces.length > 0){
-  //         for(var i=0;i<faces.length;i++){
-  //           turn_led_on(i+1);
-  //           $('<div>',{
-  //             'class':'face',
-  //             'css':{
-  //               'position':'absolute',
-  //               'left':faces[i].x*faces[i].scaleX+'px',
-  //               'top':faces[i].y*faces[i].scaleY+'px',
-  //               'width':faces[i].width*faces[i].scaleX+'px',
-  //               'height':faces[i].height*faces[i].scaleY+'px'
-  //             }
-  //           })
-  //           .insertAfter(this);
-  //         }
-  //       }else{
-  //         turn_led_off(1)
-  //       }
-  //     },
-  //     error:function(code,message){
-  //       console.log("a");
-  //       alert("Error: "+message);
-  //     }
-  //   });
-  // });
+  setInterval(detectedface, 1000);
 
   $("#turncamera").click(function(){
     configure();
@@ -36,8 +7,6 @@ $( document ).on('turbolinks:load', function() {
   });
   $("#capture").click(function(){
     capture_webcam();
-    setInterval(detectedface, 1000);
-
   });
   $("#take").click(function(){
     var picture = savePic();
@@ -55,7 +24,7 @@ $( document ).on('turbolinks:load', function() {
         url: "/equipment/"+id,
         data: dataEquipment,
         success: function(repsonse) {
-
+          location.reload();
         },
         error: function(repsonse) {
           console.log("Turn on is fails.")
@@ -74,6 +43,7 @@ $( document ).on('turbolinks:load', function() {
         data: dataEquipment,
         success: function(repsonse) {
           console.log("turn off");
+          location.reload();
         },
         error: function(repsonse) {
           console.log("Turn on is fails.")
@@ -125,7 +95,9 @@ $( document ).on('turbolinks:load', function() {
            })
            .insertAfter(this);
          }
+         console.log("on");
          setTimeout(turn_led_on(1), 3000)
+         return;
        }else{
          setTimeout(turn_led_off(1), 3000)
          return;
@@ -136,5 +108,36 @@ $( document ).on('turbolinks:load', function() {
        alert("Error: "+message);
      }
    });
+ }
+ function tam(){
+   // $("#detect").click(function(){
+   //   $(".pic").faceDetection({
+   //     complete:function(faces){
+   //       // turn_led_13(1);
+   //       if(faces.length > 0){
+   //         for(var i=0;i<faces.length;i++){
+   //           turn_led_on(i+1);
+   //           $('<div>',{
+   //             'class':'face',
+   //             'css':{
+   //               'position':'absolute',
+   //               'left':faces[i].x*faces[i].scaleX+'px',
+   //               'top':faces[i].y*faces[i].scaleY+'px',
+   //               'width':faces[i].width*faces[i].scaleX+'px',
+   //               'height':faces[i].height*faces[i].scaleY+'px'
+   //             }
+   //           })
+   //           .insertAfter(this);
+   //         }
+   //       }else{
+   //         turn_led_off(1)
+   //       }
+   //     },
+   //     error:function(code,message){
+   //       console.log("a");
+   //       alert("Error: "+message);
+   //     }
+   //   });
+   // });
  }
 })

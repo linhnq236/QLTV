@@ -9,8 +9,9 @@
 								<li>
 									<%= link_to(I18n.t('layout.equipment'), controller_equipment_path) %>
 								</li>
-								<li>
+								<li class="menu_borrow_notice">
 									<%= link_to(I18n.t('layout.borrow'),'/borrows') %>
+									<small class="borrow_notice"></small>
 								</li>
 								<li>
 									<%= link_to(I18n.t('layout.history'),'/histories') %>
@@ -19,7 +20,7 @@
 
 						    <% elsif  current_user.admin == 2%>
 								<li>
-									<%= link_to(I18n.t('layout.listalluser'), '/listalluser1') %>
+									<%= link_to(I18n.t('layout.listalluser'), '/admin/users') %>
 								</li>
 
 
@@ -27,8 +28,8 @@
 								<li>
 									<%= link_to(I18n.t('layout.mybook'), mybook_path) %>
 								</li>
-								<li>
-									<span class="cart"><%=I18n.t('layout.cart')%></span>
+								<li class="menu_cart">
+									<span class="cart"><%=I18n.t('layout.cart')%><small class="cart_size"></small></span>
 								</li>
 								<li>
 									<%= link_to(I18n.t('layout.book'), '/books') %>
@@ -37,7 +38,7 @@
 
 						<% end %>
 						<li>
-							<%= link_to(I18n.t('layout.introduce'), introduce_path) %>
+							<%= link_to(I18n.t('layout.introduce'), "/introduce") %>
 						</li>
 						<li class="icon">
 							<a href="/">
@@ -46,8 +47,8 @@
 							</a>
 						</li>
 					</div>
-					<div class="center-logo">
-						<a href="">
+					<div class="center-logo blink">
+						<a href="/">
               <%= image_tag("logo_bds-2730-43760")%>
 						</a>
 						<p id="text"><%= t('layout.library') %></p>
@@ -64,7 +65,7 @@
 								</li>
 						    <% elsif  current_user.admin == 2%>
 								<li>
-									<%= link_to(I18n.t('layout.logout'), destroy_user_session_path, method: :delete) %>
+									<%= link_to(I18n.t('layout.logs'), "/admin/historyalls") %>
 								</li>
 						    <% else %>
 								<li>

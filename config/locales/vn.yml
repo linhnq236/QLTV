@@ -7,7 +7,10 @@ vn:
     exists: "Email đã tồn tại."
     success: "Thêm thành công."
     fail: "Thêm thất bại."
-    success_update: "cập nhập thành công."
+    success_update: "cập nhật thành công."
+    fail_update: "Cập nhật thất bại. "
+    delete_success: "Xóa thành công."
+    delete_fail: "Xóa thất bại."
   layout:
     cart: "Giỏ hàng"
     title: "PHẦN MỀM QUẢN LÝ THƯ VIỆN"
@@ -38,8 +41,12 @@ vn:
     library: "THƯ VIỆN"
     mybook: "SÁCH CỦA TÔI"
     acc: "Tài khoản"
-    listalluser: "Tài Khoản 2"
+    listalluser: "Tài Khoản"
     cart: "Giỏ hàng"
+    logs: "Thao tác"
+    search: "Tìm kiếm"
+  cart:
+    empty: "Giỏ hàng trống"
   mybook:
     code: "Mã sách"
     name: "Tên sách"
@@ -65,6 +72,8 @@ vn:
     ytsk: "Y tế - sức khỏe"
     nn: "Ngoại ngữ"
     lvtn: "Luận văn tốt nghiệp"
+    ktvt: "Kinh tế vận tải"
+    tg: "Tôn giáo"
     docu: "Tài liệu thư viện"
   borrow:
     success: "Mượn sách %{name} thành công !"
@@ -108,9 +117,22 @@ vn:
     borrowed: "Đang mượn"
   history:
     date_pay: "Ngày trả"
+  admin:
+    field_name: "Tên giá trị"
+    value_old: "Giá trị cũ"
+    value_new: "Giá trị mới"
+    staff_id: "Người thây đổi"
+    active: "Hoạt động"
+    created_at: "Thời gian tạo"
+    updated_at: "Thời gian chỉnh sửa"
   button:
     login: "Đăng nhập"
   user:
+    admin: "Quản trị viên"
+    teacher: "Thủ thư"
+    student: "Sinh viên"
+    empty: "Trống"
+    all: "Tất cả"
     code: "Mssv"
     name: "Họ và tên"
     tel: "Điện thoại"
@@ -122,10 +144,10 @@ vn:
     active: "Mở"
     block: "Khóa"
     changepass: "Thay đổi mk"
-    acc_mess_succ: "Đã %{mes} tài khoản thành công."
+    acc_mess_succ: "Đã tạo %{mes} tài khoản thành công."
     placeholder: "Nhập email mới"
     submit: "Gửi"
-
+    acc_exists: "Email: %{email} đã tồn tại."
   menu:
     teacher:
       calendar: "LỊCH THEO TUẦN"
@@ -139,6 +161,13 @@ vn:
         timer: "Hẹn giờ bật"
         timeout: "Hẹn giờ tắt"
     admin:
+      field_name: "Tên giá trị"
+      value_old: "Giá trị cũ"
+      value_new: "Giá trị mới"
+      staff_id: "Người thây đổi"
+      active: "Hoạt động"
+      created_at: "Thời gian tạo"
+      update_at: "Thời gian chỉnh sửa"
 
 
 

@@ -6,11 +6,11 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 [
-  {id: 1,email: 'admin@gmail.com', password: 'Linh236!@#', password_confirmation: 'Linh236!@#', admin: 2},
+  {id: 1,email: 'admin@gmail.com', password: '123456', password_confirmation: '123456', admin: 2},
   {id: 2,email: 'teacher@gmail.com', password: '123456', password_confirmation: '123456', admin: 1},
   {id: 3,email: 'teacher1@gmail.com', password: '123456', password_confirmation: '123456', admin: 1},
-  {id: 4,email: 'student@gmail.com', password: '123456', password_confirmation: '123456', admin: 0},
-  {id: 5,email: 'student1@gmail.com', password: '123456', password_confirmation: '123456', admin: 0},
+  {id: 4,email: 'loc@gmail.com', password: '123456', password_confirmation: '123456', admin: 0},
+  {id: 5,email: 'linh@gmail.com', password: '123456', password_confirmation: '123456', admin: 0},
 ].each do |attr|
   user = User.find_by(id: attr[:id])
   User.transaction do
@@ -23,9 +23,9 @@
   end
 end
 [
-  {id: 1,equiqment_name: 'Đèn 13', active: false},
-  {id: 2,equiqment_name: 'Đèn 14', active: false},
-  {id: 3,equiqment_name: 'Đèn 15', active: false},
+  {id: 1,equiqment_name: 'Đèn', active: false},
+  {id: 2,equiqment_name: 'Quạt', active: false},
+  # {id: 3,equiqment_name: 'Đèn 15', active: false},
 ].each do |attr|
   equipment = Equipment.find_by(id: attr[:id])
   Equipment.transaction do
@@ -91,22 +91,22 @@ end
 [
   {id: 1,name: 'Nguyễn Hoàng Anh'},
   {id: 2,name: 'Nguyễn Tuấn Hùng'},
-  {id: 3,name: 'Nguyễn Đăng Khoa'},
-  {id: 4,name: 'Hoàng Tuấn'},
-  {id: 5,name: 'Trân Tuấn Hùng'},
-  {id: 6,name: 'Trần Khoa'},
-  {id: 7,name: 'Nguyễn Tuấn Anh'},
-  {id: 8,name: 'Đào Thị Hùng'},
-  {id: 9,name: 'Nguyễn  Thị Hồng'},
-  {id: 10,name: 'Nguyễn  Kim Anh'},
-  {id: 11,name: 'Ngô Thị Kim Oanh'},
-  {id: 12,name: 'Nguyễn  Bửu Hoàng'},
-  {id: 13,name: 'Ngô  Văn Sơn'},
-  {id: 14,name: 'Đào Bá Văn'},
-  {id: 15,name: 'Trần  Văn Lương'},
-  {id: 16,name: 'Đỗ  Đức Anh'},
-  {id: 17,name: 'Hoàng  Văn Hùng'},
-  {id: 18,name: 'Nguyễn  Thị Kim Ánh'},
+  # {id: 3,name: 'Nguyễn Đăng Khoa'},
+  # {id: 4,name: 'Hoàng Tuấn'},
+  # {id: 5,name: 'Trân Tuấn Hùng'},
+  # {id: 6,name: 'Trần Khoa'},
+  # {id: 7,name: 'Nguyễn Tuấn Anh'},
+  # {id: 8,name: 'Đào Thị Hùng'},
+  # {id: 9,name: 'Nguyễn  Thị Hồng'},
+  # {id: 10,name: 'Nguyễn  Kim Anh'},
+  # {id: 11,name: 'Ngô Thị Kim Oanh'},
+  # {id: 12,name: 'Nguyễn  Bửu Hoàng'},
+  # {id: 13,name: 'Ngô  Văn Sơn'},
+  # {id: 14,name: 'Đào Bá Văn'},
+  # {id: 15,name: 'Trần  Văn Lương'},
+  # {id: 16,name: 'Đỗ  Đức Anh'},
+  # {id: 17,name: 'Hoàng  Văn Hùng'},
+  # {id: 18,name: 'Nguyễn  Thị Kim Ánh'},
 ].each do |attr|
   author = Author.find_by(id: attr[:id])
   Author.transaction do
@@ -133,21 +133,21 @@ end
     end
   end
 end
-[
-  {id: 1,name: 'NXB Nhi Đồng'},
-  {id: 2,name: 'NXB Tuổi Trẻ'},
-  {id: 3,name: 'NXB Thanh Niên'},
-].each do |attr|
-  publisher = Publisher.find_by(id: attr[:id])
-  Publisher.transaction do
-    unless publisher
-      publisher = Publisher.new(attr)
-      publisher.save
-    else
-      publisher.update_attributes attr
-    end
-  end
-end
+# [
+#   {id: 1,name: 'NXB Nhi Đồng'},
+#   {id: 2,name: 'NXB Tuổi Trẻ'},
+#   {id: 3,name: 'NXB Thanh Niên'},
+# ].each do |attr|
+#   publisher = Publisher.find_by(id: attr[:id])
+#   Publisher.transaction do
+#     unless publisher
+#       publisher = Publisher.new(attr)
+#       publisher.save
+#     else
+#       publisher.update_attributes attr
+#     end
+#   end
+# end
 
 # {id: 1,name: 'Kỹ thuật phần mềm', publishyear:"1985", author_id: Author.find(1).id, publisher_id: Publisher.find(1).id, type_id: Type.find(1).id, image: "/assets/cntt.jpeg" },
 # {id: 2,name: 'Thiết kế công trình', publishyear:"1985", author_id: Author.find(2).id, publisher_id: Publisher.find(1).id, type_id: Type.find(2).id, image: "/assets/ctgt.jpeg"},

@@ -2,26 +2,30 @@ $( document ).on('turbolinks:load', function() {
   $(".btn-borrow>.detail").removeAttr("href");
   $(".btn-borrow>.hidden").remove();
   var bookids=[];
+  var ids = [];
   var list_bookid;
   $(".bor").click(function(){
     var borrow = $(this);
+    if(bookids.length >= 4){
+      $.alert("Thêm đủ số lượng sách.");
+      return false;
+    }
     bookids.push(borrow.data("id"));
     list_bookid = deduplicate(bookids);
     if (typeof(Storage) !== "undefined") {
-      console.log(list_bookid);
+      // localStorage.setItem("bookids",JSON.stringify(list_bookid));
       localStorage.setItem("bookids",list_bookid);
     }
+    $.alert("Thêm thành công.");
   })
   function deduplicate(arr) {
   let isExist = (arr, x) => arr.indexOf(x) > -1;
   let ans = [];
-
   arr.forEach(element => {
     if(!isExist(ans, element)) ans.push(element);
   });
-
-  return ans;
-}
+    return ans;
+  }
   $(".bor_send").click(function(){
     var borrow = $(this);
     dataBorrow = {
@@ -47,12 +51,9 @@ $( document ).on('turbolinks:load', function() {
   $("#book_amount").keyup(function(){
     var amount = this.value;
     if (amount > 0){
-      // console.log(amount);
-      // for(i = 0; i < amount; i++){
-        $(".amount_code").append(`<input name='amount_code' placeholder='Nhập mã sách' class='input_amount form-control'>`);
-      // }
+      $(".amount_code").append(`<input name='amount_code' placeholder='Nhập mã sách' class='input_amount form-control'>`);
     }else{
-        $(".input_amount").remove();
+      $(".input_amount").remove();
     }
   });
   // New author
@@ -68,40 +69,40 @@ $( document ).on('turbolinks:load', function() {
       '</form>',
       buttons: {
           formSubmit: {
-              text: 'GỬI',
-              btnClass: 'btn-blue',
-              action: function () {
-                var name = this.$content.find('.name').val();
-                var website = this.$content.find('.website').val();
-                if(!name || !website){
-                    $.alert('provide a valid name or website');
-                    return false;
-                }
-                $.ajax({
-                  type: "POST",
-                  url : "/authors",
-                  data:{
-                    author:{
-                      name: name,
-                      website: website
-                    }
-                  },
-                  success: function(repsonse){
-                    $.alert({
-                      title: false,
-                      content: repsonse["notice"],
-                      buttons: {
-                        confirm: function(){
-                          location.reload();
-                        }
-                      }
-                    });
-                  },
-                  error: function(repsonse){
-                    console.log(repsonse);
-                  }
-                })
+            text: 'GỬI',
+            btnClass: 'btn-blue',
+            action: function () {
+              var name = this.$content.find('.name').val();
+              var website = this.$content.find('.website').val();
+              if(!name || !website){
+                  $.alert('provide a valid name or website');
+                  return false;
               }
+              $.ajax({
+                type: "POST",
+                url : "/authors",
+                data:{
+                  author:{
+                    name: name,
+                    website: website
+                  }
+                },
+                success: function(repsonse){
+                  $.alert({
+                    title: false,
+                    content: repsonse["notice"],
+                    buttons: {
+                      confirm: function(){
+                        location.reload();
+                      }
+                    }
+                  });
+                },
+                error: function(repsonse){
+                  console.log(repsonse);
+                }
+              })
+            }
           },
           Thoát: {
             btnClass: 'btn-danger',
@@ -111,7 +112,6 @@ $( document ).on('turbolinks:load', function() {
   })
   // new type
   $(".new_type").click(function(){
-    // console.log(gon.departments);
     var html = '';
     $.each(gon.departments, function(index, value){
       html += `<option class="form-control" value="${index + 1}"> ${value.name} </option>`
@@ -129,80 +129,23 @@ $( document ).on('turbolinks:load', function() {
       </form>`,
       buttons: {
           formSubmit: {
-              text: 'GỬI',
-              btnClass: 'btn-blue',
-              action: function () {
-                  var name = this.$content.find('.name').val();
-                  var department_id = this.$content.find('.select_department').val();
-                  if(!name || !department_id){
-                      $.alert('Không được để trống !');
-                      return false;
-                  }
-                  console.log(department_id);
-                  $.ajax({
-                    type: "POST",
-                    url : "/types",
-                    data:{
-                      type:{
-                        name: name,
-                        department_id: department_id
-                      }
-                    },
-                    success: function(repsonse){
-                      $.alert({
-                        title: false,
-                        content: repsonse["notice"],
-                        buttons: {
-                          confirm: function(){
-                            location.reload();
-                          }
-                        }
-                      });
-                    },
-                    error: function(repsonse){
-                      console.log(repsonse);
-                    }
-                  })
-              }
-          },
-          Hủy: {
-            btnClass: 'btn-danger',
-          },
-      },
-    });
-  })
-  // new publisher
-  $(".new_publisher").click(function(){
-    $.confirm({
-      title: I18n.t("book.new_publisher"),
-      content: '' +
-      '<form action="" class="formName">' +
-      '<div class="form-group">' +
-      '<input type="text" placeholder="Tên nhà xuất bản" class="name form-control" required />' +
-      '<input type="text" placeholder="Địa chỉ" class="add form-control" required />' +
-      '<input type="email" placeholder="Email" class="email form-control" required />' +
-      '</div>' +
-      '</form>',
-      buttons: {
-          formSubmit: {
-              text: 'GỬI',
-              btnClass: 'btn-blue',
-              action: function () {
+            text: 'GỬI',
+            btnClass: 'btn-blue',
+            action: function () {
                 var name = this.$content.find('.name').val();
-                var add = this.$content.find('.add').val();
-                var email = this.$content.find('.email').val();
-                if(!name || !add || !email){
+                var department_id = this.$content.find('.select_department').val();
+                if(!name || !department_id){
                     $.alert('Không được để trống !');
                     return false;
                 }
+                console.log(department_id);
                 $.ajax({
                   type: "POST",
-                  url : "/publishers",
+                  url : "/types",
                   data:{
-                    publisher:{
+                    type:{
                       name: name,
-                      address: add,
-                      email: email
+                      department_id: department_id
                     }
                   },
                   success: function(repsonse){
@@ -220,11 +163,68 @@ $( document ).on('turbolinks:load', function() {
                     console.log(repsonse);
                   }
                 })
+            }
+        },
+        Hủy: {
+          btnClass: 'btn-danger',
+        },
+      },
+    });
+  })
+  // new publisher
+  $(".new_publisher").click(function(){
+    $.confirm({
+      title: I18n.t("book.new_publisher"),
+      content: '' +
+      '<form action="" class="formName">' +
+      '<div class="form-group">' +
+      '<input type="text" placeholder="Tên nhà xuất bản" class="name form-control" required />' +
+      '<input type="text" placeholder="Địa chỉ" class="add form-control" required />' +
+      '<input type="email" placeholder="Email" class="email form-control" required />' +
+      '</div>' +
+      '</form>',
+      buttons: {
+          formSubmit: {
+            text: 'GỬI',
+            btnClass: 'btn-blue',
+            action: function () {
+              var name = this.$content.find('.name').val();
+              var add = this.$content.find('.add').val();
+              var email = this.$content.find('.email').val();
+              if(!name || !add || !email){
+                  $.alert('Không được để trống !');
+                  return false;
               }
-          },
-          Hủy: {
-            btnClass: 'btn-danger',
-          },
+              $.ajax({
+                type: "POST",
+                url : "/publishers",
+                data:{
+                  publisher:{
+                    name: name,
+                    address: add,
+                    email: email
+                  }
+                },
+                success: function(repsonse){
+                  $.alert({
+                    title: false,
+                    content: repsonse["notice"],
+                    buttons: {
+                      confirm: function(){
+                        location.reload();
+                      }
+                    }
+                  });
+                },
+                error: function(repsonse){
+                  console.log(repsonse);
+                }
+              })
+            }
+        },
+        Hủy: {
+          btnClass: 'btn-danger',
+        },
       },
     });
   })
@@ -249,70 +249,154 @@ $( document ).on('turbolinks:load', function() {
       $(this).addClass('active');//danh dau da active
         }
     });
+  // show vào giỏ hàng
   $('.cart').click(function(){
-    console.log(localStorage.bookids);
+    call_cart();
+  })
+  // filler books
+  // $("#input_book").on("keyup", function() {
+  //   var value = $(this).val().toLowerCase();
+  //   $(".row .col-sm-3 .col-product").filter(function() {
+  //     $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+  //   });
+  // });
+  // size = localStorage.bookids.replace(",", "");
+  // $(".cart_size").html(size.length);
+
+  // loc sach co ten theo chữ cái
+  for (var i = 65; i <= 90; i++) {
+    char = String.fromCharCode(i);
+    $(".show_character").append(`<a class="p-2 text-center" href="/books?char=${char}">${char}</a>`);
+  }
+  $(".show_character").mouseout(function(){
+    $(this).css({"color":"blue"})
+  })
+
+  // Get data để show ra giỏ hàng
+  function call_cart(){
     $.ajax({
       type: "POST",
       url : "/api/cart",
       data:{
-          bookids: localStorage.bookids,
+        bookids: localStorage.bookids,
       },
       success: function(repsonse){
         var html = '';
+        var html_err = '';
         $.each(repsonse['data'], function( index, value ) {
           $.each(value, function(index1, value1){
-            console.log(value1);
             html += `
-              <div class="col-sm-3">${value1["image"]}</div>
-              <div class="col-sm-3">${value1["name"]}</div>
-              <div class="col-sm-3">${value1["author_name"]}</div>
-              <div class="col-sm-3">
-                <i class="fa fa-trash"> </i>
+              <div class="col-sm-4 cart_image">
+                <input type="checkbox" value="${value1["id"]}" class="float-left item cart_align">
+                ${value1["image"]}
+              </div>
+              <div class="col-sm-4">
+                <div class="cart_align">${value1["name"]}</div>
+              </div>
+              <div class="col-sm-4">
+                <div class="cart_align">${value1["author_name"]}</div>
               </div>
             `
           })
         })
         $.confirm({
-          columnClass: 'col-md-12',
+          columnClass: 'col-md-10',
           closeIcon: true,
           closeIconClass: 'fa fa-close',
           title: I18n.t("layout.cart"),
           content:
-          `<form action="" class="formName">
-            <div class="row">
-              <div class="col-sm-3">Hình ảnh</div>
-              <div class="col-sm-3">Tên sách</div>
-              <div class="col-sm-3">Tác giả</div>
-              <div class="col-sm-3">Hủy</div>
+          `<form action="" class="formName col-md-12">
+            <div class="row text-center">
+              <div class="col-sm-4">Hình ảnh</div>
+              <div class="col-sm-4">Tên sách</div>
+              <div class="col-sm-4">Tác giả</div>
             </div>
-            <div class="row">
+            <div class="row text-center">
               ${html}
             </div>
           </form>`,
           buttons: {
+              Hủy:{
+                btnClass: 'btn-secondary cancel float-right',
+              },
               formSubmit: {
-                  text: 'Submit',
-                  btnClass: 'btn-blue',
-                  action: function () {
-                      var name = this.$content.find('.name').val();
-                      if(!name){
-                          $.alert('provide a valid name');
-                          return false;
+                text: 'Gửi',
+                btnClass: 'btn-primary submit float-right',
+                action: function () {
+                  dataBorrow = {
+                    bookids: localStorage.bookids
+                  };
+                  $.ajax({
+                      type: 'POST',
+                      url: "/api/borrows",
+                      data: dataBorrow,
+                      success: function(repsonse) {
+                        localStorage.clear();
+                        $.ajax({
+                          type: "POST",
+                          url : "/api/cart_errors",
+                          data:{
+                              bookids: repsonse["data"].join(","),
+                          },
+                          success: function(repsonse){
+                            if(repsonse["data"].length == 0){
+                              $.alert({
+                                title: false,
+                                content: "Gủi thành công",
+                              });
+                              return false;
+                            }
+                            $.each(repsonse['data'], function( index, value ) {
+                              $.each(value, function(index1, value1){
+                                html_err += `<div>Sách ${value1["name"]} của tác giả ${value1["author_name"]} đã được mược hoặc đã hết số lượng.</div>`
+                              })
+                            })
+                            $.alert({
+                              title: false,
+                              content: `${html_err}`,
+                            });
+                          }
+                        })
+
+                      },
+                      error: function(repsonse) {
+                        console.log(repsonse);
                       }
-                      $.alert('Your name is ' + name);
+                  })
+                }
+              },
+              Xóa: {
+                btnClass: 'btn-danger delete float-left',
+                action: function(){
+                  var idItems = [];
+                  var idItem = this.$content.find('.item:checked').val();
+                  $.each($(".item:checked"), function(){
+                      idItems.push($(this).val());
+                  });
+                  if(!idItem){
+                      $.alert('Chua chon san pham');
+                      return false;
                   }
-              },
-              cancel: function () {
-                  //close
-              },
+                // removeItems = idItems.join(",");
+                $.each(idItems, function(index, value){
+                  idItems = localStorage.bookids.replace(value, "");
+                  localStorage.setItem("bookids",idItems);
+                })
+                call_cart();
+              }
+            },
+            Xóa_hết:{
+                btnClass: 'btn-danger delete float-left',
+                action: function(){
+                  localStorage.clear();
+              }
+            }
           },
         })
-
       },
       error: function(repsonse){
         console.log(repsonse);
       }
     })
-
-  })
+  }
 })

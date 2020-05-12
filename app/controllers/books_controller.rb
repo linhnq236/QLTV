@@ -14,7 +14,11 @@ class BooksController < ApplicationController
       @search = params[:search];
       @books = Book.search(@search).order("created_at DESC").paginate(page: params[:page], per_page: PER_PAGE)
     else
-      @books = Book.all.paginate(page: params[:page], per_page: PER_PAGE)
+      if params[:char].present?
+        @books = Book.search(params[:char]).order("created_at DESC").paginate(page: params[:page], per_page: PER_PAGE)
+      else
+        @books = Book.group(:type_id).paginate(page: params[:page], per_page: PER_PAGE)
+      end
     end
     @types = Type.all
     @authors = Author.all
@@ -113,7 +117,7 @@ class BooksController < ApplicationController
       format.json { head :no_content }
     end
   end
-  
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_book

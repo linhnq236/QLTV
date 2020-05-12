@@ -1,0 +1,28 @@
+<table class="table table-bordered table_historyall">
+  <thead class="text-center">
+    <th><%= I18n.t('admin.active') %></th>
+    <th><%= I18n.t('admin.staff_id') %></th>
+    <th><%= I18n.t('admin.created_at') %></th>
+    <th><%= I18n.t('admin.updated_at') %></th>
+    <th><%= I18n.t('admin.field_name') %></th>
+    <th><%= I18n.t('admin.value_old') %></th>
+    <th><%= I18n.t('admin.value_old') %></th>
+  </thead>
+  <tbody id="fillterlogs" class="cursor">
+    <% @historyalls.each do |history| %>
+        <tr>
+          <td class="formart_rows" rowspan="<%= history.size + 1%>"><%= unique_active(history)%></td>
+          <td class="formart_rows" rowspan="<%= history.size + 1%>"><%= history_check_user(@users,unique_staff(history))%></td>
+          <td class="formart_rows" rowspan="<%= history.size + 1%>"><%= format_datetime(unique_created_at(history))%></td>
+          <td class="formart_rows" rowspan="<%= history.size + 1%>"><%= format_datetime(unique_updated_at(history))%></td>
+        </tr>
+          <% history.each do |his|%>
+            <tr>
+              <td><%= his.field_name%></td>
+              <td class="img_historyall"><%= convert_ckeditor(his.value_old) %></td>
+              <td class="img_historyall"><%= convert_ckeditor(his.value_new) %></td>
+            </tr>
+          <% end %>
+    <% end %>
+  </tbody>
+</table>

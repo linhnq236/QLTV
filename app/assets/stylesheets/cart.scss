@@ -1,0 +1,32 @@
+.cart_image > p > img {
+  width: 40% !important;
+  height: 100px !important;
+}
+.cursor{
+  cursor: pointer;
+}
+.cart_align{
+  margin: 12% 0 20% 0;
+}
+.jconfirm-buttons{
+  width: 100%;
+}
+.jconfirm-buttons > .btn-default{
+  float: right !important;
+}
+.cart_size{
+  position: absolute;
+  top: -68%;
+  // border: 1px solid;
+  padding: 2%;
+  // border-radius: 16px;
+}
+.menu_cart{
+  position: relative;
+}
+.cart_image>ul{
+	display: none;
+}
+.cart_image>p:first-child{
+	display: block !important;
+}
