@@ -389,7 +389,10 @@ $( document ).on('turbolinks:load', function() {
                 btnClass: 'btn-danger delete float-left',
                 action: function(){
                   localStorage.clear();
+<<<<<<< HEAD
                   location.reload();
+=======
+>>>>>>> fe761dfcef47c93fd046ebc6df9b6f4e62c90654
               }
             }
           },
@@ -400,6 +403,7 @@ $( document ).on('turbolinks:load', function() {
       }
     })
   }
+<<<<<<< HEAD
   // add book
   $(".addbook").click(function(){
     var book_id = $(this).data("book_id");
@@ -447,4 +451,6 @@ $( document ).on('turbolinks:load', function() {
       }
     })
   })
+=======
+>>>>>>> fe761dfcef47c93fd046ebc6df9b6f4e62c90654
 })
