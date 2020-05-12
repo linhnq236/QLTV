@@ -17,9 +17,11 @@ $( document ).on('turbolinks:load', function() {
   })
   $(".chatmes").click(function(){
     $(".form_chat").show();
+    $(".chatmes").hide();
   })
   $(".close").click(function(){
     $(".form_chat").hide();
+    $(".chatmes").show();
   })
   $(".submit").click(function(){
     var mes = $.trim($(".mes").val());

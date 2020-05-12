@@ -568,6 +568,7 @@
 }
 .form_mes{
 	margin: 0 25%;
+	width: 100%;
 }
 .form_chat{
 	display: none;
@@ -589,5 +590,10 @@
 	margin-left: 100%;
 	border: 1px solid;
 	background: white;
-	opacity: 1;
+	opacity: 1 !important;
+	margin: 0px 76% -3px; 
+}
+.mes{
+	width: 90% !important;
+	border-bottom-left-radius: 1.25rem !important;
 }
