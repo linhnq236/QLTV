@@ -119,6 +119,9 @@ vn:
     borrowed: "Đang mượn"
     code: "Mã sách"
     addbook: "Thêm"
+    borrow: "Mượn sách"
+    allbook: "Tất cả loại sách"
+    new: "MỚI"
   history:
     date_pay: "Ngày trả"
   admin:
@@ -132,6 +135,8 @@ vn:
   button:
     login: "Đăng nhập"
   user:
+    edit_user: "Chỉnh sửa thông tin"
+    update: "Cập nhật"
     admin: "Quản trị viên"
     teacher: "Thủ thư"
     student: "Sinh viên"

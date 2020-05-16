@@ -5,6 +5,11 @@
   <div class="row">
     <div class="col-sm-3">
       <div class="col-product">
+        <% if new_book(@current_date,book.created_at) == true%>
+        <div class="ribbon-wrapper">
+          <div class="ribbon"><%= t("book.new")%></div>
+        </div>
+        <% end %>
 				<div class="col_product1" data-toggle="tooltip" data-html ="true" data-placement="top" title="<%= @book.name%>">
 					<a href="/show_book_detail/<%= @book.id%>"><%= convert_ckeditor(@book.image) %></a>
 					<p><%= @book.name.truncate(27)%></p>

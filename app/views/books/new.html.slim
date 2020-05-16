@@ -38,6 +38,7 @@ table#dataTableBook.listall.table.table-striped.table-bordered.table-sm cellspac
           = book.amount
         td
           button.btn.btn-primary.addbook data-book_id="#{book.id}" data-book_code="#{colection_amount_code(@amounts,book.id)}" data-amount="#{book.amount}" #{I18n.t('book.addbook')}
+          /button.btn.btn-danger.delete data-book_id="#{book.id}" data-book_code="#{colection_amount_code(@amounts,book.id)}" data-amount="#{book.amount}" #{I18n.t('book.delete')}
           = link_to "#{I18n.t('book.delete')}", "#{book.id}", data: { confirm: "#{I18n.t('mes.delete')}" }, method: :delete, class: "btn btn-danger"
   tfoot
     tr

@@ -10,6 +10,7 @@ class BooksController < ApplicationController
   # GET /books
   # GET /books.json
   def index
+    @current_date = Time.zone.now.to_date
     if params[:search].present?
       @search = params[:search];
       @books = Book.search(@search).order("created_at DESC").paginate(page: params[:page], per_page: PER_PAGE)
@@ -29,6 +30,7 @@ class BooksController < ApplicationController
   # GET /books/1
   # GET /books/1.json
   def show
+    @current_date = Time.zone.now.to_date
     @books = Book.where(type_id: params[:id]).order("created_at DESC").paginate(page: params[:page], per_page: PER_PAGE)
     @types = Type.all
     @authors = Author.all
@@ -37,10 +39,12 @@ class BooksController < ApplicationController
   end
 
   def show_book
+    @current_date = Time.zone.now.to_date
     @book = Book.find(params[:id]).order("created_at DESC").paginate(page: params[:page], per_page: PER_PAGE)
   end
 
   def show_book_detail
+    @current_date = Time.zone.now.to_date
     @book = Book.find(params[:id])
     @types = Type.all
     @authors = Author.all
@@ -48,9 +52,11 @@ class BooksController < ApplicationController
     @departments = Department.all
   end
   def book_detail
+    @current_date = Time.zone.now.to_date
     @book = Book.find(params[:id])
   end
   def book_detail_student
+    @current_date = Time.zone.now.to_date
     @book = Book.find(params[:id])
     @types = Type.all
     @authors = Author.all

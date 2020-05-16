@@ -48,6 +48,7 @@ html
       == include_gon(:init => true)
       div.chat
         - if user_signed_in?
+          div.alert_notice
           == image_tag("mes", class:"chatmes cursor")
       div.form_chat
         div.close.text-danger.cursor X

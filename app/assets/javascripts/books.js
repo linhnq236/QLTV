@@ -303,7 +303,7 @@ $( document ).on('turbolinks:load', function() {
           columnClass: 'col-md-10',
           closeIcon: true,
           closeIconClass: 'fa fa-close',
-          title: I18n.t("layout.cart"),
+          title: I18n.t("layout.cart_tv"),
           content:
           `<form action="" class="formName col-md-12">
             <div class="row text-center">
@@ -389,10 +389,7 @@ $( document ).on('turbolinks:load', function() {
                 btnClass: 'btn-danger delete float-left',
                 action: function(){
                   localStorage.clear();
-<<<<<<< HEAD
                   location.reload();
-=======
->>>>>>> fe761dfcef47c93fd046ebc6df9b6f4e62c90654
               }
             }
           },
@@ -403,7 +400,6 @@ $( document ).on('turbolinks:load', function() {
       }
     })
   }
-<<<<<<< HEAD
   // add book
   $(".addbook").click(function(){
     var book_id = $(this).data("book_id");
@@ -451,6 +447,5 @@ $( document ).on('turbolinks:load', function() {
       }
     })
   })
-=======
->>>>>>> fe761dfcef47c93fd046ebc6df9b6f4e62c90654
+  // delete book
 })

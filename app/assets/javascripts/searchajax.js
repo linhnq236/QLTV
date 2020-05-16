@@ -21,7 +21,8 @@ $(document).on('turbolinks:load',function(){
       success: function(reponsive){
         var html = '';
         $.each(reponsive["data"], function(index,value){
-          html += `<li class="list-group-item list-group-item-action"><a class="nav-link" href="/book_detail_student/${value["id"]}">${value["name"]}</a></li>`;
+          name = value["name"].replace(keyword,`<span class="text-warning">${keyword}</span>`);
+          html += `<li class="list-group-item list-group-item-action"><a class="nav-link search_ajax" href="/book_detail_student/${value["id"]}">${name}</a></li>`;
         })
         $(".result_search").addClass("h-25");
         $(".result_search").html(`<ul class="list-group result_search">${html}</ul>`);
