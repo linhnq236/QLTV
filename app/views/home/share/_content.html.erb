@@ -24,27 +24,37 @@
   </div>
 </div>
 <div class="clear"></div>
-
-
     <div class="danhngon">
       <div class="slogan">
         <h3 class="slogan-text">Sách là nguồn trí thức</h3>
         <h4 class="slogan-text1">Giúp cuộc sống tốt đẹp hơn</h4>
       </div>
-
     </div>
-
-
-
 <div class="sach-index">
   <div class="wap_89">
     <div class="tieude-tintuc">
       sách nổi bật trong tuần
     </div>
-
     <div class="swiper-container">
         <div class="swiper-wrapper">
-          <div class="swiper-slide">
+          <% @books.each do |book|%>
+            <div class="swiper-slide">
+              <div class="imgbox text-center" data-toggle="tooltip" data-html ="true" title="<%= book.name%>">
+                <% if new_book(@current_date,book.created_at) == true%>
+                  <div class="ribbon-wrapper">
+                    <div class="ribbon"><%= t("book.new")%></div>
+                  </div>
+                <% end %>
+                <a href="/book_detail_student/<%= book.id%>"><%= convert_ckeditor(book.image)%></a>
+              </div>
+              <div class="detail">
+                <h3><%= book.name.truncate(27)%><br>
+                <span><%= book.author.name%></span>
+                </h3>
+              </div>
+            </div>
+          <% end %>
+          <!-- <div class="swiper-slide">
             <div class="imgbox">
               <a href="">  <%= image_tag("gt")%></a>
             </div>
@@ -104,14 +114,10 @@
             <span>Tô bá lâm</span>
               </h3>
             </div>
-          </div>
-
+          </div> -->
         </div>
-
         <div class="swiper-pagination"></div>
      </div>
-
-
     </div>
   </div>
 

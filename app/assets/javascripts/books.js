@@ -303,7 +303,7 @@ $( document ).on('turbolinks:load', function() {
           columnClass: 'col-md-10',
           closeIcon: true,
           closeIconClass: 'fa fa-close',
-          title: I18n.t("layout.cart"),
+          title: I18n.t("layout.cart_tv"),
           content:
           `<form action="" class="formName col-md-12">
             <div class="row text-center">
@@ -447,4 +447,5 @@ $( document ).on('turbolinks:load', function() {
       }
     })
   })
+  // delete book
 })

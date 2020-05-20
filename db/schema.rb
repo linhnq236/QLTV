@@ -97,6 +97,7 @@ ActiveRecord::Schema.define(version: 2020_05_11_022352) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "field_name"
     t.integer "mark"
+<<<<<<< HEAD
   end
 
   create_table "messages", force: :cascade do |t|
@@ -104,6 +105,8 @@ ActiveRecord::Schema.define(version: 2020_05_11_022352) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id"
+=======
+>>>>>>> fe761dfcef47c93fd046ebc6df9b6f4e62c90654
   end
 
   create_table "publishers", force: :cascade do |t|

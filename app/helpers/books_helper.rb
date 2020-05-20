@@ -14,4 +14,10 @@ module BooksHelper
         end
       end
   end
+
+  def new_book currentdate, created
+    if currentdate.to_time <= created.to_time.months_since(1)
+      return true
+    end
+  end
 end

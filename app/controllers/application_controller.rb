@@ -37,7 +37,7 @@ class ApplicationController < ActionController::Base
     if user_signed_in?
       # unless current_user.name.present? && current_user.admin == 0
       unless current_user.name.present?
-        flash[:notice] = t("book.profileuser")
+        flash[:notice] = t("book.profileuser", profile: t("book.profile"))
         redirect_to root_path
       end
     end

@@ -5,11 +5,14 @@ class BooksController < ApplicationController
   before_action :check_active , only: [:index]
   before_action :check_staff , only: [:new, :create, :destroy, :update, :book_detail]
   skip_before_action :verify_authenticity_token
+  skip_before_action :authenticate_user!, only: [:book_detail_student]
+  before_action :check_befor_login, only: [:book_detail_student]
   # before_action :check_equipment
   PER_PAGE = 12
   # GET /books
   # GET /books.json
   def index
+    @current_date = Time.zone.now.to_date
     if params[:search].present?
       @search = params[:search];
       @books = Book.search(@search).order("created_at DESC").paginate(page: params[:page], per_page: PER_PAGE)
@@ -29,6 +32,7 @@ class BooksController < ApplicationController
   # GET /books/1
   # GET /books/1.json
   def show
+    @current_date = Time.zone.now.to_date
     @books = Book.where(type_id: params[:id]).order("created_at DESC").paginate(page: params[:page], per_page: PER_PAGE)
     @types = Type.all
     @authors = Author.all
@@ -37,10 +41,12 @@ class BooksController < ApplicationController
   end
 
   def show_book
+    @current_date = Time.zone.now.to_date
     @book = Book.find(params[:id]).order("created_at DESC").paginate(page: params[:page], per_page: PER_PAGE)
   end
 
   def show_book_detail
+    @current_date = Time.zone.now.to_date
     @book = Book.find(params[:id])
     @types = Type.all
     @authors = Author.all
@@ -48,9 +54,11 @@ class BooksController < ApplicationController
     @departments = Department.all
   end
   def book_detail
+    @current_date = Time.zone.now.to_date
     @book = Book.find(params[:id])
   end
   def book_detail_student
+    @current_date = Time.zone.now.to_date
     @book = Book.find(params[:id])
     @types = Type.all
     @authors = Author.all
@@ -134,5 +142,12 @@ class BooksController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def book_params
       params.require(:book).permit(:name, :publishyear, :author_id, :type_id, :publisher_id, :image,:amount,)
+    end
+
+    def check_befor_login
+      if !user_signed_in?
+        flash[:notice] = t("user.befor_login", href: t("user.login_href"))
+        redirect_to "/"
+      end
     end
 end
