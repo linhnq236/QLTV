@@ -5,6 +5,8 @@ class BooksController < ApplicationController
   before_action :check_active , only: [:index]
   before_action :check_staff , only: [:new, :create, :destroy, :update, :book_detail]
   skip_before_action :verify_authenticity_token
+  skip_before_action :authenticate_user!, only: [:book_detail_student]
+  before_action :check_befor_login, only: [:book_detail_student]
   # before_action :check_equipment
   PER_PAGE = 12
   # GET /books
@@ -140,5 +142,12 @@ class BooksController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def book_params
       params.require(:book).permit(:name, :publishyear, :author_id, :type_id, :publisher_id, :image,:amount,)
+    end
+
+    def check_befor_login
+      if !user_signed_in?
+        flash[:notice] = t("user.befor_login", href: t("user.login_href"))
+        redirect_to "/"
+      end
     end
 end

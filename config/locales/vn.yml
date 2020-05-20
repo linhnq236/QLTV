@@ -93,7 +93,8 @@ vn:
     pa: "Trả sách"
     note: "Ghi chú"
   book:
-    profileuser: "Cập nhật thông tin cá nhân."
+    profileuser: "Cập nhật thông tin cá nhân.<a href='/profile'>%{profile}</a>"
+    profile: "Tại đây"
     link: "Link"
     new_author: "Tác giả mới"
     new_type: "Thể loại mới"
@@ -157,6 +158,8 @@ vn:
     placeholder: "Nhập email mới"
     submit: "Gửi"
     acc_exists: "Email: %{email} đã tồn tại."
+    befor_login: "Bạn phải đăng nhập ! click tại đây: %{href}"
+    login_href: "<a href='/vn/users/sign_in'>Đăng nhập</a>"
   menu:
     teacher:
       calendar: "LỊCH THEO TUẦN"

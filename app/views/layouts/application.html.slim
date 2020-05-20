@@ -5,7 +5,7 @@ html
     title
       = content_for?(:title) ? yield(:title) : t("layout.title")
     meta name="description" content="#{content_for?(:description) ? yield(:description) : 'QLTV'}"
-    == action_cable_meta_tag
+    /== action_cable_meta_tag
     == stylesheet_link_tag "application", :media => 'all', 'data-turbolinks-track' => 'reload'
     == javascript_include_tag 'application', 'data-turbolinks-track' => 'reload'
     /== javascript_include_tag '/assets/datatable', 'data-turbolinks-track' => 'reload'
