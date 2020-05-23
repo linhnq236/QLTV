@@ -19,7 +19,7 @@ Rails.application.routes.draw do
     post "borrow_show", to: "borrows#create_by_show"
     get "borrows_book/:id", to: "borrows#index"
     resources :books
-    get "show_book/:id", to: "books#show_book"
+    # get "show_book/:id", to: "books#show_book"
     get "show_book_detail/:id", to: "books#show_book_detail"
     get "book_detail/:id", to: "books#book_detail"
     get "book_detail_student/:id", to: "books#book_detail_student"

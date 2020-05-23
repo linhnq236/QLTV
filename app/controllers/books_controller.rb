@@ -13,15 +13,10 @@ class BooksController < ApplicationController
   # GET /books.json
   def index
     @current_date = Time.zone.now.to_date
-    if params[:search].present?
-      @search = params[:search];
-      @books = Book.search(@search).order("created_at DESC").paginate(page: params[:page], per_page: PER_PAGE)
+    if params[:char].present?
+      @books = Book.search(params[:char]).order("created_at DESC").paginate(page: params[:page], per_page: PER_PAGE)
     else
-      if params[:char].present?
-        @books = Book.search(params[:char]).order("created_at DESC").paginate(page: params[:page], per_page: PER_PAGE)
-      else
-        @books = Book.group(:type_id).paginate(page: params[:page], per_page: PER_PAGE)
-      end
+      @books = Book.group(:type_id).paginate(page: params[:page], per_page: PER_PAGE)
     end
     @types = Type.all
     @authors = Author.all
@@ -40,10 +35,10 @@ class BooksController < ApplicationController
     @departments = Department.all
   end
 
-  def show_book
-    @current_date = Time.zone.now.to_date
-    @book = Book.find(params[:id]).order("created_at DESC").paginate(page: params[:page], per_page: PER_PAGE)
-  end
+  # def show_book
+  #   @current_date = Time.zone.now.to_date
+  #   @book = Book.find(params[:id]).order("created_at DESC").paginate(page: params[:page], per_page: PER_PAGE)
+  # end
 
   def show_book_detail
     @current_date = Time.zone.now.to_date
