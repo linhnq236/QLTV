@@ -1,20 +1,21 @@
+
 <div class="clear"></div>
 <div class="wap_footer">
     <div class="footer_header">
         <div class="footer_noidung">
-	        <h3>THƯ VIỆN TRƯỜNG ĐẠI HỌC GIAO THÔNG VẬN TẢI TPHCM</h3>
-	        <p>Tên viết tắt: <strong>GTS LIBRARY</strong></p>
+	        <h3><%= t('footer.title')%></h3>
+	        <p><%= t('footer.nickname')%><strong> <%= t('footer.name')%></strong></p>
 
         </div>
         <div class="footer_thongtin">
             <div class="diachi_footer">
-             	 Cơ sở chính: Số 2, Đường Võ Oanh, P.25, Q. Bình Thạnh, Thành Phố Hồ Chí Minh
+             	 <%= t('footer.address')%>
             </div>
             <div class="sdt_footer">
-              	Điện thoại: (028) 38992862
+              	<%= t('footer.tel')%> (028) 38992862
             </div>
             <div class="email_footer">
-              	Email: support@ut.edu.vn - pdt@ut.edu.vn
+              <%= t('footer.email')%>: support@ut.edu.vn - pdt@ut.edu.vn
             </div>
         </div>
     </div>
@@ -22,6 +23,6 @@
 
  <div class="bottom_footer">
  	<div class="bottom_footer_text">
- 		<h3>2020 © THƯ VIỆN TRƯỜNG ĐẠI HỌC GIAO THÔNG VẬN TẢI TPHCM.DEVELOPER BY LỘC VÀ LĨNH</h3>
+ 		<h3>2020 © <%= t('footer.title')%> <%= t('footer.by')%> </h3>
  	</div>
  </div>

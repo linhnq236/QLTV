@@ -1,4 +1,13 @@
 vn:
+  date:
+    abbr_day_names: [CN, T2 ,T3,T4 ,T5 ,T6 ,T7]
+    abbr_month_names: [CN, T2 ,T3,T4 ,T5 ,T6 ,T7]
+    order: [ !ruby/symbol day, !ruby/symbol month, !ruby/symbol year ]
+    formats:
+      Octorber: "Tháng 10"
+      default: "%Y-%m-%d"
+      short: "%b %d"
+      long: "%B %d, %Y"
   department:
     it: "Công nghệ thông tin"
     ec: "Kinh tế vận tải"
@@ -11,6 +20,7 @@ vn:
     fail_update: "Cập nhật thất bại. "
     delete_success: "Xóa thành công."
     delete_fail: "Xóa thất bại."
+    send: "Gửi"
   layout:
     cart: "Giỏ hàng"
     title: "PHẦN MỀM QUẢN LÝ THƯ VIỆN"
@@ -129,7 +139,7 @@ vn:
     field_name: "Tên giá trị"
     value_old: "Giá trị cũ"
     value_new: "Giá trị mới"
-    staff_id: "Người thây đổi"
+    staff_id: "Người thay đổi"
     active: "Hoạt động"
     created_at: "Thời gian tạo"
     updated_at: "Thời gian chỉnh sửa"
@@ -160,6 +170,9 @@ vn:
     acc_exists: "Email: %{email} đã tồn tại."
     befor_login: "Bạn phải đăng nhập ! click tại đây: %{href}"
     login_href: "<a href='/vn/users/sign_in'>Đăng nhập</a>"
+  ckeditor:
+    buttons:
+      upload: "Chèn ảnh"
   menu:
     teacher:
       calendar: "LỊCH THEO TUẦN"
@@ -198,3 +211,79 @@ vn:
       long: "%B %d, %Y %H:%M"
     am: "am"
     pm: "pm"
+  home:
+    mes: "THÔNG ĐIỆP"
+    title: "Chào mừng các em học sinh sinh viên, cùng toàn thể thầy cô giáo!"
+    content: "Thư Viện trường Đại Học Giao Thông Vận Tải TPHCM được thành lập năm 1991 trực thuộc Phân hiệu Đại học Hàng Hải.Là một thư viện chuyên nghiệp, với mục tiêu khẳng định vị thế và chất lượng trong ngành giáo dục Việt Nam"
+    content1: "Với nguồn tài chính vững chắc, hướng quản trị phù hợp, cùng đội ngũ nhân viên chuyên nghiệp, sau gần 29 năm hoạt động, chúng tôi đang dần khẳng định được vị thế và vai trò của mình đối với ngành giáo dục Việt Nam đồng thời thể hiện sự thành công tại thời điểm hiện nay..."
+    button: "Xem thêm"
+    sologan: "Sách là nguồn trí thức"
+    sologan1: "Giúp cuộc sống tốt đẹp hơn"
+    bookfamous: "sách nổi bật trong tuần"
+  footer:
+    title: "THƯ VIỆN TRƯỜNG ĐẠI HỌC GIAO THÔNG VẬN TẢI TPHCM"
+    nickname: "Tên viết tắt:"
+    name: "GTS LIBRARY"
+    address: "Cơ sở chính: Số 2, Đường Võ Oanh, P.25, Q. Bình Thạnh, Thành Phố Hồ Chí Minh"
+    tel: "Điện thoại:"
+    email: "Email"
+    by: "BỞI LĨNH - LỘC"
+  introduce:
+    title: "GIỚI THIỆU"
+    mes: "Thông điệp của thư viện"
+    hello: "Chào mừng các em học sinh, sinh viên, cùng toàn thể thầy cô giáo!"
+    mes1: "Thư viện trường đại học giao thông vận tải thành phố hồ chí minh được khởi dựng năm 1991 trực thuộc Phòng Đào tạo của Phân hiệu Đại học Hàng hải. Với sự chuyên nghiệp, đa tài dần khẳng định vị thế và thương hiệu trong ngành giáo dục Việt Nam"
+    mes2: " Với nguồn tài chính vững chắc, hứng quản trị phù hợp cùng đội ngũ giảng viên chuyên nghiệp, sau gần 29 năm hoạt động, thư viện dần khẳng định được tầm quan trọng trong nghành giáo dục, đồng thời thể hiện được đẳng cấp của mình trong những trường top.Thời gian hoạt động của thư viện bắt đầu từ 8h sáng và kết thúc vào lúc 5h chiều"
+    mes3: "Là một trong những trường top đầu khu vực TPHCM thư viện có bề dày kinh nghiệm cộng với cơ sở vật chất tốt đáp ứng đủ yêu cầu của sinh viên mới vào trường cũng như năm cuối.Tổng thể thư viện gồm 3 cơ sở lớn gồm bình thạnh, quận 2, quận 12, nguồn tài nguyên thông tin phong phú và đa dạng
+    gồm có giáo trình  sách tham khảo, ebook chuyên ngành, luận văn luận án..vv"
+    mes4: "Trong hoạch định tương lai thư viện thực hiện hóa mở rộng quy mô, xây dựng các trang thiệt bị tiên tiến, bổ sung nguồn tại liệu phong phú và đa dạng hơn để cạnh tranh với trường top."
+    mes5: "Mặc dù còn khó khăn và thử thách phía trước nhưng chúng tôi tin rằng với sự nhiệt huyết cùng sự cố gắn thì chúng tôi sẽ thành công"
+    thanks: "cảm ơn!"
+    build: "cơ sở vật chất"
+    build1: "cơ sở 1"
+    content11: "+ Phòng đọc : 215 chỗ ngồi"
+    content12: "+ Phòng đọc điện tử: 40 máy tính nối mạng Internet"
+    content13: "+ Phòng mượn sách giáo trình, sách tham khảo về nhà"
+    address1: "Địa chỉ:"
+    content_ad1: "Số 2, đường D3, khu Văn Thánh Bắc, phường 25, quận Bình Thạnh, TP.HCM."
+    tel1: "Điện Thoại:"
+    content_tel1: "(08) 38 035 654  (Phòng nghiệp vụ) – (08) 35 126 115 (Phòng phát hành)."
+    build2: "cơ sở 2"
+    content21: "+ Phòng đọc báo, tạp chí: 50 chỗ ngồi"
+    content22: "+ Phòng đọc điện tử: 05 máy tính nối mạng Internet"
+    content23: "+ Phòng mượn sách giáo trình, sách tham khảo về nhà"
+    content24: "+ Phòng bán sách giáo trình và sách chuyên ngành cho sinh"
+    address2: "Địa chỉ:"
+    content_ad2: "Số 17 - đường Trần Não, phường Bình An, quận 2, TP.Hồ Chí Minh."
+    tel2: "Điện Thoại:"
+    content_tel2: "(08) 37 406 510."
+    build3: "cơ sở 3"
+    content31: "+ Phòng đọc: 235 chỗ ngồi"
+    content32: "+ Phòng đọc điện tử: 27 máy tính nối mạng Internet"
+    content33: "+ Phòng mượn sách giáo trình, sách tham khảo về nhà"
+    content34: "+ Phòng bán sách giáo trình và sách chuyên ngành cho sinh"
+    address3: "Địa chỉ:"
+    content_ad3: "70 - đường Tô Ký, phường Tân Chánh Hiệp, quận 12, TP. Hồ Chí Minh."
+    tel3: "Điện Thoại:"
+    content_tel3: "(08) 37 406 510."
+    history:
+      title: "Lịch sử phát triển"
+      list1: "Thư viện Trường Đại học Giao thông vận tải Thành phố Hồ Chí Minh được thành lập năm 1991 trực thuộc Phòng Đào tạo của Phân hiệu Đại học Hàng hải."
+      list2: "Tháng 09/1998 Tổ Thư viện trực thộc Phòng Khoa học - Công nghệ (Phòng Đào tạo tách ra)."
+      list3: "Ngày 28/06/2001 Hiệu trưởng đã ban hành Quyết định số 41/TCCB với tên gọi Tổ Thư viện trực thuộc trường Đại học Giao thông vận tải Thành phố Hồ Chí Minh."
+      list4: "Ngày 25/10/2011 Hiệu trưởng ban hành Quyết định số 480/QĐ/ĐH GTVT thay đổi tên gọi Tổ Thư viện thành Thư viện trường Đại học Giao thông vận tải Thành phố Hồ Chí Minh."
+    service:
+      title: "Dịch vụ thông tin"
+      search: "Tra cứu tài liệu"
+      content1: "+ Bạn đọc có thể tra cứu trực tuyến thông qua hệ thống máy tính đặt tại các phòng đọc thư viện."
+      content2: "+ Tra cứu Thư viện số (liên kết với Tài liệu. VN và các trường đại học, cao đẳng …chia sẻ tài nguyên)"
+      content3: "+ Học tập cá nhân"
+      content4: "+ Học nhóm, làm bài tập nhóm"
+      content5: "+ Tìm kiếm thông tin theo chủ đề"
+      content6: "+ Truy cập Cơ sở dữ liệu"
+      content7: "+ Đọc tại chỗ, mượn về nhà, sao chụp, in ấn, photo tài liệu, dịch vụ tham khảo…"
+  login:
+    title: "Đăng nhập tài khoản"
+    title1: "Sinh viên đăng nhập tài khoản"
+    content: "Để mượn sách"
+    content1: "Bằng cách liên hệ phòng thư viện để tạo tài khoản bạn có thể mượn sách nhanh hơn, được cập nhập về tình trạng sách sau khi mượn, và theo dõi lịch sử mượn sách của bạn đã thực hiện trước đó."

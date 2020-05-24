@@ -13,30 +13,30 @@
               <%= link_to(I18n.t('layout.equipment'), controller_equipment_path) %>
             </li>
             <li  class="col-sm-12">
-              <%= link_to(I18n.t('layout.borrow'),'/borrows') %>
+              <%= link_to(I18n.t('layout.borrow'), borrows_path) %>
             </li>
             <li  class="col-sm-12">
-              <%= link_to(I18n.t('layout.history'),'/histories') %>
+              <%= link_to(I18n.t('layout.history'), histories_path) %>
             </li>
             <li class="col-sm-12">
-              <%= link_to(I18n.t('layout.add'),'/books/new') %>
+              <%= link_to(I18n.t('layout.add'), new_book_path) %>
             </li>
             <li class="col-sm-12">
-              <%= link_to(I18n.t('layout.user'),'/users') %>
+              <%= link_to(I18n.t('layout.user'), users_path) %>
             </li>
             <% elsif  current_user.admin == 2%>
             <li  class="col-sm-12">
-              <%= link_to(I18n.t('layout.listalluser'), '/admin/users') %>
+              <%= link_to(I18n.t('layout.listalluser'), admin_users_path) %>
             </li>
             <li  class="col-sm-12">
-              <%= link_to(I18n.t('layout.logs'), "/admin/historyalls") %>
+              <%= link_to(I18n.t('layout.logs'), admin_historyalls_path) %>
             </li>
             <% else %>
             <li  class="col-sm-12">
               <%= link_to(I18n.t('layout.mybook'), mybook_path) %>
             </li>
             <li  class="col-sm-12">
-              <%= link_to(I18n.t('layout.book'), '/books') %>
+              <%= link_to(I18n.t('layout.book'), books_path) %>
             </li>
             <li  class="col-sm-12">
               <%= link_to(I18n.t('layout.acc'), profile_path) %>

@@ -2,12 +2,13 @@ Rails.application.routes.draw do
   mount ActionCable.server => '/cable'
   resources :messages
   mount Ckeditor::Engine => '/ckeditor'
-  resources :users
-  get "profile", to: "users#edit"
-  post "update", to: "users#update"
-  put "active_acc", to: "users#active_acc"
-  get "listalluser", to: "users#listalluser"
+  devise_for :users
   scope "(:locale)", locale: /en|vn/ do
+    resources :users
+    get "profile", to: "users#edit"
+    post "update", to: "users#update"
+    put "active_acc", to: "users#active_acc"
+    get "listalluser", to: "users#listalluser"
     resources :departments
     resources :historyalls
     resources :histories
@@ -32,7 +33,6 @@ Rails.application.routes.draw do
     get "new_equipment" => "equipment#new"
     root to: 'home#index'
     get "introduce", to: "home#introduce"
-    devise_for :users
     get "/logout", to: "devise/registrations#destroy "
     namespace "admin" do
       root to: "equipment#index"

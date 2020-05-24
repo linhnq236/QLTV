@@ -30,6 +30,15 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
+  date:
+    abbr_day_names: [CN, T2 ,T3,T4 ,T5 ,T6 ,T7]
+    abbr_month_names: [1,2,3,4,5,6,7,8,9,10,11,12]
+    order: [ !ruby/symbol day, !ruby/symbol month, !ruby/symbol year ]
+    formats:
+      Octorber: "Tháng 10"
+      default: "%Y-%m-%d"
+      short: "%b %d"
+      long: "%B %d, %Y"
   book:
     profileuser: "Personal information Personal information."
     link: "Link"
@@ -61,6 +70,11 @@ en:
   user:
     edit_user: "Editing User"
     update: "Update"
+    all: "All"
+    admin: "Admin"
+    teacher: "Librarian"
+    student: "Student"
+    empty: "Empty"
     code: "student code"
     name: "First and last name"
     tel: "Phone"
@@ -74,10 +88,22 @@ en:
     changepass: "Change the password"
     acc_mess_succ: "Đã %{mes} successful account."
     placeholder: "Enter a new email"
-    submit: "To send"
+    submit: "Create"
     acc_exists: "Email: %{email} is exists."
 #javascript using I18n.t()
     do: "Hãy cẩn thận khi thao tác"
+
+  mybook:
+    code: "Code"
+    name: "Name"
+    date: "Date"
+    status: "Status"
+    date_borrow: "Borrow date "
+    date_pay: "Pay date"
+    receiver: "Recipients pay"
+    borrower: "Lender"
+    finish: "Payment success"
+    lose: "Lose"
   department:
     cntt: "Information Technology"
     ctgt: "Traffic Engineering "
@@ -116,6 +142,7 @@ en:
     exists: "Email already exists."
     success: "More success."
     fail: "More failures."
+    send: "Send"
 #javascript using I18n.t()
     user_conf: "- Nút MậtKhẩu là khôi phục lại mật khẩu từ đầu. <br> - Nút Khóa là khóa lại tài khoản sử dụng. <br> - Nút Xóa là xóa tài khoản."
 
@@ -167,8 +194,20 @@ en:
     acc: "Setting"
     back: "Back"
     search: "Search ..."
+    listalluser: "Accounts"
+    cart: "Cart shopping"
+    logs: "Manipulations"
   button:
     login: "Log in"
+  admin:
+    field_name: "Field"
+    value_old: "Old value"
+    value_new: "New value"
+    staff_id: "People change"
+    active: "Active"
+    created_at: "Created at"
+    updated_at: "Updated at"
+
   menu:
     teacher:
       calendar: "WEEK CALENDAR"
@@ -182,3 +221,78 @@ en:
         timer: "Timer"
         timeout: "TimeOut"
     admin:
+  home:
+    mes: "MESSAGE"
+    title: "Welcome to students and teachers!"
+    content: "The Library of Ho Chi Minh City University of Transport was established in 1991 under the Branch of Maritime University. It is a professional library, aiming to affirm its position and quality in Vietnam's education sector."
+    content1: "With solid financial resources, appropriate management direction, and professional staff, after nearly 29 years of operation, we are gradually asserting our position and role in the Vietnamese education industry. Presenting success at the present time ..."
+    button: "Load more"
+    sologan: "Books are a source of knowledge"
+    sologan1: "Helping for a better life"
+    bookfamous: "Featured books of the week"
+  footer:
+    title: "LIBRARY OF HCMC UNIVERSITY OF TRANSPORT"
+    nickname: "Abbreviations:"
+    name: "GTS LIBRARY"
+    address: "Main campus: No. 2, Vo Oanh Street, Ward 25, Binh Thanh District, Ho Chi Minh City"
+    tel: "Telephone:"
+    email: "Email"
+    by: "BY LINH - LOC"
+  introduce:
+    title: "INTROUDUCE"
+    mes: "The message of Library"
+    hello: "Welcome to students and teachers!"
+    mes1: "The library of Ho Chi Minh City University of Transport was established in 1991 under the Training Department of Maritime University's Branch. With professionalism, multi-talented gradually asserted its position and brand in Vietnam's education industry"
+    mes2: "With a solid financial source, appropriate management and professional teaching staff, after nearly 29 years of operation, the library has gradually affirmed the importance in the field of education, while showing its class. In the top schools, the library's opening hours start at 8am and end at 5pm"
+    mes3: "As one of the top schools in the area of ​​Ho Chi Minh City, the library has a wealth of experience plus good facilities to meet the requirements of new students as well as the last year. Binh thanh, district 2, district 12, rich and diverse information resources including reference textbooks, specialized ebooks, dissertations, etc."
+    mes4: "In the future planning, the library will expand and build advanced equipment, supplement more and more diverse materials to compete with the top school."
+    mes5: "Despite the difficulties and challenges ahead, we believe that with enthusiasm and attachment we will succeed."
+    thanks: "Thanks so much !"
+    build: "Infrastructures"
+    build1: "Base 1"
+    content11: "+ Reading room: 215 seats"
+    content12: "+ Electronic reading room: 40 computers connected to the Internet"
+    content13: "+ Room borrow textbooks, reference books home"
+    address1: "Address:"
+    content_ad1: "No. 2, Vo Oanh Street, Ward 25, Binh Thanh District, Ho Chi Minh City."
+    tel1: "Telephone:"
+    content_tel1: "(08) 38 035 654  (Operation Department) – (08) 35 126 115 (Publishing room)."
+    build2: "Base 2"
+    content21: "+ Reading and magazines room: 50 seats"
+    content22: "+ Electronic reading room: 05 computers connected to the Internet"
+    content23: "+ Room borrow textbooks, reference books home"
+    content24: "+ Room for selling textbooks and specialized books for students"
+    address2: "Address:"
+    content_ad2: "No. 17 - Tran Nao Street, Binh An Ward, District 2, Ho Chi Minh City."
+    tel2: "Telephone:"
+    content_tel2: "(08) 37 406 510."
+    build3: "Base 3"
+    content31: "+ Reading room: 235 seats"
+    content32: "+ Electronic reading room: 27 computers connected to the Internet"
+    content33: "+ Room borrow textbooks, reference books home"
+    content34: "+ Room for selling textbooks and specialized books for students"
+    address3: "Address:"
+    content_ad3: "No. 70 - To Ky Street, Tan Chanh Hiep Ward, District 12, City. Ho Chi Minh."
+    tel3: "Telephone:"
+    content_tel3: "(08) 37 406 510."
+    history:
+      title: "Development history"
+      list1: "The Ho Chi Minh City University of Transport Library was established in 1991 under the Training Department of the Vietnam Maritime University Branch."
+      list2: "In September 1998, the Library Division was directly under the Science and Technology Division (separated by the Training Department)."
+      list3: "On June 28, 2001 the Rector issued Decision No. 41 / TCCB with the name of Library Group under Ho Chi Minh City University of Transport."
+      list4: "On October 25, 2011, Rector issued Decision No. 480 / QĐ / DH GTVT to change the name of the Library Group to Library of Ho Chi Minh City University of Transport."
+    service:
+      title: "Information service"
+      search: "Search for documents"
+      content1: "+ Readers can search online through computer system located in the library reading rooms."
+      content2: "+ Look up Digital Library (linked to Documents. VN and universities, colleges ... sharing resources)"
+      content3: "+ Personal learning"
+      content4: "+ Study in groups, do group exercises"
+      content5: "+ Search information by topic"
+      content6: "+ Database Access"
+      content7: "+ Read on the spot, borrow home, copy, print, photo documents, reference services…"
+  login:
+    title: "Log in to your account"
+    title1: "Students login account"
+    content: "To borrow books"
+    content1: "By contacting the library room to create an account you can borrow books faster, get updated status of your books after borrowing, and keep track of the history of books you have made before."

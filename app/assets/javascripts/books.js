@@ -1,4 +1,11 @@
 $( document ).on('turbolinks:load', function() {
+  var path = $(location).attr('pathname');
+  var result = '';
+  if (path.substr(1,2) == "en") {
+    result = "/en";
+  }else{
+    result = "/vn";
+  }
   $(".btn-borrow>.detail").removeAttr("href");
   $(".btn-borrow>.hidden").remove();
   var bookids=[];
@@ -266,7 +273,7 @@ $( document ).on('turbolinks:load', function() {
   // loc sach co ten theo chữ cái
   for (var i = 65; i <= 90; i++) {
     char = String.fromCharCode(i);
-    $(".show_character").append(`<a class="p-1 text-center" href="/books?char=${char}">${char}</a>`);
+    $(".show_character").append(`<a class="p-1 text-center" href="${result}/books?char=${char}">${char}</a>`);
   }
   $(".show_character").mouseout(function(){
     $(this).css({"color":"blue"})
