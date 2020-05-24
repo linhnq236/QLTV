@@ -69,7 +69,8 @@ vn:
     borrower: "Người cho mượn"
     finish: "Trả thành công"
     lose: "Bị mất"
-
+    borrowhistory: "Lịch sử mượn sách"
+    waiting: "Sách chờ phê duyệt"
   department:
     cntt: "Công nghệ thông tin"
     ctgt: "Công trình giao thông"

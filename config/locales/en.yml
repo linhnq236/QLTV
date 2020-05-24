@@ -104,6 +104,8 @@ en:
     borrower: "Lender"
     finish: "Payment success"
     lose: "Lose"
+    borrowhistory: "History"
+    waiting: "Book pending approval"
   department:
     cntt: "Information Technology"
     ctgt: "Traffic Engineering "
