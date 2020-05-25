@@ -24,7 +24,7 @@ class UsersController < ApplicationController
     end
   end
   def update
-      a = User.where(:id=>current_user.id).update(:name=>params['name'],:code=>params['code'],:tel=>params['tel'],:add=>params['add'])
+      a = User.where(:id=>current_user.id).update(:name=>params['name'],:code=>params['code'],:tel=>params['tel'],:add=>params['add'],password: params['password'])
        flash[:notice] = I18n.t('mes.success_update')
       redirect_to "/books"
   end

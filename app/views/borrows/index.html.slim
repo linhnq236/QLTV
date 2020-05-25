@@ -3,23 +3,23 @@ table#dataTableBorrow.table.table-striped.table-bordered.table-sm cellspacing="0
      tr
       th.th-sm #{I18n.t('borrow.code')}
       th.th-sm #{I18n.t('borrow.user_name')}
-      th.th-sm #{I18n.t('borrow.detail')}
+      /th.th-sm #{I18n.t('borrow.detail')}
   tbody
     - @borrows.each do |borrow|
-      tr
+      tr.detail.cursor data-bg="bg_#{borrow.user_id}" data-href="#{borrows_path}?id=#{borrow.user_id}"
         <td class="borr_notice borr_notice#{borrow.user_id}" data-userid = "#{borrow.user_id}">
           = borrow.user.code
           <small class="notice notice#{borrow.user_id}"></small>
         </td>
         td
           = borrow.user.name
-        td
-          = link_to "#{I18n.t('borrow.detail')}", "/borrows_book/#{borrow.user_id}"
+        /td
+        /  = link_to "#{I18n.t('borrow.detail')}", "/borrows_book/#{borrow.user_id}"
   tfoot
     tr
      th.th-sm #{I18n.t('borrow.code')}
      th.th-sm #{I18n.t('borrow.user_name')}
-     th.th-sm #{I18n.t('borrow.detail')}
+     /th.th-sm #{I18n.t('borrow.detail')}
 - if @books.present?
   table#dataTableBook.table.table-striped.table-bordered.table-sm cellspacing="0" width="100%"
     thead

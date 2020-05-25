@@ -15,7 +15,11 @@
         <%= text_field_tag :tel, params[:tel], value:"#{u.tel}", class: "form-control"%><br>
         <label for="usr"><%= t('user.add')%></label>
         <%= text_field_tag :add, params[:add], value:"#{u.add}", class: "form-control"%><br>
-
+        <label for="usr"><%= t('user.password')%></label>
+        <div class="position-relative">
+          <%= password_field_tag :password, params[:password], class: "form-control"%><br>
+          <i class="showpass cursor fa fa-eye position-absolute"></i>
+        </div>
        <%= submit_tag t('user.update'), class: "form-control btn btn-success" %><br><br>
      <% end %>
    <% end %>

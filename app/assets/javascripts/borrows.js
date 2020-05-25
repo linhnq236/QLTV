@@ -120,6 +120,7 @@ $( document ).on('turbolinks:load', function() {
     userid = $(this).data("userid");
     a.push(userid);
   })
+
   $.ajax({
     type: 'POST',
     url: "/api/sum_notices",
@@ -150,4 +151,20 @@ $( document ).on('turbolinks:load', function() {
       }
     })
   }
+  // click borrow-> href
+  $(".detail").click(function(){
+    var href = $(this).data("href");
+    window.location = href;
+    $(this).addClass("bg-primary");
+  })
+  // add bg-color when click
+  var path = $(location).attr("search");
+  var subpath = path.substr(4,path.length);
+  $(".detail").each(function(index, value){
+    var bg = $(this).data("bg");
+    if(bg == `bg_${subpath}`){
+      $(this).addClass("bg-primary");
+    }
+  })
+
 })
