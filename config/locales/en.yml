@@ -67,6 +67,8 @@ en:
     borrow: "Borrow"
     allbook: "All books"
     new: "NEW"
+    processed: "Processing"
+    borrowed: "Borrowed"
   user:
     edit_user: "Editing User"
     update: "Update"
@@ -104,6 +106,9 @@ en:
     borrower: "Lender"
     finish: "Payment success"
     lose: "Lose"
+    borrowhistory: "History"
+    waiting: "Book pending approval"
+    delete: "Delete"
   department:
     cntt: "Information Technology"
     ctgt: "Traffic Engineering "
@@ -220,6 +225,8 @@ en:
         status: "Status"
         timer: "Timer"
         timeout: "TimeOut"
+        turn_on: "On"
+        turn_off: "Off"
     admin:
   home:
     mes: "MESSAGE"
@@ -281,6 +288,7 @@ en:
       list2: "In September 1998, the Library Division was directly under the Science and Technology Division (separated by the Training Department)."
       list3: "On June 28, 2001 the Rector issued Decision No. 41 / TCCB with the name of Library Group under Ho Chi Minh City University of Transport."
       list4: "On October 25, 2011, Rector issued Decision No. 480 / QĐ / DH GTVT to change the name of the Library Group to Library of Ho Chi Minh City University of Transport."
+      date_pay: "Pay date"
     service:
       title: "Information service"
       search: "Search for documents"
