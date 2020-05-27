@@ -175,6 +175,7 @@ vn:
   ckeditor:
     buttons:
       upload: "Chèn ảnh"
+
   menu:
     teacher:
       calendar: "LỊCH THEO TUẦN"
@@ -187,6 +188,8 @@ vn:
         status: "Trạng thái"
         timer: "Hẹn giờ bật"
         timeout: "Hẹn giờ tắt"
+        turn_on: "Bật"
+        turn_off: "Tắt"
     admin:
       field_name: "Tên giá trị"
       value_old: "Giá trị cũ"

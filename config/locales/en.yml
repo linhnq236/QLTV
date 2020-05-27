@@ -225,6 +225,8 @@ en:
         status: "Status"
         timer: "Timer"
         timeout: "TimeOut"
+        turn_on: "On"
+        turn_off: "Off"
     admin:
   home:
     mes: "MESSAGE"

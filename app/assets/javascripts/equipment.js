@@ -24,7 +24,7 @@ $( document ).on('turbolinks:load', function() {
   $('.turn').click(function(){
     var id = $(this).data("id");
     var active = $(this).text();
-    if (active == "On"){
+    if (active == "On" || active == "Bật"){
       dataEquipment = {
         equipment:{
           active: false
@@ -42,7 +42,7 @@ $( document ).on('turbolinks:load', function() {
         url: "/equipment/"+id,
         data: dataEquipment,
         success: function(repsonse) {
-          if (active == "On"){
+          if (active == "On" || active == "Bật"){
             console.log("Turn off is successfully.")
           }else{
             console.log("Turn on is successfully.")
@@ -58,9 +58,9 @@ $( document ).on('turbolinks:load', function() {
     var id = $(this).data("id");
     var content = '';
     if (id == 1){
-      content = "Đèn 13";
+      content = "Quạt";
     }else if (id == 2){
-      content = "Đèn 14";
+      content = "Đèn";
     }else{
       content = "Đèn 15";
     }
