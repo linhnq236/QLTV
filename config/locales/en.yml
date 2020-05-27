@@ -67,6 +67,8 @@ en:
     borrow: "Borrow"
     allbook: "All books"
     new: "NEW"
+    processed: "Processing"
+    borrowed: "Borrowed"
   user:
     edit_user: "Editing User"
     update: "Update"
@@ -106,6 +108,7 @@ en:
     lose: "Lose"
     borrowhistory: "History"
     waiting: "Book pending approval"
+    delete: "Delete"
   department:
     cntt: "Information Technology"
     ctgt: "Traffic Engineering "

@@ -71,6 +71,7 @@ vn:
     lose: "Bị mất"
     borrowhistory: "Lịch sử mượn sách"
     waiting: "Sách chờ phê duyệt"
+    delete: "Xóa"
   department:
     cntt: "Công nghệ thông tin"
     ctgt: "Công trình giao thông"
