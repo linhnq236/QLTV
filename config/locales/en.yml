@@ -147,6 +147,10 @@ en:
     exists: "Email already exists."
     success: "More success."
     fail: "More failures."
+    success_update: "Update successfully."
+    fail_update: "Update failed. "
+    delete_success: "Delete successfully."
+    delete_fail: "Delete failed."
     send: "Send"
 #javascript using I18n.t()
     user_conf: "- Nút MậtKhẩu là khôi phục lại mật khẩu từ đầu. <br> - Nút Khóa là khóa lại tài khoản sử dụng. <br> - Nút Xóa là xóa tài khoản."
