@@ -145,4 +145,8 @@ $( document ).on('turbolinks:load', function() {
       }
     })
   })
+  // showpassword
+  $(".showpass").click(function(){
+    $(this).siblings("#password").attr("type","text");
+  })
 })

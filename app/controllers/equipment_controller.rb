@@ -73,7 +73,7 @@ class EquipmentController < ApplicationController
   def update
     respond_to do |format|
       if @equipment.update(equipment_params)
-        format.html { redirect_to controller_equipment_path, notice: 'Equipment was successfully updated.' }
+        format.html { redirect_to controller_equipment_path}
         format.json { render :show, status: :ok, location: @equipment }
       else
         format.html { render :edit }

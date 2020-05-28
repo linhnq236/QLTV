@@ -88,7 +88,7 @@ class BorrowsController < ApplicationController
   def destroy
     @borrow.destroy
     respond_to do |format|
-      format.html { redirect_to borrows_url, notice: 'Borrow was successfully destroyed.' }
+      format.html { redirect_to mybook_url, notice: t("mes.delete_success") }
       format.json { head :no_content }
     end
   end

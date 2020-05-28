@@ -11,14 +11,14 @@ table.table
     - @equipment.each do |equipment|
       tr
         td = equipment.equiqment_name
-        td.turn data-id = equipment.id = equipment.active == true ? "On" : "OFF"
-        td.timer data-id = equipment.id  = equipment.timer.nil? ? "Timer" : format_datetime(equipment.timer)
-        td.timeout data-id = equipment.id  = equipment.timer.nil? ? "Timeout" : format_datetime(equipment.timeout)
+        td.turn data-id = equipment.id = equipment.active == true ? "#{t('menu.teacher.listequipment.turn_on')}" : "#{t('menu.teacher.listequipment.turn_off')}"
+        td.timer data-id = equipment.id  = equipment.timer.nil? ? "#{t('menu.teacher.listequipment.turn_off')}" : format_datetime(equipment.timer)
+        td.timeout data-id = equipment.id  = equipment.timer.nil? ? "#{t('menu.teacher.listequipment.turn_off')}" : format_datetime(equipment.timeout)
 br
 
 div#settime
 div#settimeout
-= link_to 'New Equipment', new_equipment_path
+/= link_to 'New Equipment', new_equipment_path
 /= javascript_pack_tag 'equipment', 'data-turbolinks-track': 'reload'
 div.detectedface
   /= image_tag('/assets/nen', class: "pic")
