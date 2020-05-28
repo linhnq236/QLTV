@@ -1,4 +1,5 @@
 $( document ).on('turbolinks:load', function() {
+  $(".cart_size").text(localStorage.number);
   var path = $(location).attr('pathname');
   var result = '';
   if (path.substr(1,2) == "en") {
@@ -19,10 +20,15 @@ $( document ).on('turbolinks:load', function() {
     }
     bookids.push(borrow.data("id"));
     list_bookid = deduplicate(bookids);
+    var number = list_bookid.length;
+    console.log(number);
     if (typeof(Storage) !== "undefined") {
       // localStorage.setItem("bookids",JSON.stringify(list_bookid));
       localStorage.setItem("bookids",list_bookid);
+      localStorage.setItem("number",list_bookid.length);
+
     }
+    $(".cart_size").text(localStorage.number);
     $.alert("Thêm thành công.");
   })
   function deduplicate(arr) {
@@ -386,9 +392,22 @@ $( document ).on('turbolinks:load', function() {
                   }
                 // removeItems = idItems.join(",");
                 $.each(idItems, function(index, value){
-                  idItems = localStorage.bookids.replace(value, "");
+                  var result = localStorage.bookids.split(",");
+                  $.each(result, function(index1, value1){
+                    if(value == value1){
+                      var i = result.indexOf(`${value1}`);
+                      if (i != -1) {
+                          result.splice(i,1);
+                      }
+                    }
+                  })
+                  idItems = result.join(",");
+                  localStorage.setItem("number",result.length);
                   localStorage.setItem("bookids",idItems);
+                  // localStorage.setItem("number",localStorage.bookids.length);
                 })
+                $(".cart_size").text(localStorage.number);
+
                 call_cart();
               }
             },
