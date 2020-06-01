@@ -5,6 +5,7 @@ class HomeController < ApplicationController
   def index
     @current_date = Time.zone.now.to_date
     @books = Book.group(:type_id).paginate(page: params[:page], per_page: PER_PAGE)
+  
   end
   def introduce
   end

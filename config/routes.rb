@@ -46,6 +46,9 @@ Rails.application.routes.draw do
       resources :books
       resources :users
       resources :messages
+      resources :firebases
+      get "led_status", to: "firebases#led_status"
+      post "updatestatus", to: "firebases#updatestatus"
       post "cart", to: "books#cart"
       post "cart_errors", to: "books#cart_errors"
       put "setpassword/:id", to: "users#setpassword"
